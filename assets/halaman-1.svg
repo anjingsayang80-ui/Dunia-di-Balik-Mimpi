@@ -1,28 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" width="900" height="1100" viewBox="0 0 900 1100"><defs><linearGradient id="bg0" x2="1" y2="1"><stop stop-color="#243b82"/><stop offset="1" stop-color="#f4a6d7"/></linearGradient><linearGradient id="bg1" x2="1" y2="1"><stop stop-color="#f4a6d7"/><stop offset="1" stop-color="#243b82"/></linearGradient><linearGradient id="bg2" x2="0" y2="1"><stop stop-color="#243b82"/><stop offset="1" stop-color="#f4a6d7"/></linearGradient><radialGradient id="glow"><stop stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs><rect width="900" height="1100" fill="#f8f1ff"/><rect x="0" y="0" width="900" height="75" fill="#201535"/><text x="450" y="49" font-family="Georgia" font-size="29" font-weight="bold" text-anchor="middle" fill="#ffe19a">MIMPI ARKA</text><g><rect x="28" y="85" width="844" height="300" rx="18" fill="url(#bg0)" stroke="#17112c" stroke-width="9"/><path d="M30 315 Q240 225 450 320 T870 290 V377 H30Z" fill="#10152d" opacity=".48"/><circle cx="230" cy="210" r="76" fill="#fff2a8" opacity=".15"/><g transform="translate(140 190)"><ellipse cx="0" cy="150" rx="78" ry="95" fill="#293c76"/><path d="M-65 40 Q-90 -75 0 -82 Q95 -65 65 55 L42 18 Q5 -15 -36 24Z" fill="#17172c"/><ellipse cy="5" rx="53" ry="65" fill="#ffd5bd"/><path d="M-55 -5 Q-65 -90 0 -82 Q68 -70 55 -2 L32 -35 L0 -20 L-32 -32Z" fill="#202039"/><ellipse cx="-19" cy="10" rx="7" ry="11" fill="#172044"/><ellipse cx="19" cy="10" rx="7" ry="11" fill="#172044"/><path d="M-10 37 Q0 45 12 36" fill="none" stroke="#9e4c5d" stroke-width="4" stroke-linecap="round"/><path d="M-68 95 Q0 60 68 95 L92 220 H-92Z" fill="#4059a1" stroke="#10152d" stroke-width="6"/></g><g transform="translate(705 170) scale(1 1)" stroke="#151329" stroke-width="5" stroke-linejoin="round">
- <path d="M-55 100 Q0 55 55 100 L76 230 L-76 230Z" fill="#4a244f"/>
- <path d="M-34 88 Q0 111 34 88 L25 135 L-25 135Z" fill="#fff0d8"/>
- <ellipse cy="18" rx="48" ry="59" fill="#d8b6ff"/>
- <path d="M-49 8 Q-72 -55 -12 -65 Q38 -82 54 -25 L48 14 Q22 -17 5 -26 Q-20 -5 -49 8Z" fill="#6b3b9c"/>
- <path d="M-46 3 Q-63 42 -42 63 L-34 27Z M45 0 Q63 36 42 61 L34 25Z" fill="#6b3b9c"/>
- <ellipse cx="-17" cy="20" rx="6" ry="9" fill="#18213b" stroke="none"/><ellipse cx="17" cy="20" rx="6" ry="9" fill="#18213b" stroke="none"/>
- <path d="M-9 46 Q0 53 10 45" fill="none" stroke="#9e4c5d" stroke-width="4"/>
- <path d="M-16 88 L0 116 L16 88" fill="none" stroke="#fff" stroke-width="4"/>
- </g><text x="705" y="430" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#fff">RINA</text><path d="M43 110 h320 q35 0 35 35 v90 q0 35 -35 35 h-145 l-40 35 8 -35 h-143 q-35 0 -35 -35 v-90 q0 -35 35 -35Z" fill="#fffdf5" stroke="#211a37" stroke-width="7"/><text x="203" y="160" font-family="Arial,sans-serif" font-size="23" font-weight="900" text-anchor="middle" fill="#20172e">ARKA</text><foreignObject x="70" y="173" width="270" height="110"><div xmlns="http://www.w3.org/1999/xhtml" style="font:bold 23px/1.25 Arial,sans-serif;color:#21172e;text-align:center">Suatu hari, aku akan menjelajahi dunia!</div></foreignObject></g><g><rect x="28" y="405" width="844" height="300" rx="18" fill="url(#bg1)" stroke="#17112c" stroke-width="9"/><path d="M30 635 Q240 545 450 640 T870 610 V697 H30Z" fill="#10152d" opacity=".48"/><circle cx="710" cy="530" r="76" fill="#fff2a8" opacity=".15"/><g transform="translate(640 510)"><ellipse cx="0" cy="150" rx="78" ry="95" fill="#293c76"/><path d="M-65 40 Q-90 -75 0 -82 Q95 -65 65 55 L42 18 Q5 -15 -36 24Z" fill="#d9eaff"/><ellipse cy="5" rx="53" ry="65" fill="#f1c8b4"/><path d="M-55 -5 Q-65 -90 0 -82 Q68 -70 55 -2 L32 -35 L0 -20 L-32 -32Z" fill="#e5f5ff"/><ellipse cx="-19" cy="10" rx="7" ry="11" fill="#172044"/><ellipse cx="19" cy="10" rx="7" ry="11" fill="#172044"/><path d="M-10 37 Q0 45 12 36" fill="none" stroke="#9e4c5d" stroke-width="4" stroke-linecap="round"/><path d="M-68 95 Q0 60 68 95 L92 220 H-92Z" fill="#d8eaff" stroke="#10152d" stroke-width="6"/></g><g transform="translate(245 490) scale(-1 1)" stroke="#151329" stroke-width="5" stroke-linejoin="round">
- <path d="M-55 100 Q0 55 55 100 L76 230 L-76 230Z" fill="#c34e38"/>
- <path d="M-34 88 Q0 111 34 88 L25 135 L-25 135Z" fill="#fff0d8"/>
- <ellipse cy="18" rx="48" ry="59" fill="#f4c2a1"/>
- <path d="M-49 8 Q-72 -55 -12 -65 Q38 -82 54 -25 L48 14 Q22 -17 5 -26 Q-20 -5 -49 8Z" fill="#2c638d"/>
- <path d="M-46 3 Q-63 42 -42 63 L-34 27Z M45 0 Q63 36 42 61 L34 25Z" fill="#2c638d"/>
- <ellipse cx="-17" cy="20" rx="6" ry="9" fill="#18213b" stroke="none"/><ellipse cx="17" cy="20" rx="6" ry="9" fill="#18213b" stroke="none"/>
- <path d="M-9 46 Q0 53 10 45" fill="none" stroke="#9e4c5d" stroke-width="4"/>
- <path d="M-16 88 L0 116 L16 88" fill="none" stroke="#fff" stroke-width="4"/>
- </g><text x="245" y="750" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#fff">REN</text><path d="M505 430 h320 q35 0 35 35 v90 q0 35 -35 35 h-145 l-40 35 8 -35 h-143 q-35 0 -35 -35 v-90 q0 -35 35 -35Z" fill="#fffdf5" stroke="#211a37" stroke-width="7"/><text x="665" y="480" font-family="Arial,sans-serif" font-size="23" font-weight="900" text-anchor="middle" fill="#20172e">ARKA</text><foreignObject x="532" y="493" width="270" height="110"><div xmlns="http://www.w3.org/1999/xhtml" style="font:bold 23px/1.25 Arial,sans-serif;color:#21172e;text-align:center">Aku yakin ada sesuatu yang menungguku di luar sana.</div></foreignObject></g><g><rect x="28" y="725" width="844" height="300" rx="18" fill="url(#bg2)" stroke="#17112c" stroke-width="9"/><path d="M30 955 Q240 865 450 960 T870 930 V1017 H30Z" fill="#10152d" opacity=".48"/><circle cx="230" cy="850" r="76" fill="#fff2a8" opacity=".15"/><g transform="translate(140 830)"><ellipse cx="0" cy="150" rx="78" ry="95" fill="#111629"/><path d="M-65 40 Q-90 -75 0 -82 Q95 -65 65 55 L42 18 Q5 -15 -36 24Z" fill="#17172c"/><ellipse cy="5" rx="53" ry="65" fill="#ffd5bd"/><path d="M-55 -5 Q-65 -90 0 -82 Q68 -70 55 -2 L32 -35 L0 -20 L-32 -32Z" fill="#202039"/><ellipse cx="-19" cy="10" rx="7" ry="11" fill="#172044"/><ellipse cx="19" cy="10" rx="7" ry="11" fill="#172044"/><path d="M-10 37 Q0 45 12 36" fill="none" stroke="#9e4c5d" stroke-width="4" stroke-linecap="round"/><path d="M-68 95 Q0 60 68 95 L92 220 H-92Z" fill="#4059a1" stroke="#10152d" stroke-width="6"/></g><g transform="translate(705 810) scale(1 1)" stroke="#151329" stroke-width="5" stroke-linejoin="round">
- <path d="M-55 100 Q0 55 55 100 L76 230 L-76 230Z" fill="#10152d"/>
- <path d="M-34 88 Q0 111 34 88 L25 135 L-25 135Z" fill="#fff0d8"/>
- <ellipse cy="18" rx="48" ry="59" fill="#b9eaff"/>
- <path d="M-49 8 Q-72 -55 -12 -65 Q38 -82 54 -25 L48 14 Q22 -17 5 -26 Q-20 -5 -49 8Z" fill="#26365f"/>
- <path d="M-46 3 Q-63 42 -42 63 L-34 27Z M45 0 Q63 36 42 61 L34 25Z" fill="#26365f"/>
- <ellipse cx="-17" cy="20" rx="6" ry="9" fill="#18213b" stroke="none"/><ellipse cx="17" cy="20" rx="6" ry="9" fill="#18213b" stroke="none"/>
- <path d="M-9 46 Q0 53 10 45" fill="none" stroke="#9e4c5d" stroke-width="4"/>
- <path d="M-16 88 L0 116 L16 88" fill="none" stroke="#fff" stroke-width="4"/>
- </g><text x="705" y="1070" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#fff">KURO</text><path d="M43 750 h320 q35 0 35 35 v90 q0 35 -35 35 h-145 l-40 35 8 -35 h-143 q-35 0 -35 -35 v-90 q0 -35 35 -35Z" fill="#fffdf5" stroke="#211a37" stroke-width="7"/><text x="203" y="800" font-family="Arial,sans-serif" font-size="23" font-weight="900" text-anchor="middle" fill="#20172e">NARATOR</text><foreignObject x="70" y="813" width="270" height="110"><div xmlns="http://www.w3.org/1999/xhtml" style="font:bold 23px/1.25 Arial,sans-serif;color:#21172e;text-align:center">Malam itu, bintang-bintang mulai berbisik.</div></foreignObject></g><text x="450" y="1075" font-family="Arial" font-size="19" text-anchor="middle" fill="#32234b" font-weight="bold">KOTA LEMBAYUNG · DUNIA DI BALIK MIMPI</text><g fill="#fff"><circle cx="90" cy="42" r="3"/><circle cx="810" cy="38" r="4"/><circle cx="780" cy="90" r="3"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100">
+<defs>
+ <linearGradient id="sky1" x2="0" y2="1"><stop stop-color="#111b48"/><stop offset=".55" stop-color="#7152a5"/><stop offset="1" stop-color="#e79bc8"/></linearGradient>
+ <linearGradient id="sky2" x2="1" y2="1"><stop stop-color="#18285b"/><stop offset=".55" stop-color="#5676b9"/><stop offset="1" stop-color="#f1a6c9"/></linearGradient>
+ <linearGradient id="coat" x2="0" y2="1"><stop stop-color="#4d79bd"/><stop offset="1" stop-color="#1e315f"/></linearGradient>
+ <linearGradient id="hair" x2="1" y2="1"><stop stop-color="#394d75"/><stop offset=".5" stop-color="#11182e"/><stop offset="1" stop-color="#070d1b"/></linearGradient>
+ <linearGradient id="silver" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".5" stop-color="#b9d5f3"/><stop offset="1" stop-color="#6f83b8"/></linearGradient>
+ <radialGradient id="moon"><stop stop-color="#fff5cf" stop-opacity=".95"/><stop offset="1" stop-color="#fff5cf" stop-opacity="0"/></radialGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="10"/></filter>
+ <g id="arka">
+  <path d="M-76 225 Q-86 120 -60 85 Q-30 58 0 65 Q48 55 67 94 Q88 140 75 225Z" fill="#18284d" stroke="#10162d" stroke-width="7"/>
+  <path d="M-60 118 Q-80 40 -30 10 Q-2 -12 32 5 Q82 34 57 125 L40 75 L17 52 L-10 78 L-42 67Z" fill="url(#hair)" stroke="#0b1022" stroke-width="6"/>
+  <path d="M-43 72 Q-54 105 -48 143 Q-41 184 0 190 Q43 184 49 143 L42 72 Q14 48 -10 70Z" fill="#f2c5a8" stroke="#8f5362" stroke-width="4"/>
+  <path d="M-47 100 Q-50 53 -20 36 L-7 84 L8 41 L22 82 L48 59 L47 111 Q20 85 3 92 Q-20 85 -47 112Z" fill="url(#hair)"/>
+  <path d="M-31 126 Q-19 115 -7 126 M12 126 Q25 115 36 126" fill="none" stroke="#392a3d" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="-19" cy="137" rx="7" ry="12" fill="#273e78"/><ellipse cx="22" cy="137" rx="7" ry="12" fill="#273e78"/>
+  <circle cx="-21" cy="134" r="2.8" fill="#fff"/><circle cx="20" cy="134" r="2.8" fill="#fff"/>
+  <path d="M-7 161 Q2 169 12 160" fill="none" stroke="#a64e65" stroke-width="4" stroke-linecap="round"/>
+  <path d="M-53 192 L-87 286 L88 286 L54 192 L28 180 L0 220 L-25 180Z" fill="url(#coat)" stroke="#101a3b" stroke-width="7"/>
+  <path d="M-25 184 L0 226 L27 184 L18 251 L-18 251Z" fill="#f3e6d2"/>
+  <path d="M-18 252 L0 273 L18 252" fill="none" stroke="#d4a85c" stroke-width="5"/>
+ </g>
+ <g id="rina">
+  <path d="M-77 220 Q-86 124 -60 84 Q-28 57 0 66 Q50 55 68 95 Q90 145 76 220Z" fill="#253a69" stroke="#12152e" stroke-width="7"/>
+  <path d="M-56 98 Q-85 26 -30 0 Q22 -27 56 25 Q74 68 48 127 L40 80 L17 51 L-8 80 L-42 70Z" fill="url(#silver)" stroke="#627ba9" stroke-width="5"/>
+  <path d="M-42 70 Q-52 104 -46 145 Q-38 184 0 189 Q41 183 48 143 L42 72 Q10 48 -12 68Z" fill="#f5d4c2" stroke="#ac8291" stroke-width="4"/>
+  <path d="M-43 101 Q-28 63 -12 70 L-6 42 Q13 65 22 75 L48 59 L44 111 Q20 87 2 91 Q-22 85 -43 112Z" fill="#dcecff"/>
+  <path d="M-31 126 Q-19 116 -7 126 M12 126 Q25 116 36 126" fill="none" stroke="#46364b" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="-19" cy="137" rx="7" ry="12" fill="#5576b8"/><ellipse cx="22" cy="137" rx="7" ry="12" fill="#5576b8"/>
+  <circle cx="-21" cy="134" r="2.8" fill="#fff"/><circle cx="20" cy="134" r="2.8" fill="#fff"/>
+  <path d="M-8 161 Q2 169 12 160" fill="none" stroke="#a64e65" stroke-width="4"/>
+  <path d="M-52 192 L-90 286 L90 286 L53 192 L25 179 L0 222 L-26 179Z" fill="#315a92" stroke="#172344" stroke-width="7"/>
+  <path d="M-26 184 L0 225 L26 184 L17 250 L-17 250Z" fill="#f7f1e6"/>
+  <path d="M-17 250 L0 273 L17 250" fill="none" stroke="#e5c27c" stroke-width="5"/>
+ </g>
+ <g id="ren">
+  <path d="M-72 220 Q-80 130 -54 88 Q-25 59 4 66 Q52 58 68 99 Q82 145 70 220Z" fill="#9e483e" stroke="#241a30" stroke-width="7"/>
+  <path d="M-53 101 Q-69 45 -23 9 Q21 -16 55 31 L47 114 L24 77 L2 48 L-20 81Z" fill="#205777" stroke="#12304d" stroke-width="5"/>
+  <path d="M-42 74 Q-51 106 -45 145 Q-38 184 0 189 Q40 184 47 143 L41 74 Q5 51 -15 71Z" fill="#f1c4a4" stroke="#a76c61" stroke-width="4"/>
+  <path d="M-42 105 L-31 57 L-10 80 L2 37 L20 80 L48 59 L44 111 Q12 87 -1 94 Q-25 86 -42 111Z" fill="#205777"/>
+  <path d="M-31 126 Q-19 115 -7 126 M12 126 Q25 115 36 126" fill="none" stroke="#392a3d" stroke-width="5"/>
+  <ellipse cx="-19" cy="137" rx="7" ry="12" fill="#294f81"/><ellipse cx="22" cy="137" rx="7" ry="12" fill="#294f81"/>
+  <path d="M-10 158 Q2 174 16 157" fill="none" stroke="#a64e65" stroke-width="5"/>
+  <path d="M-54 192 L-87 286 L87 286 L54 192 L24 179 L0 220 L-25 179Z" fill="#b94d3d" stroke="#39243b" stroke-width="7"/>
+  <path d="M-25 185 L0 224 L25 185 L17 249 L-17 249Z" fill="#f5e6d2"/>
+ </g>
+</defs>
+<rect width="900" height="1100" fill="#f7efff"/>
+<rect width="900" height="76" fill="#1a1536"/><text x="450" y="50" fill="#ffe3a0" font-family="Georgia" font-size="31" font-weight="bold" text-anchor="middle">MIMPI ARKA</text>
+<!-- panel 1 -->
+<rect x="22" y="91" width="856" height="292" rx="18" fill="url(#sky1)" stroke="#17132d" stroke-width="9"/>
+<circle cx="690" cy="166" r="115" fill="url(#moon)"/><circle cx="690" cy="166" r="43" fill="#fff1c7" opacity=".85"/>
+<path d="M25 300 Q170 205 310 287 T590 276 T875 275 V378 H25Z" fill="#20244d" opacity=".75"/>
+<path d="M25 338 Q190 270 330 335 T620 326 T875 316 V378 H25Z" fill="#121b37"/>
+<g fill="#fff5d9"><circle cx="120" cy="146" r="3"/><circle cx="235" cy="185" r="2.5"/><circle cx="410" cy="135" r="3"/><circle cx="810" cy="218" r="3"/></g>
+<g transform="translate(210 135) scale(.77)"><use href="#arka"/></g>
+<g transform="translate(675 145) scale(.76)"><use href="#rina"/></g>
+<path d="M54 111 H400 Q429 111 429 140 V204 Q429 232 400 232 H250 L216 263 L222 232 H54 Q27 232 27 204 V140 Q27 111 54 111Z" fill="#fffdf6" stroke="#1a1630" stroke-width="7"/>
+<text x="225" y="153" font-family="Arial" font-size="22" font-weight="900" text-anchor="middle" fill="#211a32">ARKA</text><text x="225" y="184" font-family="Arial" font-size="23" font-weight="bold" text-anchor="middle" fill="#211a32">“Suatu hari, aku akan</text><text x="225" y="213" font-family="Arial" font-size="23" font-weight="bold" text-anchor="middle" fill="#211a32">menjelajahi dunia!”</text>
+<text x="675" y="438" font-family="Arial" font-size="19" font-weight="bold" text-anchor="middle" fill="#fff">RINA</text>
+<!-- panel 2 -->
+<rect x="22" y="405" width="856" height="292" rx="18" fill="url(#sky2)" stroke="#17132d" stroke-width="9"/>
+<path d="M25 625 Q170 540 310 610 T590 605 T875 590 V692 H25Z" fill="#25234f" opacity=".8"/>
+<circle cx="175" cy="470" r="90" fill="url(#moon)"/>
+<g transform="translate(225 462) scale(.70)"><use href="#ren"/></g>
+<g transform="translate(495 455) scale(.78)"><use href="#arka"/></g>
+<g transform="translate(735 455) scale(.68)"><use href="#rina"/></g>
+<path d="M486 423 H824 Q850 423 850 450 V510 Q850 536 824 536 H680 L648 563 L653 536 H486 Q460 536 460 510 V450 Q460 423 486 423Z" fill="#fffdf6" stroke="#1a1630" stroke-width="7"/>
+<text x="655" y="464" font-family="Arial" font-size="21" font-weight="900" text-anchor="middle" fill="#211a32">ARKA</text><text x="655" y="493" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#211a32">“Ada sesuatu yang</text><text x="655" y="520" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#211a32">menungguku di luar sana.”</text>
+<text x="225" y="681" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#fff">REN</text>
+<!-- panel 3 -->
+<rect x="22" y="719" width="856" height="294" rx="18" fill="url(#sky1)" stroke="#17132d" stroke-width="9"/>
+<path d="M25 930 Q170 850 310 915 T590 908 T875 895 V1008 H25Z" fill="#171b3d" opacity=".8"/>
+<g transform="translate(210 760) scale(.72)"><use href="#arka"/></g>
+<g transform="translate(680 760) scale(.72)"><use href="#rina"/></g>
+<g transform="translate(465 825) scale(.42)"><ellipse cy="75" rx="70" ry="56" fill="#111629" stroke="#070b18" stroke-width="8"/><path d="M-52 52 Q-85 -18 -38 -40 L-8 6 L22 -42 Q80 -12 49 54Z" fill="#111629"/><ellipse cx="-22" cy="62" rx="12" ry="18" fill="#73dfff"/><ellipse cx="22" cy="62" rx="12" ry="18" fill="#73dfff"/><path d="M-13 93 Q0 102 13 93" fill="none" stroke="#fff" stroke-width="4"/></g>
+<path d="M44 750 H380 Q408 750 408 778 V845 Q408 873 380 873 H220 L188 902 L194 873 H44 Q17 873 17 845 V778 Q17 750 44 750Z" fill="#fffdf6" stroke="#1a1630" stroke-width="7"/>
+<text x="210" y="790" font-family="Arial" font-size="21" font-weight="900" text-anchor="middle" fill="#211a32">NARATOR</text><text x="210" y="823" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#211a32">Malam itu, bintang-bintang</text><text x="210" y="850" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#211a32">mulai berbisik.</text>
+<text x="450" y="1060" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#2c2347">KOTA LEMBAYUNG · DUNIA DI BALIK MIMPI</text>
+</svg>
