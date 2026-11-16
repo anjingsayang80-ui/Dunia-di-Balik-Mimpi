@@ -7,13 +7,20 @@ var cooldown := 0.0
 var sword: MeshInstance3D
 var slime_reward_claimed := false
 var attack_tween: Tween
+var walk_phase := 0.0
+var body_visual: MeshInstance3D
+var left_arm: Node3D
+var right_arm: Node3D
+var left_leg: Node3D
+var right_leg: Node3D
 
 func _ready() -> void:
     var outfit := StandardMaterial3D.new()
     outfit.albedo_color = Color(0.12, 0.22, 0.62)
     outfit.roughness = 0.82
 
-    var body := MeshInstance3D.new()
+    body_visual = MeshInstance3D.new()
+    var body := body_visual
     var capsule_mesh := CapsuleMesh.new()
     capsule_mesh.radius = 0.42
     capsule_mesh.height = 1.75
@@ -89,6 +96,13 @@ func _ready() -> void:
         iris.scale = Vector3(1.0, 1.0, 0.5)
         add_child(iris)
 
+    # Lengan dan kaki sederhana dengan pivot agar gerakan berjalan terlihat hidup.
+    var limb_material := outfit
+    left_arm = _make_limb(Vector3(-0.48, 1.35, 0.0), limb_material, 0.14, 0.78)
+    right_arm = _make_limb(Vector3(0.48, 1.35, 0.0), limb_material, 0.14, 0.78)
+    left_leg = _make_limb(Vector3(-0.19, 0.52, 0.0), limb_material, 0.17, 0.78)
+    right_leg = _make_limb(Vector3(0.19, 0.52, 0.0), limb_material, 0.17, 0.78)
+
     sword = MeshInstance3D.new()
     var blade := BoxMesh.new()
     blade.size = Vector3(0.12, 0.95, 0.16)
@@ -107,6 +121,20 @@ func _ready() -> void:
     collision.shape = shape
     collision.position.y = 0.9
     add_child(collision)
+
+func _make_limb(pivot_position: Vector3, material: Material, radius: float, height: float) -> Node3D:
+    var pivot := Node3D.new()
+    pivot.position = pivot_position
+    var limb := MeshInstance3D.new()
+    var capsule := CapsuleMesh.new()
+    capsule.radius = radius
+    capsule.height = height
+    limb.mesh = capsule
+    limb.material_override = material
+    limb.position.y = -height * 0.36
+    pivot.add_child(limb)
+    add_child(pivot)
+    return pivot
 
 func _physics_process(delta: float) -> void:
     cooldown = maxf(0.0, cooldown - delta)
@@ -132,6 +160,13 @@ func _physics_process(delta: float) -> void:
     velocity.z = direction.z * speed
     if direction.length() > 0.1:
         rotation.y = atan2(-direction.x, -direction.z)
+    walk_phase += delta * (9.0 if direction.length() > 0.1 else 2.0)
+    var stride := sin(walk_phase) * (0.62 if direction.length() > 0.1 else 0.035)
+    left_leg.rotation.x = stride
+    right_leg.rotation.x = -stride
+    left_arm.rotation.x = -stride * 0.72
+    right_arm.rotation.x = stride * 0.72
+    body_visual.position.y = 0.9 + absf(stride) * 0.045
     velocity.y -= 20.0 * delta
     move_and_slide()
 
