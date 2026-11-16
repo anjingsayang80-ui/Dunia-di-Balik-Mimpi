@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#101735"/><stop offset=".55" stop-color="#253c78"/><stop offset="1" stop-color="#090d22"/></linearGradient>
+ <linearGradient id="hair" x2=".8" y2="1"><stop stop-color="#39456f"/><stop offset="1" stop-color="#090d20"/></linearGradient>
+ <linearGradient id="coat" x2="1" y2="1"><stop stop-color="#2879c9"/><stop offset="1" stop-color="#101c49"/></linearGradient>
+ <linearGradient id="portal" x2="1" y2="1"><stop stop-color="#65f4ff"/><stop offset="1" stop-color="#7d52ff"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="512" height="512" rx="100" fill="url(#bg)"/>
+<circle cx="256" cy="220" r="185" fill="none" stroke="url(#portal)" stroke-width="10" opacity=".75" filter="url(#glow)"/>
+<circle cx="256" cy="220" r="153" fill="#121b3d" stroke="#a2f7ff" stroke-width="3" opacity=".88"/>
+<path d="M75 330 Q115 250 165 265 L195 340 L317 340 L350 265 Q411 258 442 337 L466 405 L46 405Z" fill="url(#coat)" stroke="#68dfff" stroke-width="5"/>
+<path d="M167 205 Q151 120 217 94 Q280 61 342 115 Q379 151 346 246 L327 281 L180 273Z" fill="url(#hair)" stroke="#a8dfff" stroke-width="5"/>
+<path d="M177 161 L124 115 L192 129 L170 73 L229 112 L247 56 L269 111 L323 77 L305 133 L372 117 L337 173Z" fill="#171d39" stroke="#8cbbe9" stroke-width="5"/>
+<ellipse cx="256" cy="209" rx="79" ry="91" fill="#f1c6ac" stroke="#ffe0ce" stroke-width="4"/>
+<path d="M177 190 Q190 121 251 122 Q318 113 337 184 Q297 155 269 167 Q228 145 177 190Z" fill="url(#hair)"/>
+<path d="M204 210 Q224 195 242 210" fill="none" stroke="#18213d" stroke-width="8" stroke-linecap="round"/>
+<path d="M270 210 Q290 195 308 210" fill="none" stroke="#18213d" stroke-width="8" stroke-linecap="round"/>
+<ellipse cx="225" cy="222" rx="11" ry="15" fill="#27a9ec"/><ellipse cx="289" cy="222" rx="11" ry="15" fill="#27a9ec"/>
+<circle cx="228" cy="217" r="4" fill="white"/><circle cx="292" cy="217" r="4" fill="white"/>
+<path d="M246 258 Q257 268 270 257" fill="none" stroke="#9c4b54" stroke-width="5" stroke-linecap="round"/>
+<path d="M194 290 L256 331 L319 290 L348 408 L164 408Z" fill="url(#coat)" stroke="#82eaff" stroke-width="5"/>
+<path d="M256 331 L256 408" stroke="#f5d27b" stroke-width="7"/>
+<path d="M351 300 L400 175 L414 182 L378 315" fill="none" stroke="#dffaff" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+<path d="M400 175 L428 117" stroke="#8ceeff" stroke-width="5"/>
+<path d="M70 130 L86 130 M78 122 L78 138 M430 245 L448 245 M439 236 L439 254" stroke="#b7f8ff" stroke-width="5" stroke-linecap="round"/>
+<rect x="40" y="418" width="432" height="68" rx="18" fill="#080d22" stroke="#8deeff" stroke-width="3"/>
+<text x="256" y="462" text-anchor="middle" font-family="sans-serif" font-size="31" font-weight="900" letter-spacing="1.2" fill="#f5f4ff">DUNIA DI BALIK MIMPI</text>
+</svg>
