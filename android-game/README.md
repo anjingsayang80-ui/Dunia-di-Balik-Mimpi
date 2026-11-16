@@ -15,19 +15,22 @@ Prototipe game RPG 3D offline untuk Android. Folder ini terpisah dari komik di r
 - Animasi ayunan pedang menggunakan Tween.
 - Slime mengejar dan menyerang pemain.
 - HP pemain dan HP monster.
-- **Quest berantai:** kalahkan Slime untuk memperoleh Lendir Slime dan 10 Koin, lalu kumpulkan 3 Kristal Mimpi yang muncul di arena untuk bonus 20 Koin.
+- **Quest berantai:** kalahkan Slime untuk memperoleh Lendir Slime dan 10 Koin, lalu kumpulkan 3 Kristal Mimpi untuk bonus 20 Koin. Setelah itu Bos Mimpi muncul sebagai misi ketiga.
 - Kristal Mimpi memiliki efek cahaya dan dikumpulkan dengan menyentuhnya.
 - **Inventaris:** mulai dengan 2 Ramuan Kecil; ramuan memulihkan 30 HP (maksimum 100).
-- **Simpan otomatis:** inventaris, progres kedua quest, dan hadiah disimpan ke `user://savegame.cfg`; progres dimuat kembali saat game dibuka.
+- **Level dan kekuatan MC:** setiap monster biasa yang dikalahkan memberi Level +1 dan Kekuatan +0,2 (1/5). Mengalahkan Bos Mimpi memberi Level +5 dan Kekuatan +3. Kekuatan meningkatkan damage pedang.
+- **Bos Mimpi:** bos ber-HP 350, mengejar dan menyerang pemain, memberi Inti Bos dan 100 Koin. Hadiah bos hanya bisa diterima satu kali.
+- **Simpan otomatis:** inventaris, level, kekuatan, progres quest, dan status hadiah bos disimpan ke `user://savegame.cfg`; progres dimuat kembali saat game dibuka.
 - Tombol TAS membuka inventaris dan joystick layar sentuh tersedia untuk Android.
 
 ## Pengujian fitur simpan
 1. Jalankan game dan buka tombol TAS untuk melihat dua Ramuan Kecil.
 2. Gunakan satu ramuan saat HP tidak penuh; jumlah ramuan harus berkurang.
-3. Kalahkan Slime sampai quest pertama selesai dan hadiah muncul di inventaris.
-4. Sentuh tiga Kristal Mimpi yang muncul di arena; pastikan quest kedua selesai dan bonus Koin diterima.
-5. Tutup lalu jalankan ulang game pada perangkat/profil Godot yang sama.
-6. Pastikan progres kedua quest dan barang tetap tersimpan. File save berada di direktori data pengguna Godot, bukan di folder proyek.
+3. Kalahkan Slime; pastikan Level naik 1 dan Kekuatan naik 0,2.
+4. Sentuh tiga Kristal Mimpi; pastikan Bos Mimpi muncul.
+5. Kalahkan Bos Mimpi; pastikan Level naik 5, Kekuatan naik 3, dan hadiah bos diterima satu kali.
+6. Tutup lalu jalankan ulang game pada perangkat/profil Godot yang sama.
+7. Pastikan level, kekuatan, status bos, quest, dan inventaris tetap tersimpan. File save berada di direktori data pengguna Godot, bukan di folder proyek.
 
 ## Membuat APK Android
 APK belum disertakan atau dikompilasi oleh perubahan kode ini. Untuk mengekspor:
@@ -39,4 +42,4 @@ APK belum disertakan atau dikompilasi oleh perubahan kode ini. Untuk mengekspor:
 6. Tekan **Export Project**, pilih lokasi `.apk`, lalu instal APK pada perangkat untuk menguji.
 
 ## Batasan yang masih ada
-Tampilan anime masih berupa mesh geometri sederhana, bukan model 3D karakter profesional. Belum ada rig/skeletal animation, suara, dunia terbuka, quest lanjutan setelah dua misi awal, sistem level/EXP, atau APK terkompilasi. Fitur save menyimpan inventaris dan progres quest, tetapi belum menyimpan posisi pemain atau HP. Pengujian runtime Godot tetap perlu dilakukan setelah perubahan ini.
+Tampilan anime dan Bos Mimpi masih berupa mesh geometri sederhana, bukan model 3D karakter profesional. Belum ada rig/skeletal animation, suara, dunia terbuka, sistem EXP, atau APK terkompilasi. Saat ini monster biasa yang tersedia di arena baru Slime. Fitur save belum menyimpan posisi pemain atau HP. Pengujian runtime Godot tetap perlu dilakukan setelah perubahan ini.
