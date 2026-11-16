@@ -14,6 +14,7 @@ var camera_mouse_drag := false
 var attack_button: Button
 var clone_button: Button
 var shadow_clones: Array[Node3D] = []
+var clone_attack_timers: Array[float] = []
 var clone_time_left := 0.0
 var hp_text: Label
 var stats_text: Label
@@ -329,6 +330,7 @@ func _activate_shadow_clones() -> void:
         shadow.position = hero.global_position + offsets[i]
         shadow.rotation = hero.rotation
         shadow_clones.append(shadow)
+        clone_attack_timers.append(0.0)
     game_state.last_notice = "KAGE BUNSHIN! Tiga bayangan muncul selama 8 detik!"
 
 func _make_shadow_material() -> StandardMaterial3D:
@@ -346,6 +348,7 @@ func _clear_shadow_clones() -> void:
         if is_instance_valid(shadow):
             shadow.queue_free()
     shadow_clones.clear()
+    clone_attack_timers.clear()
 
 func _toggle_inventory() -> void:
     inventory_panel.visible = not inventory_panel.visible
@@ -422,6 +425,33 @@ func _rotate_camera(delta: Vector2) -> void:
     camera_node.rotation.y -= delta.x * 0.006
     camera_node.rotation.x = clampf(camera_node.rotation.x - delta.y * 0.004, deg_to_rad(-55.0), deg_to_rad(5.0))
 
+func _shadow_clone_attack(delta: float) -> void:
+    for i in range(shadow_clones.size()):
+        if i >= clone_attack_timers.size():
+            continue
+        clone_attack_timers[i] = maxf(0.0, clone_attack_timers[i] - delta)
+        if clone_attack_timers[i] > 0.0:
+            continue
+        var target: Node3D = null
+        var target_name := ""
+        if is_instance_valid(boss) and boss.hp > 0 and shadow_clones[i].global_position.distance_to(boss.global_position) < 4.8:
+            target = boss
+            target_name = "DreamBoss"
+        elif is_instance_valid(slime) and slime.hp > 0 and shadow_clones[i].global_position.distance_to(slime.global_position) < 4.0:
+            target = slime
+            target_name = "Slime"
+        if target != null:
+            var damage := maxi(1, int(round(12.0 * game_state.player_strength)))
+            target.take_damage(damage)
+            clone_attack_timers[i] = 0.8
+            game_state.last_notice = "Bayangan Kage Bunshin menyerang %s (-%d HP)!" % [target_name, damage]
+            if target.hp <= 0:
+                if target_name == "Slime":
+                    game_state.complete_slime_quest()
+                    hero.slime_reward_claimed = true
+                else:
+                    game_state.defeat_boss()
+
 func _process(delta: float) -> void:
     if clone_time_left > 0.0:
         clone_time_left -= delta
@@ -433,11 +463,12 @@ func _process(delta: float) -> void:
                     var target_pos: Vector3 = hero.global_position + offsets[i].rotated(Vector3.UP, hero.rotation.y)
                     shadow.global_position = shadow.global_position.lerp(target_pos, minf(1.0, delta * 7.0))
                     shadow.rotation.y = hero.rotation.y
+            _shadow_clone_attack(delta)
         if clone_time_left <= 0.0:
             _clear_shadow_clones()
     if is_instance_valid(clone_button):
         clone_button.disabled = false
-        clone_button.text = "KAGE\\nBUNSHIN"
+        clone_button.text = "KAGE\nBUNSHIN"
     if is_instance_valid(hero):
         hero.mobile_move = move_vector
         if hero.hp <= 0:
