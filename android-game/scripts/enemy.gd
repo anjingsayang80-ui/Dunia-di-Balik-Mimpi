@@ -80,3 +80,21 @@ func take_damage(amount: int) -> void:
         return
     hp = max(0, hp - amount)
     flash_timer = 0.16
+    _show_damage_number(amount)
+
+func _show_damage_number(amount: int) -> void:
+    var popup := Label3D.new()
+    popup.name = "DamageNumber"
+    popup.text = "-%d" % amount
+    popup.font_size = 64
+    popup.pixel_size = 0.01
+    popup.outline_size = 10
+    popup.modulate = Color(1.0, 0.82, 0.22, 1.0)
+    popup.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+    popup.position = Vector3(0.0, 2.0, 0.0)
+    add_child(popup)
+    var tween := create_tween()
+    tween.set_parallel(true)
+    tween.tween_property(popup, "position:y", 3.15, 0.7)
+    tween.tween_property(popup, "modulate:a", 0.0, 0.7)
+    tween.chain().tween_callback(popup.queue_free)
