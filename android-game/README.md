@@ -11,7 +11,7 @@ Prototipe RPG 3D offline untuk Android, dibuat dengan Godot 4.3. Seluruh pekerja
 ## Fitur yang sudah dibuat
 - Arena 3D dengan pencahayaan, lantai, dan pilar.
 - MC 3D sederhana dengan rambut, mata, pakaian, lengan dan kaki beranimasi prosedural saat berjalan, serta pedang dengan animasi ayunan.
-- Slime dan Bos Mimpi dapat mengejar serta menyerang pemain; keduanya memberi efek kilat merah, perubahan bentuk singkat, dan angka kerusakan melayang saat terkena serangan, ditambah bar HP visual yang berkurang secara langsung untuk Slime dan Bos. Tombol HINDAR memberi dash singkat untuk mengelak dengan jeda pemulihan 2 detik. Bos memberi tanda cahaya kuning selama sekitar setengah detik sebelum pukulan jarak dekat.
+- Slime dan Bos Mimpi dapat mengejar serta menyerang pemain; keduanya memberi efek kilat merah, perubahan bentuk singkat, dan angka kerusakan melayang saat terkena serangan, ditambah bar HP visual yang berkurang secara langsung untuk Slime dan Bos. Tombol HINDAR memberi dash singkat untuk mengelak dengan jeda pemulihan 2 detik, disertai indikator HUD yang menampilkan status siap atau hitung mundur pemulihannya. Bos memberi tanda cahaya kuning selama sekitar setengah detik sebelum pukulan jarak dekat.
 - Kontrol Android: analog bulat di kiri, tombol SERANG dan KAGE BUNSHIN di kanan, serta swipe pada area kosong untuk memutar kamera mengelilingi pemain.
 - Arah gerak analog mengikuti arah kamera.
 - Kage Bunshin memunculkan tepat 3 bayangan biru selama 8 detik. Tidak ada cooldown; tombol dapat digunakan lagi kapan saja. Bayangan mengikuti MC, menyamakan gerakan lengan dan kaki dengan MC, dan otomatis menyerang Slime atau Bos yang berada dalam jangkauan.
