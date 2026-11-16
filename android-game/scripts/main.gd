@@ -473,6 +473,15 @@ func _process(delta: float) -> void:
                     var target_pos: Vector3 = hero.global_position + offsets[i].rotated(Vector3.UP, hero.rotation.y)
                     shadow.global_position = shadow.global_position.lerp(target_pos, minf(1.0, delta * 7.0))
                     shadow.rotation.y = hero.rotation.y
+                    for limb_name in ["LeftArm", "RightArm", "LeftLeg", "RightLeg"]:
+                        var hero_limb := hero.get_node_or_null(limb_name)
+                        var shadow_limb := shadow.get_node_or_null(limb_name)
+                        if hero_limb and shadow_limb:
+                            shadow_limb.rotation = hero_limb.rotation
+                    var hero_body := hero.get_node_or_null("BodyVisual")
+                    var shadow_body := shadow.get_node_or_null("BodyVisual")
+                    if hero_body and shadow_body:
+                        shadow_body.position.y = hero_body.position.y
             _shadow_clone_attack(delta)
         if clone_time_left <= 0.0:
             _clear_shadow_clones()
