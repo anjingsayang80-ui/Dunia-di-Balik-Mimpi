@@ -2,11 +2,13 @@ extends Node3D
 
 var hero
 var slime
+var boss
 var game_state
 var move_vector := Vector2.ZERO
 var joystick: Control
 var knob: ColorRect
 var hp_text: Label
+var stats_text: Label
 var enemy_text: Label
 var quest_text: Label
 var inventory_text: Label
@@ -84,6 +86,8 @@ func _make_world() -> void:
         slime.visible = false
         hero.slime_reward_claimed = true
     _spawn_dream_crystals()
+    if game_state.dream_crystal_quest_completed:
+        _spawn_boss()
 
     var camera := Camera3D.new()
     camera.position = Vector3(0, 5.5, 9)
@@ -130,6 +134,20 @@ func _on_dream_crystal_body_entered(body: Node3D, crystal: Area3D) -> void:
         return
     game_state.collect_dream_crystal()
     crystal.queue_free()
+    if game_state.dream_crystal_quest_completed:
+        _spawn_boss()
+
+func _spawn_boss() -> void:
+    if is_instance_valid(boss):
+        return
+    boss = CharacterBody3D.new()
+    boss.name = "DreamBoss"
+    boss.set_script(load("res://scripts/boss.gd"))
+    boss.position = Vector3(0.0, 0.1, -9.0)
+    add_child(boss)
+    if game_state.boss_defeated:
+        boss.hp = 0
+        boss.visible = false
 
 func _make_hud() -> void:
     var layer := CanvasLayer.new()
@@ -147,19 +165,24 @@ func _make_hud() -> void:
     hp_text.add_theme_font_size_override("font_size", 20)
     layer.add_child(hp_text)
 
+    stats_text = Label.new()
+    stats_text.position = Vector2(24, 84)
+    stats_text.add_theme_font_size_override("font_size", 18)
+    layer.add_child(stats_text)
+
     enemy_text = Label.new()
-    enemy_text.position = Vector2(24, 84)
+    enemy_text.position = Vector2(24, 112)
     enemy_text.add_theme_font_size_override("font_size", 18)
     layer.add_child(enemy_text)
 
     quest_text = Label.new()
-    quest_text.position = Vector2(24, 118)
+    quest_text.position = Vector2(24, 146)
     quest_text.size = Vector2(420, 55)
     quest_text.add_theme_font_size_override("font_size", 16)
     layer.add_child(quest_text)
 
     notice_text = Label.new()
-    notice_text.position = Vector2(24, 180)
+    notice_text.position = Vector2(24, 208)
     notice_text.add_theme_color_override("font_color", Color(1.0, 0.9, 0.45))
     layer.add_child(notice_text)
 
@@ -273,8 +296,13 @@ func _process(_delta: float) -> void:
     if is_instance_valid(hero):
         hero.mobile_move = move_vector
         hp_text.text = "HP: %d / 100" % hero.hp
+        stats_text.text = "Level: %d  |  Kekuatan: %.2f" % [game_state.player_level, game_state.player_strength]
+    var enemy_lines := []
     if is_instance_valid(slime):
-        enemy_text.text = "Slime HP: %d" % slime.hp if slime.hp > 0 else "Slime dikalahkan!"
+        enemy_lines.append("Slime HP: %d" % slime.hp if slime.hp > 0 else "Slime dikalahkan!")
+    if is_instance_valid(boss):
+        enemy_lines.append("BOS MIMPI HP: %d / 350" % boss.hp if boss.hp > 0 else "Bos Mimpi dikalahkan!")
+    enemy_text.text = "  •  ".join(enemy_lines)
     quest_text.text = game_state.get_quest_text()
     if inventory_panel.visible:
         _refresh_inventory()
