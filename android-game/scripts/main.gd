@@ -136,15 +136,18 @@ func _make_hud() -> void:
     inventory_panel.visible = false
     layer.add_child(inventory_panel)
 
+    var inventory_box := VBoxContainer.new()
+    inventory_panel.add_child(inventory_box)
+
     inventory_text = Label.new()
     inventory_text.text = "Inventaris kosong"
     inventory_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-    inventory_panel.add_child(inventory_text)
+    inventory_box.add_child(inventory_text)
 
     var use_potion := Button.new()
     use_potion.text = "Gunakan Ramuan (+30 HP)"
     use_potion.pressed.connect(_use_potion)
-    inventory_panel.add_child(use_potion)
+    inventory_box.add_child(use_potion)
 
     joystick = Control.new()
     joystick.position = Vector2(35, -185)
@@ -184,13 +187,13 @@ func _toggle_inventory() -> void:
     _refresh_inventory()
 
 func _use_potion() -> void:
-    if game_state.use_item("Ramuan Kecil") and hero.hp < 100:
+    if hero.hp >= 100:
+        notice_text.text = "HP masih penuh."
+    elif game_state.use_item("Ramuan Kecil"):
         hero.hp = mini(100, hero.hp + 30)
         notice_text.text = "Ramuan digunakan: HP +30"
-    elif game_state.get_item_count("Ramuan Kecil") <= 0:
-        notice_text.text = "Ramuan tidak tersedia."
     else:
-        notice_text.text = "HP masih penuh."
+        notice_text.text = "Ramuan tidak tersedia."
     _refresh_inventory()
 
 func _refresh_inventory() -> void:
