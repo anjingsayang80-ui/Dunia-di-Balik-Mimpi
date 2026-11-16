@@ -12,6 +12,10 @@ var camera_touch_index := -1
 var camera_last_touch := Vector2.ZERO
 var camera_mouse_drag := false
 var attack_button: Button
+var clone_button: Button
+var shadow_clones: Array[Node3D] = []
+var clone_time_left := 0.0
+var clone_cooldown := 0.0
 var hp_text: Label
 var stats_text: Label
 var enemy_text: Label
@@ -289,6 +293,62 @@ func _make_hud() -> void:
     attack_button.pressed.connect(hero.attack)
     layer.add_child(attack_button)
 
+    clone_button = Button.new()
+    clone_button.text = "KAGE\nBUNSHIN"
+    clone_button.position = Vector2(-330, -145)
+    clone_button.size = Vector2(126, 100)
+    clone_button.anchor_left = 1.0
+    clone_button.anchor_right = 1.0
+    clone_button.anchor_top = 1.0
+    clone_button.anchor_bottom = 1.0
+    clone_button.add_theme_font_size_override("font_size", 17)
+    var clone_style := StyleBoxFlat.new()
+    clone_style.bg_color = Color(0.18, 0.25, 0.55, 0.92)
+    clone_style.corner_radius_top_left = 24
+    clone_style.corner_radius_top_right = 24
+    clone_style.corner_radius_bottom_left = 24
+    clone_style.corner_radius_bottom_right = 24
+    clone_button.add_theme_stylebox_override("normal", clone_style)
+    clone_button.pressed.connect(_activate_shadow_clones)
+    layer.add_child(clone_button)
+
+func _activate_shadow_clones() -> void:
+    if clone_cooldown > 0.0 or not is_instance_valid(hero):
+        return
+    _clear_shadow_clones()
+    clone_time_left = 8.0
+    clone_cooldown = 20.0
+    var offsets := [Vector3(-1.8, 0.0, 0.8), Vector3(1.8, 0.0, 0.8), Vector3(0.0, 0.0, -2.0)]
+    for i in range(3):
+        var shadow := Node3D.new()
+        shadow.name = "KageBunshin%d" % (i + 1)
+        add_child(shadow)
+        for child in hero.get_children():
+            if child is MeshInstance3D:
+                var ghost_mesh := child.duplicate() as MeshInstance3D
+                ghost_mesh.material_override = _make_shadow_material()
+                shadow.add_child(ghost_mesh)
+        shadow.position = hero.global_position + offsets[i]
+        shadow.rotation = hero.rotation
+        shadow_clones.append(shadow)
+    game_state.last_notice = "KAGE BUNSHIN! Tiga bayangan muncul selama 8 detik!"
+
+func _make_shadow_material() -> StandardMaterial3D:
+    var material := StandardMaterial3D.new()
+    material.albedo_color = Color(0.24, 0.72, 1.0, 0.48)
+    material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+    material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+    material.emission_enabled = true
+    material.emission = Color(0.08, 0.42, 1.0)
+    material.emission_energy_multiplier = 1.6
+    return material
+
+func _clear_shadow_clones() -> void:
+    for shadow in shadow_clones:
+        if is_instance_valid(shadow):
+            shadow.queue_free()
+    shadow_clones.clear()
+
 func _toggle_inventory() -> void:
     inventory_panel.visible = not inventory_panel.visible
     _refresh_inventory()
@@ -363,6 +423,22 @@ func _rotate_camera(delta: Vector2) -> void:
     camera_node.rotation.x = clampf(camera_node.rotation.x - delta.y * 0.004, deg_to_rad(-55.0), deg_to_rad(5.0))
 
 func _process(delta: float) -> void:
+    clone_cooldown = maxf(0.0, clone_cooldown - delta)
+    if clone_time_left > 0.0:
+        clone_time_left -= delta
+        if is_instance_valid(hero):
+            var offsets := [Vector3(-1.8, 0.0, 0.8), Vector3(1.8, 0.0, 0.8), Vector3(0.0, 0.0, -2.0)]
+            for i in range(shadow_clones.size()):
+                var shadow := shadow_clones[i]
+                if is_instance_valid(shadow):
+                    var target_pos: Vector3 = hero.global_position + offsets[i].rotated(Vector3.UP, hero.rotation.y)
+                    shadow.global_position = shadow.global_position.lerp(target_pos, minf(1.0, delta * 7.0))
+                    shadow.rotation.y = hero.rotation.y
+        if clone_time_left <= 0.0:
+            _clear_shadow_clones()
+    if is_instance_valid(clone_button):
+        clone_button.disabled = clone_cooldown > 0.0
+        clone_button.text = "KAGE\\n%.0fs" % clone_cooldown if clone_cooldown > 0.0 else "KAGE\\nBUNSHIN"
     if is_instance_valid(hero):
         hero.mobile_move = move_vector
         if hero.hp <= 0:
