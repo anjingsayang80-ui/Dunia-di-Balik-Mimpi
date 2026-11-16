@@ -9,12 +9,21 @@ var dream_crystal_quest_completed := false
 var player_level := 1
 var player_strength := 1.0
 var boss_defeated := false
+var player_hp := 100
+var player_position := Vector3(0, 0.1, 4)
+var has_player_save := false
 var last_notice := ""
 
 func _ready() -> void:
     if not load_game():
         inventory = {"Ramuan Kecil": 2}
         save_game()
+
+func save_player_state(current_hp: int, current_position: Vector3) -> void:
+    player_hp = clampi(current_hp, 0, 100)
+    player_position = current_position
+    has_player_save = true
+    save_game()
 
 func add_item(item_name: String, amount: int = 1) -> void:
     if amount <= 0:
@@ -92,6 +101,9 @@ func save_game() -> void:
     data.set_value("player", "inventory", inventory)
     data.set_value("player", "level", player_level)
     data.set_value("player", "strength", player_strength)
+    data.set_value("player", "hp", player_hp)
+    data.set_value("player", "position", player_position)
+    data.set_value("player", "has_player_save", has_player_save)
     data.set_value("quest", "slime_kills", slime_kills)
     data.set_value("quest", "completed", quest_completed)
     data.set_value("quest", "dream_crystals_collected", dream_crystals_collected)
@@ -109,6 +121,9 @@ func load_game() -> bool:
     inventory = data.get_value("player", "inventory", {"Ramuan Kecil": 2})
     player_level = int(data.get_value("player", "level", 1))
     player_strength = float(data.get_value("player", "strength", 1.0))
+    player_hp = clampi(int(data.get_value("player", "hp", 100)), 0, 100)
+    player_position = data.get_value("player", "position", Vector3(0, 0.1, 4))
+    has_player_save = bool(data.get_value("player", "has_player_save", false))
     slime_kills = int(data.get_value("quest", "slime_kills", 0))
     quest_completed = bool(data.get_value("quest", "completed", false))
     dream_crystals_collected = int(data.get_value("quest", "dream_crystals_collected", 0))
