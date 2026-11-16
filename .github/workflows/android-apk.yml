@@ -14,17 +14,41 @@ jobs:
   build-apk:
     name: Export Godot Android APK
     runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:4.3.0
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Verify Godot project and Android preset
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK packages
+        run: sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0" "cmdline-tools;latest"
+
+      - name: Set up Godot and export templates
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.3.0
+          use-dotnet: false
+          include-templates: true
+
+      - name: Verify project and tools
         run: |
           test -f android-game/project.godot
           test -f android-game/export_presets.cfg
           godot --version
+          java -version
+          echo "ANDROID_HOME=$ANDROID_HOME"
+
+      - name: Configure Android SDK path
+        run: |
+          mkdir -p "$HOME/.config/godot"
+          godot --headless --editor --path android-game --quit
 
       - name: Import project resources
         run: godot --headless --editor --path android-game --quit
@@ -33,6 +57,7 @@ jobs:
         run: |
           mkdir -p android-game/build
           godot --headless --path android-game --export-debug "Android" android-game/build/DuniaDiBalikMimpi-debug.apk
+          test -s android-game/build/DuniaDiBalikMimpi-debug.apk
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
