@@ -4,10 +4,15 @@ var hp := 350
 var speed := 1.25
 var hit_timer := 0.0
 var hero: CharacterBody3D
+var body_visual: MeshInstance3D
+var base_material: StandardMaterial3D
+var hit_material: StandardMaterial3D
+var flash_timer := 0.0
 
 func _ready() -> void:
     hero = get_parent().get_node_or_null("Hero")
-    var body := MeshInstance3D.new()
+    body_visual = MeshInstance3D.new()
+    var body := body_visual
     var mesh := SphereMesh.new()
     mesh.radius = 1.25
     mesh.height = 2.35
@@ -20,6 +25,12 @@ func _ready() -> void:
     armor.emission = Color(0.18, 0.025, 0.32)
     armor.emission_energy_multiplier = 0.65
     body.material_override = armor
+    base_material = armor
+    hit_material = StandardMaterial3D.new()
+    hit_material.albedo_color = Color(1.0, 0.55, 0.48)
+    hit_material.emission_enabled = true
+    hit_material.emission = Color(1.0, 0.12, 0.06)
+    hit_material.emission_energy_multiplier = 1.4
     body.position.y = 1.2
     add_child(body)
 
@@ -59,6 +70,12 @@ func _ready() -> void:
     collision.position.y = 1.15
     add_child(collision)
 
+func _process(delta: float) -> void:
+    flash_timer = maxf(0.0, flash_timer - delta)
+    if is_instance_valid(body_visual):
+        body_visual.material_override = hit_material if flash_timer > 0.0 else base_material
+        body_visual.scale = Vector3(1.12, 0.86, 1.12) if flash_timer > 0.0 else Vector3.ONE
+
 func _physics_process(delta: float) -> void:
     if hp <= 0 or not is_instance_valid(hero):
         visible = false
@@ -81,4 +98,7 @@ func _physics_process(delta: float) -> void:
         hit_timer = 1.25
 
 func take_damage(amount: int) -> void:
+    if hp <= 0:
+        return
     hp = max(0, hp - amount)
+    flash_timer = 0.16
