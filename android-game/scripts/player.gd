@@ -5,6 +5,7 @@ var speed := 5.8
 var mobile_move := Vector2.ZERO
 var cooldown := 0.0
 var sword: MeshInstance3D
+var slime_reward_claimed := false
 
 func _ready() -> void:
     var body := MeshInstance3D.new()
@@ -81,7 +82,13 @@ func attack() -> void:
     cooldown = 0.55
     var target = get_parent().get_node_or_null("Slime")
     if target and target.hp > 0 and global_position.distance_to(target.global_position) < 3.3:
+        var was_alive: bool = target.hp > 0
         target.take_damage(35)
+        if was_alive and target.hp <= 0 and not slime_reward_claimed:
+            slime_reward_claimed = true
+            var state = get_parent().get_node_or_null("GameState")
+            if state:
+                state.complete_slime_quest()
     sword.rotation.z = -0.9
     await get_tree().create_timer(0.18).timeout
     if is_instance_valid(sword):
