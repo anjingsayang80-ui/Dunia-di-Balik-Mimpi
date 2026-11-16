@@ -35,7 +35,7 @@ const manga=m=document.getElementById('manga');
 const legacySpeakers=["ARKA","ARKA","SUARA MISTERIUS","ARKA","RINA","KURO"];
 function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function renderDialogue(p){
- const legacy=p.story.match(/<div class="dialog">([\\s\\S]*?)<\\/div>/);
+ const legacy=p.story.match(/<div class="dialog">([\s\S]*?)<\/div>/);
  const entries=p.dialogue||(legacy?[{speaker:legacySpeakers[index]||"TOKOH",text:legacy[1]}]:[]);
  if(!entries.length)return "";
  return '<div class="conversation" aria-label="Dialog percakapan">'+entries.map((d,i)=>'<div class="speech '+(i%2?'right':'')+'"><span class="speaker">'+escapeHtml(d.speaker)+'</span><span class="speech-text">'+escapeHtml(d.text)+'</span></div>').join("")+'</div>';
@@ -45,7 +45,7 @@ function render(){
   manga.innerHTML='<div class="comic-page" style="aspect-ratio:9/11;background:linear-gradient(145deg,#263b81,#9d65ce 55%,#f4bd78);display:grid;place-items:center;text-align:center;padding:30px;color:#fff2bc;font:bold clamp(2rem,8vw,4rem) Georgia;text-shadow:0 5px 20px #160b38">DUNIA DI<br> BALIK MIMPI<small style="display:block;font:600 1rem system-ui;color:white;margin-top:20px">Sebuah petualangan menembus dunia mimpi</small></div>';
   tag.textContent="Sampul";heading.textContent="Sebuah Mimpi Besar";story.textContent="Ikuti perjalanan Arka menembus dunia yang tersembunyi di balik mimpinya.";count.textContent="Sampul";next.textContent="Mulai membaca →";
  }else{
-  const p=pages[index],legacy=p.story.replace(/<div class="dialog">[\\s\\S]*?<\\/div>/,"");
+  const p=pages[index],legacy=p.story.replace(/<div class="dialog">[\s\S]*?<\/div>/,"");
   manga.innerHTML='<img class="comic-page" src="'+p.image+'" alt="Komik anime berwarna halaman '+(index+1)+': '+p.title+'">';
   tag.textContent="Bab 1 · Halaman "+(index+1);heading.textContent=p.title;
   story.innerHTML=legacy+renderDialogue(p);count.textContent="Halaman "+(index+1)+" dari 200";
