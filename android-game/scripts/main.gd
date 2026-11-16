@@ -1,8 +1,8 @@
 extends Node3D
 
-var hero: CharacterBody3D
-var slime: CharacterBody3D
-var game_state: Node
+var hero
+var slime
+var game_state
 var move_vector := Vector2.ZERO
 var joystick: Control
 var knob: ColorRect
