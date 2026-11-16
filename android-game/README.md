@@ -11,12 +11,21 @@ Prototipe game RPG 3D offline untuk Android. Folder ini terpisah dari komik di r
 
 ## Fitur prototipe saat ini
 - Arena 3D, pencahayaan, dan pilar dekoratif.
-- Karakter pemain, pedang, dan Slime yang mengejar serta menyerang.
+- Karakter bergaya anime sederhana dengan detail rambut, mata, kerah, dan pedang; seluruhnya masih dibuat dari mesh dasar Godot.
+- Animasi ayunan pedang menggunakan Tween.
+- Slime mengejar dan menyerang pemain.
 - HP pemain dan HP monster.
-- **Quest:** kalahkan Slime (1/1); penyelesaian quest memberi hadiah.
-- **Inventaris:** mulai dengan 2 Ramuan Kecil; Slime menjatuhkan Lendir Slime dan 10 Koin.
-- Tombol TAS membuka inventaris; tombol Gunakan Ramuan memulihkan 30 HP (maksimum 100).
-- Joystick layar sentuh untuk Android.
+- **Quest:** kalahkan Slime; penyelesaian memberi Lendir Slime dan 10 Koin.
+- **Inventaris:** mulai dengan 2 Ramuan Kecil; ramuan memulihkan 30 HP (maksimum 100).
+- **Simpan otomatis:** inventaris dan status quest disimpan ke `user://savegame.cfg`; progres dimuat kembali saat game dibuka.
+- Tombol TAS membuka inventaris dan joystick layar sentuh tersedia untuk Android.
+
+## Pengujian fitur simpan
+1. Jalankan game dan buka tombol TAS untuk melihat dua Ramuan Kecil.
+2. Gunakan satu ramuan saat HP tidak penuh; jumlah ramuan harus berkurang.
+3. Kalahkan Slime sampai quest selesai dan hadiah muncul di inventaris.
+4. Tutup lalu jalankan ulang game pada perangkat/profil Godot yang sama.
+5. Pastikan quest tetap selesai dan barang tersimpan. File save berada di direktori data pengguna Godot, bukan di folder proyek.
 
 ## Membuat APK Android
 APK belum disertakan atau dikompilasi oleh perubahan kode ini. Untuk mengekspor:
@@ -28,4 +37,4 @@ APK belum disertakan atau dikompilasi oleh perubahan kode ini. Untuk mengekspor:
 6. Tekan **Export Project**, pilih lokasi `.apk`, lalu instal APK pada perangkat untuk menguji.
 
 ## Batasan yang masih ada
-Model karakter dan monster masih berupa bentuk geometri placeholder, bukan model anime detail. Quest saat ini satu misi tutorial dan inventaris belum disimpan antar-sesi. Belum ada animasi skeletal, audio, dunia terbuka, sistem level/EXP, atau APK terkompilasi.
+Tampilan anime masih berupa mesh geometri sederhana, bukan model 3D karakter profesional. Belum ada rig/skeletal animation, suara, dunia terbuka, banyak quest, sistem level/EXP, atau APK terkompilasi. Fitur save saat ini menyimpan inventaris dan quest, belum menyimpan posisi pemain atau HP.
