@@ -39,4 +39,4 @@ APK belum disertakan atau dikompilasi oleh perubahan kode ini. Untuk mengekspor:
 6. Tekan **Export Project**, pilih lokasi `.apk`, lalu instal APK pada perangkat untuk menguji.
 
 ## Batasan yang masih ada
-Tampilan anime masih berupa mesh geometri sederhana, bukan model 3D karakter profesional. Belum ada rig/skeletal animation, suara, dunia terbuka, banyak quest, sistem level/EXP, atau APK terkompilasi. Fitur save menyimpan inventaris dan progres quest, tetapi belum menyimpan posisi pemain atau HP. Pengujian runtime Godot tetap perlu dilakukan setelah perubahan ini.
+Tampilan anime masih berupa mesh geometri sederhana, bukan model 3D karakter profesional. Belum ada rig/skeletal animation, suara, dunia terbuka, quest lanjutan setelah dua misi awal, sistem level/EXP, atau APK terkompilasi. Fitur save menyimpan inventaris dan progres quest, tetapi belum menyimpan posisi pemain atau HP. Pengujian runtime Godot tetap perlu dilakukan setelah perubahan ini.
