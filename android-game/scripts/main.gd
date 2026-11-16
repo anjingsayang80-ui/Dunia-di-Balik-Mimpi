@@ -8,6 +8,7 @@ var move_vector := Vector2.ZERO
 var joystick: Control
 var knob: Panel
 var camera_node: Camera3D
+var camera_pivot: Node3D
 var camera_touch_index := -1
 var camera_last_touch := Vector2.ZERO
 var camera_mouse_drag := false
@@ -102,11 +103,15 @@ func _make_world() -> void:
     if game_state.dream_crystal_quest_completed:
         _spawn_boss()
 
+    camera_pivot = Node3D.new()
+    camera_pivot.name = "CameraPivot"
+    camera_pivot.position = Vector3(0, 1.1, 0)
+    hero.add_child(camera_pivot)
     camera_node = Camera3D.new()
-    camera_node.position = Vector3(0, 5.5, 9)
-    camera_node.rotation_degrees = Vector3(-23, 0, 0)
+    camera_node.position = Vector3(0, 4.4, 9)
+    camera_node.rotation_degrees.x = -23.0
     camera_node.current = true
-    hero.add_child(camera_node)
+    camera_pivot.add_child(camera_node)
 
 func _spawn_dream_crystals() -> void:
     if not game_state.quest_completed or game_state.dream_crystal_quest_completed:
@@ -420,10 +425,10 @@ func _input(event: InputEvent) -> void:
         _rotate_camera(event.relative)
 
 func _rotate_camera(delta: Vector2) -> void:
-    if not is_instance_valid(camera_node):
+    if not is_instance_valid(camera_pivot):
         return
-    camera_node.rotation.y -= delta.x * 0.006
-    camera_node.rotation.x = clampf(camera_node.rotation.x - delta.y * 0.004, deg_to_rad(-55.0), deg_to_rad(5.0))
+    camera_pivot.rotation.y -= delta.x * 0.006
+    camera_pivot.rotation.x = clampf(camera_pivot.rotation.x - delta.y * 0.004, deg_to_rad(-0.15), deg_to_rad(0.55))
 
 func _shadow_clone_attack(delta: float) -> void:
     for i in range(shadow_clones.size()):
