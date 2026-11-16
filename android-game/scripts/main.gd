@@ -14,6 +14,7 @@ var camera_last_touch := Vector2.ZERO
 var camera_mouse_drag := false
 var attack_button: Button
 var clone_button: Button
+var dash_button: Button
 var shadow_clones: Array[Node3D] = []
 var clone_attack_timers: Array[float] = []
 var clone_time_left := 0.0
@@ -323,6 +324,25 @@ func _make_hud() -> void:
     clone_button.pressed.connect(_activate_shadow_clones)
     layer.add_child(clone_button)
 
+    dash_button = Button.new()
+    dash_button.text = "HINDAR"
+    dash_button.position = Vector2(-480, -130)
+    dash_button.size = Vector2(126, 86)
+    dash_button.anchor_left = 1.0
+    dash_button.anchor_right = 1.0
+    dash_button.anchor_top = 1.0
+    dash_button.anchor_bottom = 1.0
+    dash_button.add_theme_font_size_override("font_size", 17)
+    var dash_style := StyleBoxFlat.new()
+    dash_style.bg_color = Color(0.12, 0.48, 0.38, 0.94)
+    dash_style.corner_radius_top_left = 22
+    dash_style.corner_radius_top_right = 22
+    dash_style.corner_radius_bottom_left = 22
+    dash_style.corner_radius_bottom_right = 22
+    dash_button.add_theme_stylebox_override("normal", dash_style)
+    dash_button.pressed.connect(hero.dash)
+    layer.add_child(dash_button)
+
 func _make_health_bar(layer: CanvasLayer, bar_position: Vector2, max_health: float, fill_color: Color) -> ProgressBar:
     var bar := ProgressBar.new()
     bar.position = bar_position
@@ -439,6 +459,8 @@ func _is_control_touch(pos: Vector2) -> bool:
     if attack_button and attack_button.get_global_rect().has_point(pos):
         return true
     if clone_button and clone_button.get_global_rect().has_point(pos):
+        return true
+    if dash_button and dash_button.get_global_rect().has_point(pos):
         return true
     if inventory_panel and inventory_panel.visible and inventory_panel.get_global_rect().has_point(pos):
         return true
