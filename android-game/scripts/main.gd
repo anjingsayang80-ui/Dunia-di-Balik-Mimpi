@@ -332,6 +332,11 @@ func _activate_shadow_clones() -> void:
                 var ghost_mesh := child.duplicate() as MeshInstance3D
                 ghost_mesh.material_override = _make_shadow_material()
                 shadow.add_child(ghost_mesh)
+            elif child is Node3D and child != camera_pivot:
+                var ghost_part := child.duplicate() as Node3D
+                for ghost_mesh in ghost_part.find_children("*", "MeshInstance3D", true, false):
+                    ghost_mesh.material_override = _make_shadow_material()
+                shadow.add_child(ghost_part)
         shadow.position = hero.global_position + offsets[i]
         shadow.rotation = hero.rotation
         shadow_clones.append(shadow)
