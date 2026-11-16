@@ -380,7 +380,7 @@ func _on_joystick_input(event: InputEvent) -> void:
             _set_joystick(event.position)
         else:
             move_vector = Vector2.ZERO
-            knob.position = Vector2(45, 45)
+            knob.position = joystick.size * 0.5 - knob.size * 0.5
     elif event is InputEventScreenDrag:
         _set_joystick(event.position)
 
