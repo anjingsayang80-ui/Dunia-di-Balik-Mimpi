@@ -114,8 +114,8 @@ func _make_world() -> void:
     camera_node = Camera3D.new()
     camera_node.position = Vector3(0, 4.4, 9)
     camera_node.rotation_degrees.x = -23.0
-    camera_node.current = true
     camera_pivot.add_child(camera_node)
+    camera_node.make_current()
 
 func _spawn_dream_crystals() -> void:
     if not game_state.quest_completed or game_state.dream_crystal_quest_completed:
