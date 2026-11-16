@@ -6,7 +6,12 @@ var boss
 var game_state
 var move_vector := Vector2.ZERO
 var joystick: Control
-var knob: ColorRect
+var knob: Panel
+var camera_node: Camera3D
+var camera_touch_index := -1
+var camera_last_touch := Vector2.ZERO
+var camera_mouse_drag := false
+var attack_button: Button
 var hp_text: Label
 var stats_text: Label
 var enemy_text: Label
@@ -93,11 +98,11 @@ func _make_world() -> void:
     if game_state.dream_crystal_quest_completed:
         _spawn_boss()
 
-    var camera := Camera3D.new()
-    camera.position = Vector3(0, 5.5, 9)
-    camera.rotation_degrees = Vector3(-23, 0, 0)
-    hero.add_child(camera)
-    camera.current = true
+    camera_node = Camera3D.new()
+    camera_node.position = Vector3(0, 5.5, 9)
+    camera_node.rotation_degrees = Vector3(-23, 0, 0)
+    camera_node.current = true
+    hero.add_child(camera_node)
 
 func _spawn_dream_crystals() -> void:
     if not game_state.quest_completed or game_state.dream_crystal_quest_completed:
@@ -222,37 +227,67 @@ func _make_hud() -> void:
     inventory_box.add_child(use_potion)
 
     joystick = Control.new()
-    joystick.position = Vector2(35, -185)
-    joystick.size = Vector2(155, 155)
+    joystick.position = Vector2(38, -198)
+    joystick.size = Vector2(170, 170)
     joystick.anchor_top = 1.0
     joystick.anchor_bottom = 1.0
     joystick.gui_input.connect(_on_joystick_input)
     layer.add_child(joystick)
 
-    var base := ColorRect.new()
-    base.size = Vector2(150, 150)
-    base.color = Color(0.06, 0.08, 0.13, 0.42)
+    var base := Panel.new()
+    base.position = Vector2(5, 5)
+    base.size = Vector2(160, 160)
+    var base_style := StyleBoxFlat.new()
+    base_style.bg_color = Color(0.05, 0.08, 0.15, 0.48)
+    base_style.corner_radius_top_left = 80
+    base_style.corner_radius_top_right = 80
+    base_style.corner_radius_bottom_left = 80
+    base_style.corner_radius_bottom_right = 80
+    base_style.border_width_left = 3
+    base_style.border_width_top = 3
+    base_style.border_width_right = 3
+    base_style.border_width_bottom = 3
+    base_style.border_color = Color(0.75, 0.84, 1.0, 0.65)
+    base.add_theme_stylebox_override("panel", base_style)
     base.mouse_filter = Control.MOUSE_FILTER_IGNORE
     joystick.add_child(base)
 
-    knob = ColorRect.new()
-    knob.position = Vector2(45, 45)
-    knob.size = Vector2(60, 60)
-    knob.color = Color(0.82, 0.87, 0.98, 0.8)
+    knob = Panel.new()
+    knob.position = Vector2(60, 60)
+    knob.size = Vector2(50, 50)
+    var knob_style := StyleBoxFlat.new()
+    knob_style.bg_color = Color(0.86, 0.91, 1.0, 0.92)
+    knob_style.corner_radius_top_left = 25
+    knob_style.corner_radius_top_right = 25
+    knob_style.corner_radius_bottom_left = 25
+    knob_style.corner_radius_bottom_right = 25
+    knob_style.border_width_left = 2
+    knob_style.border_width_top = 2
+    knob_style.border_width_right = 2
+    knob_style.border_width_bottom = 2
+    knob_style.border_color = Color(1, 1, 1, 0.85)
+    knob.add_theme_stylebox_override("panel", knob_style)
     knob.mouse_filter = Control.MOUSE_FILTER_IGNORE
     joystick.add_child(knob)
 
-    var attack := Button.new()
-    attack.text = "SERANG"
-    attack.position = Vector2(-175, -145)
-    attack.size = Vector2(140, 100)
-    attack.anchor_left = 1.0
-    attack.anchor_right = 1.0
-    attack.anchor_top = 1.0
-    attack.anchor_bottom = 1.0
-    attack.add_theme_font_size_override("font_size", 21)
-    attack.pressed.connect(hero.attack)
-    layer.add_child(attack)
+    attack_button = Button.new()
+    attack_button.text = "SERANG"
+    attack_button.position = Vector2(-174, -158)
+    attack_button.size = Vector2(138, 118)
+    attack_button.anchor_left = 1.0
+    attack_button.anchor_right = 1.0
+    attack_button.anchor_top = 1.0
+    attack_button.anchor_bottom = 1.0
+    attack_button.add_theme_font_size_override("font_size", 21)
+    var attack_style := StyleBoxFlat.new()
+    attack_style.bg_color = Color(0.68, 0.12, 0.18, 0.9)
+    attack_style.corner_radius_top_left = 28
+    attack_style.corner_radius_top_right = 28
+    attack_style.corner_radius_bottom_left = 28
+    attack_style.corner_radius_bottom_right = 28
+    attack_button.add_theme_stylebox_override("normal", attack_style)
+    attack_button.pressed.connect(hero.attack)
+    layer.add_child(attack_button)
 
 func _toggle_inventory() -> void:
     inventory_panel.visible = not inventory_panel.visible
@@ -291,10 +326,41 @@ func _on_joystick_input(event: InputEvent) -> void:
 func _set_joystick(pos: Vector2) -> void:
     var center := joystick.size * 0.5
     var delta := pos - center
-    if delta.length() > 55.0:
-        delta = delta.normalized() * 55.0
-    move_vector = Vector2(delta.x / 55.0, delta.y / 55.0)
-    knob.position = Vector2(45, 45) + delta
+    if delta.length() > 52.0:
+        delta = delta.normalized() * 52.0
+    move_vector = Vector2(delta.x / 52.0, delta.y / 52.0)
+    knob.position = center - knob.size * 0.5 + delta
+
+func _is_control_touch(pos: Vector2) -> bool:
+    if joystick and joystick.get_global_rect().has_point(pos):
+        return true
+    if attack_button and attack_button.get_global_rect().has_point(pos):
+        return true
+    if inventory_panel and inventory_panel.visible and inventory_panel.get_global_rect().has_point(pos):
+        return true
+    return false
+
+func _input(event: InputEvent) -> void:
+    if event is InputEventScreenTouch:
+        if event.pressed:
+            if not _is_control_touch(event.position):
+                camera_touch_index = event.index
+                camera_last_touch = event.position
+        elif event.index == camera_touch_index:
+            camera_touch_index = -1
+    elif event is InputEventScreenDrag and event.index == camera_touch_index:
+        _rotate_camera(event.position - camera_last_touch)
+        camera_last_touch = event.position
+    elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+        camera_mouse_drag = event.pressed and not _is_control_touch(event.position)
+    elif event is InputEventMouseMotion and camera_mouse_drag:
+        _rotate_camera(event.relative)
+
+func _rotate_camera(delta: Vector2) -> void:
+    if not is_instance_valid(camera_node):
+        return
+    camera_node.rotation.y -= delta.x * 0.006
+    camera_node.rotation.x = clampf(camera_node.rotation.x - delta.y * 0.004, deg_to_rad(-55.0), deg_to_rad(5.0))
 
 func _process(delta: float) -> void:
     if is_instance_valid(hero):
