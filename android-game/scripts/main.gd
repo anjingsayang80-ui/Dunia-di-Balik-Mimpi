@@ -15,6 +15,7 @@ var camera_mouse_drag := false
 var attack_button: Button
 var clone_button: Button
 var dash_button: Button
+var dash_status_text: Label
 var shadow_clones: Array[Node3D] = []
 var clone_attack_timers: Array[float] = []
 var clone_time_left := 0.0
@@ -343,6 +344,17 @@ func _make_hud() -> void:
     dash_button.pressed.connect(hero.dash)
     layer.add_child(dash_button)
 
+    dash_status_text = Label.new()
+    dash_status_text.text = "HINDAR: SIAP"
+    dash_status_text.position = Vector2(-320, 22)
+    dash_status_text.size = Vector2(130, 30)
+    dash_status_text.anchor_left = 1.0
+    dash_status_text.anchor_right = 1.0
+    dash_status_text.add_theme_font_size_override("font_size", 15)
+    dash_status_text.add_theme_color_override("font_color", Color(0.45, 1.0, 0.72))
+    dash_status_text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+    layer.add_child(dash_status_text)
+
 func _make_health_bar(layer: CanvasLayer, bar_position: Vector2, max_health: float, fill_color: Color) -> ProgressBar:
     var bar := ProgressBar.new()
     bar.position = bar_position
@@ -555,6 +567,13 @@ func _process(delta: float) -> void:
             game_state.save_player_state(hero.hp, hero.global_position)
         hp_text.text = "HP: %d / 100" % hero.hp
         stats_text.text = "Level: %d  |  Kekuatan: %.2f" % [game_state.player_level, game_state.player_strength]
+        if is_instance_valid(dash_status_text):
+            if hero.dash_cooldown <= 0.0:
+                dash_status_text.text = "HINDAR: SIAP"
+                dash_status_text.add_theme_color_override("font_color", Color(0.45, 1.0, 0.72))
+            else:
+                dash_status_text.text = "HINDAR: %.1fs" % hero.dash_cooldown
+                dash_status_text.add_theme_color_override("font_color", Color(1.0, 0.78, 0.35))
     var enemy_lines := []
     if is_instance_valid(slime):
         enemy_lines.append("Slime HP: %d" % slime.hp if slime.hp > 0 else "Slime dikalahkan!")
