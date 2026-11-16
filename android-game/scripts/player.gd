@@ -128,14 +128,28 @@ func attack() -> void:
     if cooldown > 0.0:
         return
     cooldown = 0.55
-    var target = get_parent().get_node_or_null("Slime")
-    if target and target.hp > 0 and global_position.distance_to(target.global_position) < 3.3:
-        target.take_damage(35)
-        if target.hp <= 0 and not slime_reward_claimed:
-            slime_reward_claimed = true
-            var state = get_parent().get_node_or_null("GameState")
-            if state:
+    var state = get_parent().get_node_or_null("GameState")
+    var target: Node = null
+    var target_name := ""
+    var boss = get_parent().get_node_or_null("DreamBoss")
+    var slime_target = get_parent().get_node_or_null("Slime")
+    if boss and boss.hp > 0 and global_position.distance_to(boss.global_position) < 4.0:
+        target = boss
+        target_name = "DreamBoss"
+    elif slime_target and slime_target.hp > 0 and global_position.distance_to(slime_target.global_position) < 3.3:
+        target = slime_target
+        target_name = "Slime"
+    if target != null:
+        var damage := 35
+        if state:
+            damage = maxi(1, int(round(35.0 * state.player_strength)))
+        target.take_damage(damage)
+        if target.hp <= 0 and state:
+            if target_name == "Slime" and not slime_reward_claimed:
+                slime_reward_claimed = true
                 state.complete_slime_quest()
+            elif target_name == "DreamBoss":
+                state.defeat_boss()
 
     if attack_tween and attack_tween.is_running():
         attack_tween.kill()
