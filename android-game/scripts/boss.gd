@@ -8,6 +8,8 @@ var body_visual: MeshInstance3D
 var base_material: StandardMaterial3D
 var hit_material: StandardMaterial3D
 var flash_timer := 0.0
+var attack_windup := 0.0
+var warning_material: StandardMaterial3D
 
 func _ready() -> void:
     hero = get_parent().get_node_or_null("Hero")
@@ -31,6 +33,11 @@ func _ready() -> void:
     hit_material.emission_enabled = true
     hit_material.emission = Color(1.0, 0.12, 0.06)
     hit_material.emission_energy_multiplier = 1.4
+    warning_material = StandardMaterial3D.new()
+    warning_material.albedo_color = Color(1.0, 0.72, 0.12)
+    warning_material.emission_enabled = true
+    warning_material.emission = Color(1.0, 0.48, 0.02)
+    warning_material.emission_energy_multiplier = 2.2
     body.position.y = 1.2
     add_child(body)
 
@@ -73,8 +80,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
     flash_timer = maxf(0.0, flash_timer - delta)
     if is_instance_valid(body_visual):
-        body_visual.material_override = hit_material if flash_timer > 0.0 else base_material
-        body_visual.scale = Vector3(1.12, 0.86, 1.12) if flash_timer > 0.0 else Vector3.ONE
+        if flash_timer > 0.0:
+            body_visual.material_override = hit_material
+            body_visual.scale = Vector3(1.12, 0.86, 1.12)
+        elif attack_windup > 0.0:
+            body_visual.material_override = warning_material
+            body_visual.scale = Vector3.ONE * 1.08
+        else:
+            body_visual.material_override = base_material
+            body_visual.scale = Vector3.ONE
 
 func _physics_process(delta: float) -> void:
     if hp <= 0 or not is_instance_valid(hero):
@@ -94,8 +108,15 @@ func _physics_process(delta: float) -> void:
     velocity.y -= 20.0 * delta
     move_and_slide()
     if offset.length() <= 2.0 and hit_timer <= 0.0:
-        hero.hp = max(0, hero.hp - 16)
-        hit_timer = 1.25
+        if attack_windup <= 0.0:
+            attack_windup = 0.55
+        else:
+            attack_windup = maxf(0.0, attack_windup - delta)
+            if attack_windup <= 0.0:
+                hero.hp = max(0, hero.hp - 16)
+                hit_timer = 1.25
+    else:
+        attack_windup = 0.0
 
 func take_damage(amount: int) -> void:
     if hp <= 0:
