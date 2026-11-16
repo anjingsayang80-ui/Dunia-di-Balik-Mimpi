@@ -102,6 +102,10 @@ func _ready() -> void:
     right_arm = _make_limb(Vector3(0.48, 1.35, 0.0), limb_material, 0.14, 0.78)
     left_leg = _make_limb(Vector3(-0.19, 0.52, 0.0), limb_material, 0.17, 0.78)
     right_leg = _make_limb(Vector3(0.19, 0.52, 0.0), limb_material, 0.17, 0.78)
+    left_arm.name = "LeftArm"
+    right_arm.name = "RightArm"
+    left_leg.name = "LeftLeg"
+    right_leg.name = "RightLeg"
 
     sword = MeshInstance3D.new()
     var blade := BoxMesh.new()
