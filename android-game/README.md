@@ -12,7 +12,7 @@ Prototipe RPG 3D offline untuk Android, dibuat dengan Godot 4.3. Seluruh pekerja
 - Arena 3D dengan pencahayaan, lantai, dan pilar.
 - MC 3D sederhana dengan rambut, mata, pakaian, dan pedang; pedang memiliki animasi ayunan.
 - Slime dan Bos Mimpi dapat mengejar serta menyerang pemain.
-- Kontrol Android: analog bulat di kiri, tombol SERANG dan KAGE BUNSHIN di kanan, serta swipe pada area kosong untuk memutar kamera.
+- Kontrol Android: analog bulat di kiri, tombol SERANG dan KAGE BUNSHIN di kanan, serta swipe pada area kosong untuk memutar kamera mengelilingi pemain.
 - Arah gerak analog mengikuti arah kamera.
 - Kage Bunshin memunculkan tepat 3 bayangan biru selama 8 detik. Tidak ada cooldown; tombol dapat digunakan lagi kapan saja. Bayangan mengikuti MC dan otomatis menyerang Slime atau Bos yang berada dalam jangkauan.
 - Quest berantai: kalahkan Slime, kumpulkan 3 Kristal Mimpi, lalu kalahkan Bos Mimpi.
