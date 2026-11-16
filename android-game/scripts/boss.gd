@@ -27,7 +27,8 @@ func _ready() -> void:
     horn_mat.albedo_color = Color(0.88, 0.28, 0.22)
     for x in [-0.78, 0.78]:
         var horn := MeshInstance3D.new()
-        var horn_mesh := ConeMesh.new()
+        var horn_mesh := CylinderMesh.new()
+        horn_mesh.top_radius = 0.0
         horn_mesh.bottom_radius = 0.24
         horn_mesh.height = 0.9
         horn.mesh = horn_mesh
