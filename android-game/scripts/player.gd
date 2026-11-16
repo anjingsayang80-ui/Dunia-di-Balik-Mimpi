@@ -129,7 +129,7 @@ func attack() -> void:
         return
     cooldown = 0.55
     var state = get_parent().get_node_or_null("GameState")
-    var target: Node = null
+    var target = null
     var target_name := ""
     var boss = get_parent().get_node_or_null("DreamBoss")
     var slime_target = get_parent().get_node_or_null("Slime")
