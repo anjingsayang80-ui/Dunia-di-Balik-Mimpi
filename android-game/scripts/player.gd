@@ -116,7 +116,18 @@ func _physics_process(delta: float) -> void:
     )
     if mobile_move.length() > 0.12:
         move = mobile_move
-    var direction := Vector3(move.x, 0, move.y).normalized()
+    var direction := Vector3.ZERO
+    var active_camera := get_viewport().get_camera_3d()
+    if active_camera:
+        var camera_right := active_camera.global_basis.x
+        var camera_forward := -active_camera.global_basis.z
+        camera_right.y = 0.0
+        camera_forward.y = 0.0
+        camera_right = camera_right.normalized()
+        camera_forward = camera_forward.normalized()
+        direction = (camera_right * move.x + camera_forward * -move.y).normalized()
+    else:
+        direction = Vector3(move.x, 0.0, move.y).normalized()
     velocity.x = direction.x * speed
     velocity.z = direction.z * speed
     if direction.length() > 0.1:
