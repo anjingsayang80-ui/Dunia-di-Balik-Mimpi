@@ -11,10 +11,10 @@ Prototipe RPG 3D offline untuk Android, dibuat dengan Godot 4.3. Seluruh pekerja
 ## Fitur yang sudah dibuat
 - Arena 3D dengan pencahayaan, lantai, dan pilar.
 - MC 3D sederhana dengan rambut, mata, pakaian, lengan dan kaki beranimasi prosedural saat berjalan, serta pedang dengan animasi ayunan.
-- Slime dan Bos Mimpi dapat mengejar serta menyerang pemain.
+- Slime dan Bos Mimpi dapat mengejar serta menyerang pemain; keduanya memberi efek kilat merah dan animasi terpental singkat saat terkena serangan.
 - Kontrol Android: analog bulat di kiri, tombol SERANG dan KAGE BUNSHIN di kanan, serta swipe pada area kosong untuk memutar kamera mengelilingi pemain.
 - Arah gerak analog mengikuti arah kamera.
-- Kage Bunshin memunculkan tepat 3 bayangan biru selama 8 detik. Tidak ada cooldown; tombol dapat digunakan lagi kapan saja. Bayangan mengikuti MC, menampilkan bagian tubuh beranimasi, dan otomatis menyerang Slime atau Bos yang berada dalam jangkauan.
+- Kage Bunshin memunculkan tepat 3 bayangan biru selama 8 detik. Tidak ada cooldown; tombol dapat digunakan lagi kapan saja. Bayangan mengikuti MC, menyamakan gerakan lengan dan kaki dengan MC, dan otomatis menyerang Slime atau Bos yang berada dalam jangkauan.
 - Quest berantai: kalahkan Slime, kumpulkan 3 Kristal Mimpi, lalu kalahkan Bos Mimpi.
 - Hadiah monster biasa: Level +1 dan Kekuatan +0,2 (seperlima). Hadiah Bos: Level +5 dan Kekuatan +3.
 - Inventaris dengan 2 Ramuan Kecil awal; satu ramuan memulihkan 30 HP hingga maksimum 100.
