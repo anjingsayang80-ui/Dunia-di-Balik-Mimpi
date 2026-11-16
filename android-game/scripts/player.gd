@@ -20,6 +20,7 @@ func _ready() -> void:
     outfit.roughness = 0.82
 
     body_visual = MeshInstance3D.new()
+    body_visual.name = "BodyVisual"
     var body := body_visual
     var capsule_mesh := CapsuleMesh.new()
     capsule_mesh.radius = 0.42
