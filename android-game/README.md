@@ -23,7 +23,7 @@ Prototipe game RPG 3D offline untuk Android. Folder ini terpisah dari komik di r
 - **Simpan otomatis:** inventaris, level, kekuatan, progres quest, status hadiah bos, HP, dan posisi pemain disimpan ke `user://savegame.cfg`; progres dimuat kembali saat game dibuka. Posisi dan HP disimpan berkala setiap 5 detik serta saat progres penting berubah.
 - **Sistem tumbang dan kembali:** jika HP pemain habis, karakter kembali ke titik awal dengan HP penuh tanpa menghapus progres quest atau inventaris.
 - **Kontrol Android horizontal:** orientasi layar landscape, analog virtual berbentuk bulat di kiri, tombol SERANG di kanan, dan swipe pada area permainan untuk memutar kamera. UI mengikuti ukuran layar yang melebar.
-- **Kage Bunshin:** tombol jurus memunculkan tepat 3 bayangan biru selama 8 detik; waktu pemulihan/cooldown jurus adalah 6 detik sebelum dapat digunakan kembali.
+- **Kage Bunshin:** tombol jurus memunculkan tepat 3 bayangan biru selama 8 detik; jurus dapat digunakan berulang kali tanpa cooldown; mengaktifkannya kembali akan memperbarui tiga bayangan dan durasi 8 detiknya.
 - Tombol TAS membuka inventaris.
 
 ## Pengujian fitur simpan
