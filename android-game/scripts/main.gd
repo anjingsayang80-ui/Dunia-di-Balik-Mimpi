@@ -109,8 +109,8 @@ func _make_world() -> void:
 
     camera_pivot = Node3D.new()
     camera_pivot.name = "CameraPivot"
-    camera_pivot.position = Vector3(0, 1.1, 0)
-    hero.add_child(camera_pivot)
+    camera_pivot.position = hero.global_position + Vector3(0, 1.1, 0)
+    add_child(camera_pivot)
     camera_node = Camera3D.new()
     camera_node.position = Vector3(0, 4.4, 9)
     camera_node.rotation_degrees.x = -23.0
@@ -554,6 +554,8 @@ func _process(delta: float) -> void:
         clone_button.disabled = false
         clone_button.text = "KAGE\nBUNSHIN"
     if is_instance_valid(hero):
+        # Kamera mengikuti posisi pemain, tetapi yaw-nya tidak ikut berputar saat pemain menghadap arah gerak.
+        camera_pivot.global_position = hero.global_position + Vector3(0, 1.1, 0)
         hero.mobile_move = move_vector
         if hero.hp <= 0:
             hero.hp = 100
