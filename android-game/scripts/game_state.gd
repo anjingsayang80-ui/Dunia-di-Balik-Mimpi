@@ -6,6 +6,9 @@ var slime_kills := 0
 var quest_completed := false
 var dream_crystals_collected := 0
 var dream_crystal_quest_completed := false
+var player_level := 1
+var player_strength := 1.0
+var boss_defeated := false
 var last_notice := ""
 
 func _ready() -> void:
@@ -32,6 +35,15 @@ func use_item(item_name: String) -> bool:
     save_game()
     return true
 
+func _award_progress(level_gain: int, strength_gain: float, source: String) -> void:
+    player_level += level_gain
+    player_strength = snappedf(player_strength + strength_gain, 0.01)
+    last_notice = "%s dikalahkan! Level +%d, Kekuatan +%s." % [source, level_gain, _format_strength(strength_gain)]
+    save_game()
+
+func _format_strength(value: float) -> String:
+    return ("%.2f" % value).trim_suffix("0").trim_suffix(".")
+
 func complete_slime_quest() -> void:
     if quest_completed:
         return
@@ -39,7 +51,8 @@ func complete_slime_quest() -> void:
     quest_completed = true
     inventory["Lendir Slime"] = int(inventory.get("Lendir Slime", 0)) + 1
     inventory["Koin"] = int(inventory.get("Koin", 0)) + 10
-    last_notice = "Misi selesai! Hadiah: Lendir Slime dan 10 Koin."
+    _award_progress(1, 0.2, "Monster biasa")
+    last_notice = "Slime dikalahkan! Level +1, Kekuatan +0,2. Hadiah: Lendir Slime dan 10 Koin."
     save_game()
 
 func collect_dream_crystal() -> void:
@@ -50,9 +63,19 @@ func collect_dream_crystal() -> void:
     if dream_crystals_collected >= 3:
         dream_crystal_quest_completed = true
         inventory["Koin"] = int(inventory.get("Koin", 0)) + 20
-        last_notice = "Quest Kristal Mimpi selesai! Bonus 20 Koin."
+        last_notice = "Quest Kristal Mimpi selesai! Bonus 20 Koin. Bos telah muncul!"
     else:
         last_notice = "Kristal Mimpi diperoleh (%d/3)." % dream_crystals_collected
+    save_game()
+
+func defeat_boss() -> void:
+    if boss_defeated:
+        return
+    boss_defeated = true
+    inventory["Inti Bos"] = int(inventory.get("Inti Bos", 0)) + 1
+    inventory["Koin"] = int(inventory.get("Koin", 0)) + 100
+    _award_progress(5, 3.0, "Bos")
+    last_notice = "BOS DIKALAHKAN! Level +5, Kekuatan +3. Hadiah: Inti Bos dan 100 Koin."
     save_game()
 
 func get_quest_text() -> String:
@@ -60,15 +83,20 @@ func get_quest_text() -> String:
         return "MISI 1: Kalahkan Slime  •  Progres: %d/1" % slime_kills
     if not dream_crystal_quest_completed:
         return "MISI 2: Kumpulkan Kristal Mimpi  •  Progres: %d/3" % dream_crystals_collected
-    return "SEMUA MISI SELESAI  •  Hadiah telah diterima"
+    if not boss_defeated:
+        return "MISI 3: Kalahkan Bos Mimpi"
+    return "SEMUA MISI SELESAI  •  Bos telah dikalahkan"
 
 func save_game() -> void:
     var data := ConfigFile.new()
     data.set_value("player", "inventory", inventory)
+    data.set_value("player", "level", player_level)
+    data.set_value("player", "strength", player_strength)
     data.set_value("quest", "slime_kills", slime_kills)
     data.set_value("quest", "completed", quest_completed)
     data.set_value("quest", "dream_crystals_collected", dream_crystals_collected)
     data.set_value("quest", "dream_crystal_quest_completed", dream_crystal_quest_completed)
+    data.set_value("quest", "boss_defeated", boss_defeated)
     var error := data.save(SAVE_PATH)
     if error != OK:
         push_warning("Gagal menyimpan progres: %s" % error_string(error))
@@ -79,9 +107,12 @@ func load_game() -> bool:
     if error != OK:
         return false
     inventory = data.get_value("player", "inventory", {"Ramuan Kecil": 2})
+    player_level = int(data.get_value("player", "level", 1))
+    player_strength = float(data.get_value("player", "strength", 1.0))
     slime_kills = int(data.get_value("quest", "slime_kills", 0))
     quest_completed = bool(data.get_value("quest", "completed", false))
     dream_crystals_collected = int(data.get_value("quest", "dream_crystals_collected", 0))
     dream_crystal_quest_completed = bool(data.get_value("quest", "dream_crystal_quest_completed", false))
+    boss_defeated = bool(data.get_value("quest", "boss_defeated", false))
     last_notice = "Progres permainan berhasil dimuat."
     return true
