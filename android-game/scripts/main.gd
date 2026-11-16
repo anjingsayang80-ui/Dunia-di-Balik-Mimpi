@@ -14,6 +14,9 @@ var quest_text: Label
 var inventory_text: Label
 var notice_text: Label
 var inventory_panel: PanelContainer
+var autosave_timer := 0.0
+const SAVE_INTERVAL := 5.0
+const START_POSITION := Vector3(0, 0.1, 4)
 
 func _ready() -> void:
     game_state = Node.new()
@@ -73,8 +76,9 @@ func _make_world() -> void:
     hero = CharacterBody3D.new()
     hero.name = "Hero"
     hero.set_script(load("res://scripts/player.gd"))
-    hero.position = Vector3(0, 0.1, 4)
+    hero.position = game_state.player_position if game_state.has_player_save else START_POSITION
     add_child(hero)
+    hero.hp = game_state.player_hp if game_state.has_player_save else 100
 
     slime = CharacterBody3D.new()
     slime.name = "Slime"
@@ -292,9 +296,19 @@ func _set_joystick(pos: Vector2) -> void:
     move_vector = Vector2(delta.x / 55.0, delta.y / 55.0)
     knob.position = Vector2(45, 45) + delta
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
     if is_instance_valid(hero):
         hero.mobile_move = move_vector
+        if hero.hp <= 0:
+            hero.hp = 100
+            hero.global_position = START_POSITION
+            hero.velocity = Vector3.ZERO
+            game_state.last_notice = "Kamu pingsan! Kembali ke titik awal dengan HP penuh."
+            game_state.save_player_state(hero.hp, hero.global_position)
+        autosave_timer += delta
+        if autosave_timer >= SAVE_INTERVAL:
+            autosave_timer = 0.0
+            game_state.save_player_state(hero.hp, hero.global_position)
         hp_text.text = "HP: %d / 100" % hero.hp
         stats_text.text = "Level: %d  |  Kekuatan: %.2f" % [game_state.player_level, game_state.player_strength]
     var enemy_lines := []
