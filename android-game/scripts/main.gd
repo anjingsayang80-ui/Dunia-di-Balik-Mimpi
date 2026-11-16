@@ -15,7 +15,6 @@ var attack_button: Button
 var clone_button: Button
 var shadow_clones: Array[Node3D] = []
 var clone_time_left := 0.0
-var clone_cooldown := 0.0
 var hp_text: Label
 var stats_text: Label
 var enemy_text: Label
@@ -313,11 +312,10 @@ func _make_hud() -> void:
     layer.add_child(clone_button)
 
 func _activate_shadow_clones() -> void:
-    if clone_cooldown > 0.0 or not is_instance_valid(hero):
+    if not is_instance_valid(hero):
         return
     _clear_shadow_clones()
     clone_time_left = 8.0
-    clone_cooldown = 6.0
     var offsets := [Vector3(-1.8, 0.0, 0.8), Vector3(1.8, 0.0, 0.8), Vector3(0.0, 0.0, -2.0)]
     for i in range(3):
         var shadow := Node3D.new()
@@ -425,7 +423,6 @@ func _rotate_camera(delta: Vector2) -> void:
     camera_node.rotation.x = clampf(camera_node.rotation.x - delta.y * 0.004, deg_to_rad(-55.0), deg_to_rad(5.0))
 
 func _process(delta: float) -> void:
-    clone_cooldown = maxf(0.0, clone_cooldown - delta)
     if clone_time_left > 0.0:
         clone_time_left -= delta
         if is_instance_valid(hero):
@@ -439,8 +436,8 @@ func _process(delta: float) -> void:
         if clone_time_left <= 0.0:
             _clear_shadow_clones()
     if is_instance_valid(clone_button):
-        clone_button.disabled = clone_cooldown > 0.0
-        clone_button.text = "KAGE\\n%.0fs" % clone_cooldown if clone_cooldown > 0.0 else "KAGE\\nBUNSHIN"
+        clone_button.disabled = false
+        clone_button.text = "KAGE\\nBUNSHIN"
     if is_instance_valid(hero):
         hero.mobile_move = move_vector
         if hero.hp <= 0:
