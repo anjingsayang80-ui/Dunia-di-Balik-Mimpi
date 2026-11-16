@@ -15,17 +15,19 @@ Prototipe game RPG 3D offline untuk Android. Folder ini terpisah dari komik di r
 - Animasi ayunan pedang menggunakan Tween.
 - Slime mengejar dan menyerang pemain.
 - HP pemain dan HP monster.
-- **Quest:** kalahkan Slime; penyelesaian memberi Lendir Slime dan 10 Koin.
+- **Quest berantai:** kalahkan Slime untuk memperoleh Lendir Slime dan 10 Koin, lalu kumpulkan 3 Kristal Mimpi yang muncul di arena untuk bonus 20 Koin.
+- Kristal Mimpi memiliki efek cahaya dan dikumpulkan dengan menyentuhnya.
 - **Inventaris:** mulai dengan 2 Ramuan Kecil; ramuan memulihkan 30 HP (maksimum 100).
-- **Simpan otomatis:** inventaris dan status quest disimpan ke `user://savegame.cfg`; progres dimuat kembali saat game dibuka.
+- **Simpan otomatis:** inventaris, progres kedua quest, dan hadiah disimpan ke `user://savegame.cfg`; progres dimuat kembali saat game dibuka.
 - Tombol TAS membuka inventaris dan joystick layar sentuh tersedia untuk Android.
 
 ## Pengujian fitur simpan
 1. Jalankan game dan buka tombol TAS untuk melihat dua Ramuan Kecil.
 2. Gunakan satu ramuan saat HP tidak penuh; jumlah ramuan harus berkurang.
-3. Kalahkan Slime sampai quest selesai dan hadiah muncul di inventaris.
-4. Tutup lalu jalankan ulang game pada perangkat/profil Godot yang sama.
-5. Pastikan quest tetap selesai dan barang tersimpan. File save berada di direktori data pengguna Godot, bukan di folder proyek.
+3. Kalahkan Slime sampai quest pertama selesai dan hadiah muncul di inventaris.
+4. Sentuh tiga Kristal Mimpi yang muncul di arena; pastikan quest kedua selesai dan bonus Koin diterima.
+5. Tutup lalu jalankan ulang game pada perangkat/profil Godot yang sama.
+6. Pastikan progres kedua quest dan barang tetap tersimpan. File save berada di direktori data pengguna Godot, bukan di folder proyek.
 
 ## Membuat APK Android
 APK belum disertakan atau dikompilasi oleh perubahan kode ini. Untuk mengekspor:
@@ -37,4 +39,4 @@ APK belum disertakan atau dikompilasi oleh perubahan kode ini. Untuk mengekspor:
 6. Tekan **Export Project**, pilih lokasi `.apk`, lalu instal APK pada perangkat untuk menguji.
 
 ## Batasan yang masih ada
-Tampilan anime masih berupa mesh geometri sederhana, bukan model 3D karakter profesional. Belum ada rig/skeletal animation, suara, dunia terbuka, banyak quest, sistem level/EXP, atau APK terkompilasi. Fitur save saat ini menyimpan inventaris dan quest, belum menyimpan posisi pemain atau HP.
+Tampilan anime masih berupa mesh geometri sederhana, bukan model 3D karakter profesional. Belum ada rig/skeletal animation, suara, dunia terbuka, banyak quest, sistem level/EXP, atau APK terkompilasi. Fitur save menyimpan inventaris dan progres quest, tetapi belum menyimpan posisi pemain atau HP. Pengujian runtime Godot tetap perlu dilakukan setelah perubahan ini.
