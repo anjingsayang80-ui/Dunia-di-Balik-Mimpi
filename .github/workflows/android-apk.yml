@@ -46,6 +46,13 @@ jobs:
           godot --version
           java -version
           echo "ANDROID_HOME=$ANDROID_HOME"
+          test -d "$ANDROID_HOME/platform-tools"
+          test -d "$ANDROID_HOME/build-tools/34.0.0"
+
+      - name: Create Android debug keystore
+        run: |
+          mkdir -p "$HOME/.android"
+          keytool -genkeypair -v -keystore "$HOME/.android/debug.keystore" -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
 
       - name: Configure Godot Android export paths
         run: |
@@ -55,6 +62,9 @@ jobs:
           [resource]
           export/android/android_sdk_path = "$ANDROID_HOME"
           export/android/java_sdk_path = "$JAVA_HOME"
+          export/android/debug_keystore = "$HOME/.android/debug.keystore"
+          export/android/debug_keystore_user = "androiddebugkey"
+          export/android/debug_keystore_pass = "android"
           EOF
 
       - name: Import project resources
@@ -63,7 +73,7 @@ jobs:
       - name: Export debug APK
         run: |
           mkdir -p android-game/build
-          godot --headless --path android-game --export-debug "Android" android-game/build/DuniaDiBalikMimpi-debug.apk
+          godot --headless --verbose --path android-game --export-debug "Android" android-game/build/DuniaDiBalikMimpi-debug.apk
           test -s android-game/build/DuniaDiBalikMimpi-debug.apk
 
       - name: Upload APK artifact
