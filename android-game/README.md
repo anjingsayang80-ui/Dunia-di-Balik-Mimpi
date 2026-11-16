@@ -23,7 +23,7 @@ Prototipe game RPG 3D offline untuk Android. Folder ini terpisah dari komik di r
 - **Simpan otomatis:** inventaris, level, kekuatan, progres quest, status hadiah bos, HP, dan posisi pemain disimpan ke `user://savegame.cfg`; progres dimuat kembali saat game dibuka. Posisi dan HP disimpan berkala setiap 5 detik serta saat progres penting berubah.
 - **Sistem tumbang dan kembali:** jika HP pemain habis, karakter kembali ke titik awal dengan HP penuh tanpa menghapus progres quest atau inventaris.
 - **Kontrol Android horizontal:** orientasi layar landscape, analog virtual berbentuk bulat di kiri, tombol SERANG di kanan, dan swipe pada area permainan untuk memutar kamera. UI mengikuti ukuran layar yang melebar.
-- **Kage Bunshin:** tombol jurus memunculkan tepat 3 bayangan biru selama 8 detik; jurus dapat digunakan berulang kali tanpa cooldown; mengaktifkannya kembali akan memperbarui tiga bayangan dan durasi 8 detiknya.
+- **Kage Bunshin:** tombol jurus memunculkan tepat 3 bayangan biru selama 8 detik; jurus dapat digunakan berulang kali tanpa cooldown; ketiga bayangan mengikuti MC dan otomatis menyerang Slime atau Bos Mimpi yang berada dalam jangkauan, dengan damage berdasarkan kekuatan MC.
 - Tombol TAS membuka inventaris.
 
 ## Pengujian fitur simpan
@@ -38,7 +38,7 @@ Prototipe game RPG 3D offline untuk Android. Folder ini terpisah dari komik di r
 9. Biarkan monster mengurangi HP hingga habis; karakter harus kembali ke titik awal dengan HP penuh.
 
 ## Membuat APK Android
-APK belum disertakan atau dikompilasi oleh perubahan kode ini. Untuk mengekspor:
+APK debug dibuat otomatis oleh GitHub Actions setiap ada perubahan pada folder `android-game/`. Buka tab Actions, pilih workflow **Build Android APK**, buka build terbaru yang sukses, lalu unduh artefak `DuniaDiBalikMimpi-Android-debug`. Untuk ekspor manual:
 1. Pasang **Export Templates** yang cocok dengan versi Godot.
 2. Siapkan Android SDK dan Java JDK mengikuti dokumentasi ekspor Android Godot.
 3. Buka **Project > Export**, lalu pilih **Add... > Android**.
@@ -47,4 +47,4 @@ APK belum disertakan atau dikompilasi oleh perubahan kode ini. Untuk mengekspor:
 6. Tekan **Export Project**, pilih lokasi `.apk`, lalu instal APK pada perangkat untuk menguji.
 
 ## Batasan yang masih ada
-Tampilan anime dan Bos Mimpi masih berupa mesh geometri sederhana, bukan model 3D karakter profesional. Belum ada rig/skeletal animation, suara, dunia terbuka, sistem EXP, atau APK terkompilasi. Saat ini monster biasa yang tersedia di arena baru Slime. Model karakter dan musuh masih berupa mesh geometri sederhana; animasi skeletal, efek suara, peta dunia luas, beberapa jenis monster, toko, dan pengujian perangkat fisik masih perlu dikerjakan. Penyimpanan posisi/HP dan kontrol sentuh landscape sudah ditambahkan, tetapi perlu diuji pada perangkat Android dengan berbagai rasio layar. Pengujian runtime Godot tetap perlu dilakukan setelah perubahan ini.
+Tampilan karakter MC dan Bos Mimpi masih berupa mesh geometri sederhana, bukan model 3D profesional dengan rig dan animasi skeletal. Belum ada rig/skeletal animation, suara, dunia terbuka, sistem EXP, atau APK terkompilasi. Saat ini monster biasa yang tersedia di arena baru Slime. Model karakter dan musuh masih berupa mesh geometri sederhana; animasi skeletal, efek suara, peta dunia luas, beberapa jenis monster, toko, dan pengujian perangkat fisik masih perlu dikerjakan. Penyimpanan posisi/HP dan kontrol sentuh landscape sudah ditambahkan, tetapi perlu diuji pada perangkat Android dengan berbagai rasio layar. Pengujian runtime Godot tetap perlu dilakukan setelah perubahan ini.
