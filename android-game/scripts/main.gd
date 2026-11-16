@@ -20,6 +20,8 @@ var clone_time_left := 0.0
 var hp_text: Label
 var stats_text: Label
 var enemy_text: Label
+var slime_health_bar: ProgressBar
+var boss_health_bar: ProgressBar
 var quest_text: Label
 var inventory_text: Label
 var notice_text: Label
@@ -193,14 +195,18 @@ func _make_hud() -> void:
     enemy_text.add_theme_font_size_override("font_size", 18)
     layer.add_child(enemy_text)
 
+    slime_health_bar = _make_health_bar(layer, Vector2(24, 140), 70.0, Color(0.24, 0.82, 0.42))
+    boss_health_bar = _make_health_bar(layer, Vector2(24, 164), 350.0, Color(0.72, 0.28, 0.95))
+    boss_health_bar.visible = false
+
     quest_text = Label.new()
-    quest_text.position = Vector2(24, 146)
+    quest_text.position = Vector2(24, 198)
     quest_text.size = Vector2(420, 55)
     quest_text.add_theme_font_size_override("font_size", 16)
     layer.add_child(quest_text)
 
     notice_text = Label.new()
-    notice_text.position = Vector2(24, 208)
+    notice_text.position = Vector2(24, 258)
     notice_text.add_theme_color_override("font_color", Color(1.0, 0.9, 0.45))
     layer.add_child(notice_text)
 
@@ -316,6 +322,31 @@ func _make_hud() -> void:
     clone_button.add_theme_stylebox_override("normal", clone_style)
     clone_button.pressed.connect(_activate_shadow_clones)
     layer.add_child(clone_button)
+
+func _make_health_bar(layer: CanvasLayer, bar_position: Vector2, max_health: float, fill_color: Color) -> ProgressBar:
+    var bar := ProgressBar.new()
+    bar.position = bar_position
+    bar.size = Vector2(300, 15)
+    bar.min_value = 0.0
+    bar.max_value = max_health
+    bar.value = max_health
+    bar.show_percentage = false
+    var background := StyleBoxFlat.new()
+    background.bg_color = Color(0.035, 0.045, 0.075, 0.88)
+    background.corner_radius_top_left = 7
+    background.corner_radius_top_right = 7
+    background.corner_radius_bottom_left = 7
+    background.corner_radius_bottom_right = 7
+    bar.add_theme_stylebox_override("background", background)
+    var fill := StyleBoxFlat.new()
+    fill.bg_color = fill_color
+    fill.corner_radius_top_left = 7
+    fill.corner_radius_top_right = 7
+    fill.corner_radius_bottom_left = 7
+    fill.corner_radius_bottom_right = 7
+    bar.add_theme_stylebox_override("fill", fill)
+    layer.add_child(bar)
+    return bar
 
 func _activate_shadow_clones() -> void:
     if not is_instance_valid(hero):
@@ -508,6 +539,12 @@ func _process(delta: float) -> void:
     if is_instance_valid(boss):
         enemy_lines.append("BOS MIMPI HP: %d / 350" % boss.hp if boss.hp > 0 else "Bos Mimpi dikalahkan!")
     enemy_text.text = "  •  ".join(enemy_lines)
+    if is_instance_valid(slime_health_bar) and is_instance_valid(slime):
+        slime_health_bar.value = maxf(0.0, float(slime.hp))
+        slime_health_bar.visible = slime.hp > 0
+    if is_instance_valid(boss_health_bar) and is_instance_valid(boss):
+        boss_health_bar.value = maxf(0.0, float(boss.hp))
+        boss_health_bar.visible = boss.hp > 0
     quest_text.text = game_state.get_quest_text()
     if inventory_panel.visible:
         _refresh_inventory()
