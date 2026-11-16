@@ -83,12 +83,53 @@ func _make_world() -> void:
         slime.hp = 0
         slime.visible = false
         hero.slime_reward_claimed = true
+    _spawn_dream_crystals()
 
     var camera := Camera3D.new()
     camera.position = Vector3(0, 5.5, 9)
     camera.rotation_degrees = Vector3(-23, 0, 0)
     hero.add_child(camera)
     camera.current = true
+
+func _spawn_dream_crystals() -> void:
+    if not game_state.quest_completed or game_state.dream_crystal_quest_completed:
+        return
+    var spots := [
+        Vector3(-7.0, 0.0, -3.0),
+        Vector3(7.0, 0.0, -6.0),
+        Vector3(0.0, 0.0, -12.0)
+    ]
+    for i in range(game_state.dream_crystals_collected, 3):
+        var crystal := Area3D.new()
+        crystal.name = "DreamCrystal%d" % i
+        crystal.position = spots[i]
+        var visual := MeshInstance3D.new()
+        var crystal_mesh := SphereMesh.new()
+        crystal_mesh.radius = 0.38
+        crystal_mesh.height = 0.82
+        visual.mesh = crystal_mesh
+        var glow := StandardMaterial3D.new()
+        glow.albedo_color = Color(0.25, 0.9, 1.0)
+        glow.emission_enabled = true
+        glow.emission = Color(0.08, 0.65, 1.0)
+        glow.emission_energy_multiplier = 1.4
+        visual.material_override = glow
+        visual.position.y = 0.85
+        crystal.add_child(visual)
+        var collision := CollisionShape3D.new()
+        var shape := SphereShape3D.new()
+        shape.radius = 1.0
+        collision.shape = shape
+        collision.position.y = 0.85
+        crystal.add_child(collision)
+        crystal.body_entered.connect(_on_dream_crystal_body_entered.bind(crystal))
+        add_child(crystal)
+
+func _on_dream_crystal_body_entered(body: Node3D, crystal: Area3D) -> void:
+    if body != hero or not is_instance_valid(crystal):
+        return
+    game_state.collect_dream_crystal()
+    crystal.queue_free()
 
 func _make_hud() -> void:
     var layer := CanvasLayer.new()
