@@ -4,6 +4,9 @@ var hp := 100
 var speed := 5.8
 var mobile_move := Vector2.ZERO
 var cooldown := 0.0
+var dash_cooldown := 0.0
+var dash_time_left := 0.0
+var dash_direction := Vector3.ZERO
 var sword: MeshInstance3D
 var slime_reward_claimed := false
 var attack_tween: Tween
@@ -143,6 +146,8 @@ func _make_limb(pivot_position: Vector3, material: Material, radius: float, heig
 
 func _physics_process(delta: float) -> void:
     cooldown = maxf(0.0, cooldown - delta)
+    dash_cooldown = maxf(0.0, dash_cooldown - delta)
+    dash_time_left = maxf(0.0, dash_time_left - delta)
     var move := Vector2(
         Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
         Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -161,8 +166,12 @@ func _physics_process(delta: float) -> void:
         direction = (camera_right * move.x + camera_forward * -move.y).normalized()
     else:
         direction = Vector3(move.x, 0.0, move.y).normalized()
-    velocity.x = direction.x * speed
-    velocity.z = direction.z * speed
+    if dash_time_left > 0.0:
+        velocity.x = dash_direction.x * 16.0
+        velocity.z = dash_direction.z * 16.0
+    else:
+        velocity.x = direction.x * speed
+        velocity.z = direction.z * speed
     if direction.length() > 0.1:
         rotation.y = atan2(-direction.x, -direction.z)
     walk_phase += delta * (9.0 if direction.length() > 0.1 else 2.0)
@@ -174,6 +183,23 @@ func _physics_process(delta: float) -> void:
     body_visual.position.y = 0.9 + absf(stride) * 0.045
     velocity.y -= 20.0 * delta
     move_and_slide()
+
+func dash() -> void:
+    if dash_cooldown > 0.0 or dash_time_left > 0.0:
+        return
+    var active_camera := get_viewport().get_camera_3d()
+    if mobile_move.length() > 0.12 and active_camera:
+        var camera_right := active_camera.global_basis.x
+        var camera_forward := -active_camera.global_basis.z
+        camera_right.y = 0.0
+        camera_forward.y = 0.0
+        dash_direction = (camera_right.normalized() * mobile_move.x + camera_forward.normalized() * -mobile_move.y).normalized()
+    else:
+        dash_direction = -global_basis.z
+        dash_direction.y = 0.0
+        dash_direction = dash_direction.normalized()
+    dash_time_left = 0.22
+    dash_cooldown = 2.0
 
 func attack() -> void:
     if cooldown > 0.0:
