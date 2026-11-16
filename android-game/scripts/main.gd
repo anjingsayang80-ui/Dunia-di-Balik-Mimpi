@@ -24,8 +24,6 @@ var inventory_text: Label
 var notice_text: Label
 var inventory_panel: PanelContainer
 var autosave_timer := 0.0
-var recovery_time_left := 0.0
-const RECOVERY_DURATION := 6.0
 const SAVE_INTERVAL := 5.0
 const START_POSITION := Vector3(0, 0.1, 4)
 
@@ -319,7 +317,7 @@ func _activate_shadow_clones() -> void:
         return
     _clear_shadow_clones()
     clone_time_left = 8.0
-    clone_cooldown = 20.0
+    clone_cooldown = 6.0
     var offsets := [Vector3(-1.8, 0.0, 0.8), Vector3(1.8, 0.0, 0.8), Vector3(0.0, 0.0, -2.0)]
     for i in range(3):
         var shadow := Node3D.new()
@@ -446,22 +444,11 @@ func _process(delta: float) -> void:
     if is_instance_valid(hero):
         hero.mobile_move = move_vector
         if hero.hp <= 0:
-            if recovery_time_left <= 0.0:
-                recovery_time_left = RECOVERY_DURATION
-                hero.velocity = Vector3.ZERO
-                move_vector = Vector2.ZERO
-                _clear_shadow_clones()
-            else:
-                recovery_time_left = maxf(0.0, recovery_time_left - delta)
-                hero.velocity = Vector3.ZERO
-                move_vector = Vector2.ZERO
-                notice_text.text = "Kamu tumbang! Pulih dalam %.0f detik..." % ceilf(recovery_time_left)
-                if recovery_time_left <= 0.0:
-                    hero.hp = 100
-                    hero.global_position = START_POSITION
-                    hero.velocity = Vector3.ZERO
-                    game_state.last_notice = "Kamu telah pulih! HP kembali penuh."
-                    game_state.save_player_state(hero.hp, hero.global_position)
+            hero.hp = 100
+            hero.global_position = START_POSITION
+            hero.velocity = Vector3.ZERO
+            game_state.last_notice = "Kamu pingsan! Kembali ke titik awal dengan HP penuh."
+            game_state.save_player_state(hero.hp, hero.global_position)
         autosave_timer += delta
         if autosave_timer >= SAVE_INTERVAL:
             autosave_timer = 0.0
