@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100"><defs><linearGradient id="bg0" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#15243d"/><stop offset="1" stop-color="#3c5c83"/></linearGradient><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#263d61"/><stop offset="1" stop-color="#8b82b7"/></linearGradient><linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101e37"/><stop offset="1" stop-color="#4776a4"/></linearGradient><radialGradient id="glow"><stop stop-color="#bdf5ff" stop-opacity=".8"/><stop offset="1" stop-color="#bdf5ff" stop-opacity="0"/></radialGradient></defs><rect width="900" height="1100" fill="#f8f1ff"/><rect width="900" height="75" fill="#201535"/><text x="450" y="49" font-family="Georgia,serif" font-size="29" font-weight="bold" text-anchor="middle" fill="#ffe19a">JANJI DI AMBANG DUNIA</text><g><rect x="28" y="90" width="844" height="300" rx="18" fill="url(#bg0)" stroke="#17112c" stroke-width="9"/><circle cx="730" cy="148" r="48" fill="#fff4c8" opacity=".13"/><g fill="#fff" opacity=".8"><circle cx="85" cy="138" r="3"/><circle cx="520" cy="155" r="3"/><circle cx="820" cy="250" r="2"/></g><path d="M30 390 L80 135 L130 390 M160 390 L220 110 L280 390 M630 390 L690 105 L750 390 M760 390 L820 145 L870 390" fill="#142d39" stroke="#245a5b" stroke-width="20"/><g transform="translate(475 250) scale(0.85)">
+ <ellipse rx="95" ry="125" fill="#72dfff" opacity=".18"/><ellipse rx="66" ry="105" fill="none" stroke="#b4f3ff" stroke-width="12" opacity=".95"/><ellipse rx="47" ry="86" fill="#173e76" opacity=".8"/><path d="M-42 -58 Q0 -103 42 -58 Q73 0 0 78 Q-72 0 -42 -58Z" fill="#9ceaff" opacity=".65"/>
+ <g fill="#fff"><circle cx="-25" cy="-35" r="4"/><circle cx="28" cy="14" r="5"/><circle cx="-16" cy="43" r="3"/><circle cx="15" cy="-65" r="3"/></g>
+ </g><g transform="translate(160 225) scale(0.7)" stroke="#111528" stroke-width="5" stroke-linejoin="round">
+ <path d="M-48 54 Q-85 5 -65 -34 Q-20 -5 0 -27 Q29 -9 63 -35 Q81 9 48 55Z" fill="#171a2c"/>
+ <ellipse cy="37" rx="57" ry="51" fill="#20253e"/>
+ <path d="M-39 15 L-53 -35 L-9 -4 M39 15 L54 -35 L10 -4" fill="#20253e"/>
+ <ellipse cx="-21" cy="34" rx="10" ry="15" fill="#69dfff" stroke="none"/><ellipse cx="21" cy="34" rx="10" ry="15" fill="#69dfff" stroke="none"/>
+ <circle cx="-21" cy="34" r="4" fill="#fff" stroke="none"/><circle cx="21" cy="34" r="4" fill="#fff" stroke="none"/>
+ <path d="M-10 56 Q0 64 10 56" fill="none" stroke="#f3b8c6" stroke-width="4"/>
+ <path d="M45 68 Q90 84 75 35" fill="none" stroke="#171a2c" stroke-width="13" stroke-linecap="round"/>
+ <circle cx="0" cy="89" r="8" fill="#ffd36b"/>
+ </g><g transform="translate(720 138) scale(0.7 0.7)" stroke="#151329" stroke-width="5" stroke-linejoin="round">
+ <path d="M-58 116 Q-5 83 52 116 L78 252 L-82 252Z" fill="#27334f"/>
+ <path d="M-29 110 L0 158 L29 110 L18 190 L-18 190Z" fill="#f5e6d7"/>
+ <path d="M-55 132 Q-92 154 -103 210 L-83 220 L-34 169Z M55 132 Q91 153 105 207 L84 219 L35 169Z" fill="#27334f"/>
+ <path d="M-42 25 Q-52 -25 0 -36 Q57 -26 45 34 L39 87 Q0 119 -40 82Z" fill="#eec4aa"/>
+ <path d="M-49 31 Q-78 -49 -8 -58 Q48 -68 59 -7 L47 38 Q27 2 7 -9 Q-13 20 -49 31Z" fill="#247a9a"/>
+ <path d="M-48 18 Q-72 62 -44 92 L-33 46Z M45 13 Q69 52 42 89 L32 43Z" fill="#247a9a"/>
+ <ellipse cx="-17" cy="43" rx="7" ry="11" fill="#172044" stroke="none"/><ellipse cx="17" cy="43" rx="7" ry="11" fill="#172044" stroke="none"/>
+ <path d="M-10 70 Q0 78 11 69" fill="none" stroke="#a94f65" stroke-width="4" stroke-linecap="round"/>
+ <path d="M-17 111 L0 137 L17 111" fill="none" stroke="#ef665d" stroke-width="5"/>
+ <path d="M-44 105 Q0 129 44 105 L36 126 Q0 151 -36 126Z" fill="#d64e4a"/>
+ <path d="M-73 244 Q0 222 73 244" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4"/>
+ </g><g><path d="M352 197 l-28 28 62 -28Z" fill="#fffdf5" stroke="#211a37" stroke-width="5" stroke-linejoin="round"/><rect x="300" y="108" width="510" height="94" rx="20" fill="#fffdf5" stroke="#211a37" stroke-width="5"/><text x="318" y="136" font-family="Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="2" fill="#8052ad">KURO</text><text x="555" y="169" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#20172e">Sekali melangkah, jalan pulang</text><text x="555" y="194" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#20172e">mungkin tidak akan sama.</text></g><text x="54" y="372" font-family="Arial" font-size="14" font-weight="bold" fill="#fff" opacity=".75">PANEL 1</text></g><g><rect x="28" y="410" width="844" height="300" rx="18" fill="url(#bg1)" stroke="#17112c" stroke-width="9"/><circle cx="730" cy="468" r="48" fill="#fff4c8" opacity=".13"/><g fill="#fff" opacity=".8"><circle cx="85" cy="458" r="3"/><circle cx="520" cy="475" r="3"/><circle cx="820" cy="570" r="2"/></g><path d="M30 710 L80 455 L130 710 M160 710 L220 430 L280 710 M630 710 L690 425 L750 710 M760 710 L820 465 L870 710" fill="#142d39" stroke="#245a5b" stroke-width="20"/><g transform="translate(475 575) scale(0.72)">
+ <ellipse rx="95" ry="125" fill="#72dfff" opacity=".18"/><ellipse rx="66" ry="105" fill="none" stroke="#b4f3ff" stroke-width="12" opacity=".95"/><ellipse rx="47" ry="86" fill="#173e76" opacity=".8"/><path d="M-42 -58 Q0 -103 42 -58 Q73 0 0 78 Q-72 0 -42 -58Z" fill="#9ceaff" opacity=".65"/>
+ <g fill="#fff"><circle cx="-25" cy="-35" r="4"/><circle cx="28" cy="14" r="5"/><circle cx="-16" cy="43" r="3"/><circle cx="15" cy="-65" r="3"/></g>
+ </g><g transform="translate(170 458) scale(0.82 0.82)" stroke="#151329" stroke-width="5" stroke-linejoin="round">
+ <path d="M-58 116 Q-5 83 52 116 L78 252 L-82 252Z" fill="#345aa3"/>
+ <path d="M-29 110 L0 158 L29 110 L18 190 L-18 190Z" fill="#f7e9d5"/>
+ <path d="M-55 132 Q-92 154 -103 210 L-83 220 L-34 169Z M55 132 Q91 153 105 207 L84 219 L35 169Z" fill="#345aa3"/>
+ <path d="M-42 25 Q-52 -25 0 -36 Q57 -26 45 34 L39 87 Q0 119 -40 82Z" fill="#ffd3bc"/>
+ <path d="M-49 31 Q-78 -49 -8 -58 Q48 -68 59 -7 L47 38 Q27 2 7 -9 Q-13 20 -49 31Z" fill="#18213d"/>
+ <path d="M-48 18 Q-72 62 -44 92 L-33 46Z M45 13 Q69 52 42 89 L32 43Z" fill="#18213d"/>
+ <ellipse cx="-17" cy="43" rx="7" ry="11" fill="#172044" stroke="none"/><ellipse cx="17" cy="43" rx="7" ry="11" fill="#172044" stroke="none"/>
+ <path d="M-10 70 Q0 78 11 69" fill="none" stroke="#a94f65" stroke-width="4" stroke-linecap="round"/>
+ <path d="M-17 111 L0 137 L17 111" fill="none" stroke="#74c9ff" stroke-width="5"/>
+ 
+ <path d="M-73 244 Q0 222 73 244" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4"/>
+ </g><g transform="translate(720 458) scale(-0.75 0.75)" stroke="#151329" stroke-width="5" stroke-linejoin="round">
+ <path d="M-58 116 Q-5 83 52 116 L78 252 L-82 252Z" fill="#5a83c9"/>
+ <path d="M-29 110 L0 158 L29 110 L18 190 L-18 190Z" fill="#f7f3ff"/>
+ <path d="M-55 132 Q-92 154 -103 210 L-83 220 L-34 169Z M55 132 Q91 153 105 207 L84 219 L35 169Z" fill="#5a83c9"/>
+ <path d="M-42 25 Q-52 -25 0 -36 Q57 -26 45 34 L39 87 Q0 119 -40 82Z" fill="#f2cbb9"/>
+ <path d="M-49 31 Q-78 -49 -8 -58 Q48 -68 59 -7 L47 38 Q27 2 7 -9 Q-13 20 -49 31Z" fill="#e4f3ff"/>
+ <path d="M-48 18 Q-72 62 -44 92 L-33 46Z M45 13 Q69 52 42 89 L32 43Z" fill="#e4f3ff"/>
+ <ellipse cx="-17" cy="43" rx="7" ry="11" fill="#172044" stroke="none"/><ellipse cx="17" cy="43" rx="7" ry="11" fill="#172044" stroke="none"/>
+ <path d="M-10 70 Q0 78 11 69" fill="none" stroke="#a94f65" stroke-width="4" stroke-linecap="round"/>
+ <path d="M-17 111 L0 137 L17 111" fill="none" stroke="#b7eaff" stroke-width="5"/>
+ 
+ <path d="M-73 244 Q0 222 73 244" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4"/>
+ </g><g><path d="M372 517 l-28 28 62 -28Z" fill="#fffdf5" stroke="#211a37" stroke-width="5" stroke-linejoin="round"/><rect x="320" y="428" width="490" height="94" rx="20" fill="#fffdf5" stroke="#211a37" stroke-width="5"/><text x="338" y="456" font-family="Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="2" fill="#8052ad">ARKA</text><text x="565" y="489" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#20172e">Aku memang takut.</text><text x="565" y="514" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#20172e">Tapi aku tetap ingin maju.</text></g><text x="54" y="692" font-family="Arial" font-size="14" font-weight="bold" fill="#fff" opacity=".75">PANEL 2</text></g><g><rect x="28" y="730" width="844" height="300" rx="18" fill="url(#bg2)" stroke="#17112c" stroke-width="9"/><circle cx="730" cy="788" r="48" fill="#fff4c8" opacity=".13"/><g fill="#fff" opacity=".8"><circle cx="85" cy="778" r="3"/><circle cx="520" cy="795" r="3"/><circle cx="820" cy="890" r="2"/></g><path d="M30 1030 L80 775 L130 1030 M160 1030 L220 750 L280 1030 M630 1030 L690 745 L750 1030 M760 1030 L820 785 L870 1030" fill="#142d39" stroke="#245a5b" stroke-width="20"/><g transform="translate(465 895) scale(0.9)">
+ <ellipse rx="95" ry="125" fill="#72dfff" opacity=".18"/><ellipse rx="66" ry="105" fill="none" stroke="#b4f3ff" stroke-width="12" opacity=".95"/><ellipse rx="47" ry="86" fill="#173e76" opacity=".8"/><path d="M-42 -58 Q0 -103 42 -58 Q73 0 0 78 Q-72 0 -42 -58Z" fill="#9ceaff" opacity=".65"/>
+ <g fill="#fff"><circle cx="-25" cy="-35" r="4"/><circle cx="28" cy="14" r="5"/><circle cx="-16" cy="43" r="3"/><circle cx="15" cy="-65" r="3"/></g>
+ </g><g transform="translate(140 778) scale(0.67 0.67)" stroke="#151329" stroke-width="5" stroke-linejoin="round">
+ <path d="M-58 116 Q-5 83 52 116 L78 252 L-82 252Z" fill="#345aa3"/>
+ <path d="M-29 110 L0 158 L29 110 L18 190 L-18 190Z" fill="#f7e9d5"/>
+ <path d="M-55 132 Q-92 154 -103 210 L-83 220 L-34 169Z M55 132 Q91 153 105 207 L84 219 L35 169Z" fill="#345aa3"/>
+ <path d="M-42 25 Q-52 -25 0 -36 Q57 -26 45 34 L39 87 Q0 119 -40 82Z" fill="#ffd3bc"/>
+ <path d="M-49 31 Q-78 -49 -8 -58 Q48 -68 59 -7 L47 38 Q27 2 7 -9 Q-13 20 -49 31Z" fill="#18213d"/>
+ <path d="M-48 18 Q-72 62 -44 92 L-33 46Z M45 13 Q69 52 42 89 L32 43Z" fill="#18213d"/>
+ <ellipse cx="-17" cy="43" rx="7" ry="11" fill="#172044" stroke="none"/><ellipse cx="17" cy="43" rx="7" ry="11" fill="#172044" stroke="none"/>
+ <path d="M-10 70 Q0 78 11 69" fill="none" stroke="#a94f65" stroke-width="4" stroke-linecap="round"/>
+ <path d="M-17 111 L0 137 L17 111" fill="none" stroke="#74c9ff" stroke-width="5"/>
+ 
+ <path d="M-73 244 Q0 222 73 244" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4"/>
+ </g><g transform="translate(350 778) scale(0.67 0.67)" stroke="#151329" stroke-width="5" stroke-linejoin="round">
+ <path d="M-58 116 Q-5 83 52 116 L78 252 L-82 252Z" fill="#5a83c9"/>
+ <path d="M-29 110 L0 158 L29 110 L18 190 L-18 190Z" fill="#f7f3ff"/>
+ <path d="M-55 132 Q-92 154 -103 210 L-83 220 L-34 169Z M55 132 Q91 153 105 207 L84 219 L35 169Z" fill="#5a83c9"/>
+ <path d="M-42 25 Q-52 -25 0 -36 Q57 -26 45 34 L39 87 Q0 119 -40 82Z" fill="#f2cbb9"/>
+ <path d="M-49 31 Q-78 -49 -8 -58 Q48 -68 59 -7 L47 38 Q27 2 7 -9 Q-13 20 -49 31Z" fill="#e4f3ff"/>
+ <path d="M-48 18 Q-72 62 -44 92 L-33 46Z M45 13 Q69 52 42 89 L32 43Z" fill="#e4f3ff"/>
+ <ellipse cx="-17" cy="43" rx="7" ry="11" fill="#172044" stroke="none"/><ellipse cx="17" cy="43" rx="7" ry="11" fill="#172044" stroke="none"/>
+ <path d="M-10 70 Q0 78 11 69" fill="none" stroke="#a94f65" stroke-width="4" stroke-linecap="round"/>
+ <path d="M-17 111 L0 137 L17 111" fill="none" stroke="#b7eaff" stroke-width="5"/>
+ 
+ <path d="M-73 244 Q0 222 73 244" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4"/>
+ </g><g transform="translate(590 778) scale(0.67 0.67)" stroke="#151329" stroke-width="5" stroke-linejoin="round">
+ <path d="M-58 116 Q-5 83 52 116 L78 252 L-82 252Z" fill="#27334f"/>
+ <path d="M-29 110 L0 158 L29 110 L18 190 L-18 190Z" fill="#f5e6d7"/>
+ <path d="M-55 132 Q-92 154 -103 210 L-83 220 L-34 169Z M55 132 Q91 153 105 207 L84 219 L35 169Z" fill="#27334f"/>
+ <path d="M-42 25 Q-52 -25 0 -36 Q57 -26 45 34 L39 87 Q0 119 -40 82Z" fill="#eec4aa"/>
+ <path d="M-49 31 Q-78 -49 -8 -58 Q48 -68 59 -7 L47 38 Q27 2 7 -9 Q-13 20 -49 31Z" fill="#247a9a"/>
+ <path d="M-48 18 Q-72 62 -44 92 L-33 46Z M45 13 Q69 52 42 89 L32 43Z" fill="#247a9a"/>
+ <ellipse cx="-17" cy="43" rx="7" ry="11" fill="#172044" stroke="none"/><ellipse cx="17" cy="43" rx="7" ry="11" fill="#172044" stroke="none"/>
+ <path d="M-10 70 Q0 78 11 69" fill="none" stroke="#a94f65" stroke-width="4" stroke-linecap="round"/>
+ <path d="M-17 111 L0 137 L17 111" fill="none" stroke="#ef665d" stroke-width="5"/>
+ <path d="M-44 105 Q0 129 44 105 L36 126 Q0 151 -36 126Z" fill="#d64e4a"/>
+ <path d="M-73 244 Q0 222 73 244" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="4"/>
+ </g><g transform="translate(790 880) scale(0.5)" stroke="#111528" stroke-width="5" stroke-linejoin="round">
+ <path d="M-48 54 Q-85 5 -65 -34 Q-20 -5 0 -27 Q29 -9 63 -35 Q81 9 48 55Z" fill="#171a2c"/>
+ <ellipse cy="37" rx="57" ry="51" fill="#20253e"/>
+ <path d="M-39 15 L-53 -35 L-9 -4 M39 15 L54 -35 L10 -4" fill="#20253e"/>
+ <ellipse cx="-21" cy="34" rx="10" ry="15" fill="#69dfff" stroke="none"/><ellipse cx="21" cy="34" rx="10" ry="15" fill="#69dfff" stroke="none"/>
+ <circle cx="-21" cy="34" r="4" fill="#fff" stroke="none"/><circle cx="21" cy="34" r="4" fill="#fff" stroke="none"/>
+ <path d="M-10 56 Q0 64 10 56" fill="none" stroke="#f3b8c6" stroke-width="4"/>
+ <path d="M45 68 Q90 84 75 35" fill="none" stroke="#171a2c" stroke-width="13" stroke-linecap="round"/>
+ <circle cx="0" cy="89" r="8" fill="#ffd36b"/>
+ </g><g><path d="M752 837 l28 28 -62 -28Z" fill="#fffdf5" stroke="#211a37" stroke-width="5" stroke-linejoin="round"/><rect x="300" y="748" width="510" height="94" rx="20" fill="#fffdf5" stroke="#211a37" stroke-width="5"/><text x="318" y="776" font-family="Arial,sans-serif" font-size="17" font-weight="900" letter-spacing="2" fill="#8052ad">RINA</text><text x="555" y="809" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#20172e">Apa pun yang terjadi,</text><text x="555" y="834" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#20172e">kita hadapi bersama!</text></g><text x="54" y="1012" font-family="Arial" font-size="14" font-weight="bold" fill="#fff" opacity=".75">PANEL 3</text></g><text x="450" y="1075" font-family="Arial" font-size="18" text-anchor="middle" fill="#32234b" font-weight="bold">DUNIA DI BALIK MIMPI · HALAMAN 11</text></svg>
