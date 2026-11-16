@@ -21,8 +21,9 @@ Prototipe game RPG 3D offline untuk Android. Folder ini terpisah dari komik di r
 - **Level dan kekuatan MC:** setiap monster biasa yang dikalahkan memberi Level +1 dan Kekuatan +0,2 (1/5). Mengalahkan Bos Mimpi memberi Level +5 dan Kekuatan +3. Kekuatan meningkatkan damage pedang.
 - **Bos Mimpi:** bos ber-HP 350, mengejar dan menyerang pemain, memberi Inti Bos dan 100 Koin. Hadiah bos hanya bisa diterima satu kali.
 - **Simpan otomatis:** inventaris, level, kekuatan, progres quest, status hadiah bos, HP, dan posisi pemain disimpan ke `user://savegame.cfg`; progres dimuat kembali saat game dibuka. Posisi dan HP disimpan berkala setiap 5 detik serta saat progres penting berubah.
-- **Sistem tumbang dan kembali:** jika HP pemain habis, karakter tumbang dan menjalani hitung mundur pemulihan selama 6 detik, lalu kembali ke titik awal dengan HP penuh tanpa menghapus progres quest atau inventaris.
+- **Sistem tumbang dan kembali:** jika HP pemain habis, karakter kembali ke titik awal dengan HP penuh tanpa menghapus progres quest atau inventaris.
 - **Kontrol Android horizontal:** orientasi layar landscape, analog virtual berbentuk bulat di kiri, tombol SERANG di kanan, dan swipe pada area permainan untuk memutar kamera. UI mengikuti ukuran layar yang melebar.
+- **Kage Bunshin:** tombol jurus memunculkan tepat 3 bayangan biru selama 8 detik; waktu pemulihan/cooldown jurus adalah 6 detik sebelum dapat digunakan kembali.
 - Tombol TAS membuka inventaris.
 
 ## Pengujian fitur simpan
@@ -34,7 +35,7 @@ Prototipe game RPG 3D offline untuk Android. Folder ini terpisah dari komik di r
 6. Tutup lalu jalankan ulang game pada perangkat/profil Godot yang sama.
 7. Pastikan level, kekuatan, status bos, quest, inventaris, HP, dan posisi terakhir tetap tersimpan. File save berada di direktori data pengguna Godot, bukan di folder proyek.
 8. Biarkan karakter berjalan beberapa detik, tutup game, lalu buka lagi untuk memastikan posisi terakhir dipulihkan.
-9. Biarkan monster mengurangi HP hingga habis; karakter harus menunggu hitung mundur 6 detik, lalu kembali ke titik awal dengan HP penuh.
+9. Biarkan monster mengurangi HP hingga habis; karakter harus kembali ke titik awal dengan HP penuh.
 
 ## Membuat APK Android
 APK belum disertakan atau dikompilasi oleh perubahan kode ini. Untuk mengekspor:
