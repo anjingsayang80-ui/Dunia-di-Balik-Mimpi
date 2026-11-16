@@ -79,6 +79,10 @@ func _make_world() -> void:
     slime.set_script(load("res://scripts/enemy.gd"))
     slime.position = Vector3(0, 0.1, -5)
     add_child(slime)
+    if game_state.quest_completed:
+        slime.hp = 0
+        slime.visible = false
+        hero.slime_reward_claimed = true
 
     var camera := Camera3D.new()
     camera.position = Vector3(0, 5.5, 9)
