@@ -13,9 +13,10 @@ Buka `index.html` melalui GitHub Pages atau jalankan situs secara lokal. Gunakan
 
 ## Kemajuan cerita
 - Sampul: tersedia.
-- Halaman cerita 1–11: tersedia.
+- Halaman cerita 1–16: tersedia.
 - Halaman 7–11 menambahkan kemunculan Pemburu Mimpi, peta bercahaya, pertemuan dengan Ren, dan perjalanan melewati gerbang pertama.
-- Halaman 12–200: akan dilanjutkan secara bertahap.
+- Halaman 12–16: memasuki Hutan Seribu Bisikan, menghadapi suara peniru dan Penjaga Akar, serta mengungkap segel misterius Ren.
+- Halaman 17–200: akan dilanjutkan secara bertahap.
 - Ilustrasi halaman tersimpan sebagai SVG orisinal di folder `assets/`.
 
 ## Tokoh utama
