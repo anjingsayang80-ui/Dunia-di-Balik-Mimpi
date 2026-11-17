@@ -28,7 +28,7 @@ Prototipe RPG 3D offline untuk Android, dibuat dengan Godot 4.3. Seluruh pekerja
 ## Fitur yang sudah dibuat
 - Arena 3D dengan pencahayaan, lantai, dan pilar.
 - Batas arena menjaga pemain tetap di atas platform dan menghentikan gerakan saat mencapai tepi, agar tidak jatuh keluar dari area permainan.
-- MC 3D sederhana dengan rambut, mata, pakaian, lengan dan kaki beranimasi prosedural saat berjalan, serta pedang dengan animasi ayunan.
+- MC 3D bergaya anime dengan rambut runcing, mata, syal merah, mantel pendek, pelindung bahu emas, lengan dan kaki beranimasi prosedural saat berjalan, serta pedang dengan animasi ayunan. Model masih berupa mesh geometri Godot, bukan aset karakter anime profesional.
 - Slime dan Bos Mimpi dapat mengejar serta menyerang pemain; keduanya memberi efek kilat merah, perubahan bentuk singkat, dan angka kerusakan melayang saat terkena serangan, ditambah bar HP visual yang berkurang secara langsung untuk Slime dan Bos. Tombol HINDAR memberi dash singkat untuk mengelak dengan jeda pemulihan 2 detik, disertai indikator HUD yang menampilkan status siap atau hitung mundur pemulihannya. Bos memberi tanda cahaya kuning selama sekitar setengah detik sebelum pukulan jarak dekat.
 - Kontrol Android: analog bulat di kiri, tombol SERANG dan KAGE BUNSHIN di kanan, serta swipe pada area kosong untuk memutar kamera mengelilingi pemain.
 - Arah gerak analog mengikuti arah kamera.
