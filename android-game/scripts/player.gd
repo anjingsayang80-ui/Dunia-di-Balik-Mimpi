@@ -184,6 +184,19 @@ func _physics_process(delta: float) -> void:
     velocity.y -= 20.0 * delta
     move_and_slide()
 
+    # Arena memiliki lantai terbatas; tahan pemain agar tidak berjalan keluar
+    # dari tepi platform dan jatuh tanpa bisa kembali.
+    var bounded_position := global_position
+    var hit_x_edge := absf(bounded_position.x) > 33.0
+    var hit_z_edge := absf(bounded_position.z) > 33.0
+    bounded_position.x = clampf(bounded_position.x, -33.0, 33.0)
+    bounded_position.z = clampf(bounded_position.z, -33.0, 33.0)
+    if hit_x_edge:
+        velocity.x = 0.0
+    if hit_z_edge:
+        velocity.z = 0.0
+    global_position = bounded_position
+
 func dash() -> void:
     if dash_cooldown > 0.0 or dash_time_left > 0.0:
         return
