@@ -76,6 +76,55 @@ func _ready() -> void:
         bang.rotation_degrees.z = -12.0 + float(i) * 6.0
         add_child(bang)
 
+    # Jambul runcing khas tokoh anime agar siluet kepala lebih mudah dikenali.
+    for i in range(5):
+        var hair_spike := MeshInstance3D.new()
+        var spike_mesh := CylinderMesh.new()
+        spike_mesh.top_radius = 0.0
+        spike_mesh.bottom_radius = 0.14
+        spike_mesh.height = 0.52
+        hair_spike.mesh = spike_mesh
+        hair_spike.material_override = hair_mat
+        hair_spike.position = Vector3(-0.24 + float(i) * 0.12, 2.23, 0.02)
+        hair_spike.rotation_degrees.z = -24.0 + float(i) * 12.0
+        hair_spike.rotation_degrees.x = -12.0
+        add_child(hair_spike)
+
+    # Syal merah dan mantel pendek memberi aksen warna pada kostum petualang.
+    var scarf_mat := StandardMaterial3D.new()
+    scarf_mat.albedo_color = Color(0.78, 0.10, 0.16)
+    scarf_mat.roughness = 0.72
+    var scarf := MeshInstance3D.new()
+    var scarf_mesh := BoxMesh.new()
+    scarf_mesh.size = Vector3(0.76, 0.20, 0.24)
+    scarf.mesh = scarf_mesh
+    scarf.material_override = scarf_mat
+    scarf.position = Vector3(0.0, 1.57, 0.12)
+    add_child(scarf)
+
+    var cape := MeshInstance3D.new()
+    var cape_mesh := BoxMesh.new()
+    cape_mesh.size = Vector3(0.72, 0.86, 0.10)
+    cape.mesh = cape_mesh
+    cape.material_override = scarf_mat
+    cape.position = Vector3(0.0, 1.13, 0.39)
+    cape.rotation_degrees.x = -8.0
+    add_child(cape)
+
+    var armor_mat := StandardMaterial3D.new()
+    armor_mat.albedo_color = Color(0.88, 0.62, 0.20)
+    armor_mat.metallic = 0.55
+    for x in [-0.48, 0.48]:
+        var shoulder_guard := MeshInstance3D.new()
+        var guard_mesh := SphereMesh.new()
+        guard_mesh.radius = 0.22
+        guard_mesh.height = 0.30
+        shoulder_guard.mesh = guard_mesh
+        shoulder_guard.material_override = armor_mat
+        shoulder_guard.position = Vector3(x, 1.53, 0.0)
+        shoulder_guard.scale = Vector3(1.0, 0.72, 1.0)
+        add_child(shoulder_guard)
+
     var eye_white := StandardMaterial3D.new()
     eye_white.albedo_color = Color(1.0, 0.98, 0.92)
     var iris_mat := StandardMaterial3D.new()
