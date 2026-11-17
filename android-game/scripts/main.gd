@@ -556,29 +556,57 @@ func _shadow_clone_attack(delta: float) -> void:
     for i in range(shadow_clones.size()):
         if i >= clone_attack_timers.size():
             continue
-        clone_attack_timers[i] = maxf(0.0, clone_attack_timers[i] - delta)
-        if clone_attack_timers[i] > 0.0:
+        var shadow := shadow_clones[i]
+        if not is_instance_valid(shadow):
             continue
+
+        # Pilih musuh hidup terdekat agar bayangan benar-benar memburu target,
+        # bukan hanya menunggu musuh masuk ke formasi di sekitar MC.
         var target: Node3D = null
         var target_name := ""
-        if is_instance_valid(boss) and boss.hp > 0 and shadow_clones[i].global_position.distance_to(boss.global_position) < 4.8:
+        var boss_distance := INF
+        var slime_distance := INF
+        if is_instance_valid(boss) and boss.hp > 0:
+            boss_distance = shadow.global_position.distance_to(boss.global_position)
+        if is_instance_valid(slime) and slime.hp > 0:
+            slime_distance = shadow.global_position.distance_to(slime.global_position)
+        if boss_distance < slime_distance:
             target = boss
             target_name = "DreamBoss"
-        elif is_instance_valid(slime) and slime.hp > 0 and shadow_clones[i].global_position.distance_to(slime.global_position) < 4.0:
+        elif slime_distance < INF:
             target = slime
             target_name = "Slime"
-        if target != null:
-            _animate_shadow_strike(shadow_clones[i])
-            var damage := maxi(1, int(round(12.0 * game_state.player_strength)))
-            target.take_damage(damage)
-            clone_attack_timers[i] = 0.8
-            game_state.last_notice = "Bayangan Kage Bunshin menyerang %s (-%d HP)!" % [target_name, damage]
-            if target.hp <= 0:
-                if target_name == "Slime":
+
+        if target == null:
+            continue
+
+        var to_target := target.global_position - shadow.global_position
+        to_target.y = 0.0
+        var distance := to_target.length()
+        if distance > 0.01:
+            shadow.rotation.y = atan2(-to_target.x, -to_target.z)
+
+        clone_attack_timers[i] = maxf(0.0, clone_attack_timers[i] - delta)
+        if distance > 2.7:
+            var chase_direction := to_target.normalized()
+            shadow.global_position += chase_direction * minf(distance - 2.35, 5.5 * delta)
+            continue
+
+        if clone_attack_timers[i] > 0.0:
+            continue
+
+        _animate_shadow_strike(shadow)
+        var damage := maxi(1, int(round(12.0 * game_state.player_strength)))
+        target.take_damage(damage)
+        clone_attack_timers[i] = 0.8
+        game_state.last_notice = "Kage Bunshin %d menyerang %s (-%d HP)!" % [i + 1, target_name, damage]
+        if target.hp <= 0:
+            if target_name == "Slime":
+                if not hero.slime_reward_claimed:
                     game_state.complete_slime_quest()
                     hero.slime_reward_claimed = true
-                else:
-                    game_state.defeat_boss()
+            else:
+                game_state.defeat_boss()
 
 func _animate_shadow_strike(shadow: Node3D) -> void:
     var shadow_sword := shadow.get_node_or_null("Sword") as MeshInstance3D
