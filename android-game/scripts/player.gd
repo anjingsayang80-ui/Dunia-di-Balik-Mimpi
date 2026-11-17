@@ -8,6 +8,8 @@ var dash_cooldown := 0.0
 var dash_time_left := 0.0
 var dash_direction := Vector3.ZERO
 var sword: MeshInstance3D
+var slash_effect: MeshInstance3D
+var slash_tween: Tween
 var slime_reward_claimed := false
 var attack_tween: Tween
 var walk_phase := 0.0
@@ -171,6 +173,25 @@ func _ready() -> void:
     sword.position = Vector3(0.52, 1.0, -0.18)
     add_child(sword)
 
+    # Kilatan sabetan berbentuk busur cahaya di depan pedang.
+    slash_effect = MeshInstance3D.new()
+    slash_effect.name = "SwordSlashEffect"
+    var slash_mesh := TorusMesh.new()
+    slash_mesh.inner_radius = 0.58
+    slash_mesh.outer_radius = 0.72
+    slash_effect.mesh = slash_mesh
+    var slash_material := StandardMaterial3D.new()
+    slash_material.albedo_color = Color(0.35, 0.82, 1.0, 0.92)
+    slash_material.emission_enabled = true
+    slash_material.emission = Color(0.18, 0.68, 1.0)
+    slash_material.emission_energy_multiplier = 2.2
+    slash_effect.material_override = slash_material
+    slash_effect.position = Vector3(0.0, 1.18, -0.82)
+    slash_effect.rotation_degrees.x = 90.0
+    slash_effect.scale = Vector3(0.12, 0.12, 0.12)
+    slash_effect.visible = false
+    add_child(slash_effect)
+
     var collision := CollisionShape3D.new()
     var shape := CapsuleShape3D.new()
     shape.radius = 0.4
@@ -296,3 +317,17 @@ func attack() -> void:
     attack_tween = create_tween()
     attack_tween.tween_property(sword, "rotation:z", -1.25, 0.10)
     attack_tween.tween_property(sword, "rotation:z", 0.0, 0.16)
+    _play_slash_effect()
+
+func _play_slash_effect() -> void:
+    if slash_tween and slash_tween.is_running():
+        slash_tween.kill()
+    slash_effect.visible = true
+    slash_effect.scale = Vector3(0.12, 0.12, 0.12)
+    slash_tween = create_tween()
+    slash_tween.tween_property(slash_effect, "scale", Vector3(1.45, 0.92, 0.12), 0.18)
+    slash_tween.tween_callback(_finish_slash_effect)
+
+func _finish_slash_effect() -> void:
+    slash_effect.visible = false
+    slash_effect.scale = Vector3(0.12, 0.12, 0.12)
