@@ -2,11 +2,27 @@
 
 Prototipe RPG 3D offline untuk Android, dibuat dengan Godot 4.3. Seluruh pekerjaan game berada di folder `android-game/`; folder komik dan berkas lain di luar folder ini tidak diubah.
 
-## Menjalankan proyek
-1. Instal Godot Engine 4.3 dan buka Project Manager.
-2. Pilih **Import**, lalu pilih `android-game/project.godot`.
-3. Jalankan proyek dengan **F6/F5**.
-4. Pada Android, game menggunakan orientasi horizontal (landscape).
+## Menjalankan dan menguji di Godot
+1. Instal Godot Engine 4.3, buka Project Manager, lalu pilih **Import** dan arahkan ke `android-game/project.godot`.
+2. Pilih proyek dan tekan **F6/F5** untuk menjalankan arena.
+3. Di komputer, gunakan tombol panah untuk bergerak dan seret mouse pada area kosong untuk memutar kamera. Di Android, gunakan analog kiri; tombol SERANG, HINDAR, KAGE BUNSHIN, dan TAS berada di layar.
+4. Uji alur quest: kalahkan Slime, ambil 3 Kristal Mimpi yang muncul, lalu kalahkan Bos Mimpi.
+5. Buka TAS: pastikan Lendir Slime, Kristal Mimpi, Koin, dan Ramuan terlihat. Kurangi HP dengan mendekati musuh, gunakan ramuan, lalu pastikan HP dan stok ramuan berubah.
+6. Tutup lalu jalankan kembali game. Pastikan level, kekuatan, quest, inventaris, HP, dan posisi terakhir dimuat kembali.
+7. Uji analog dengan beberapa sentuhan: lepaskan jari yang menggerakkan analog dan pastikan hanya sentuhan itu yang menghentikan gerakan; geser area kosong untuk memutar kamera.
+
+## Ekspor Android APK secara lokal
+1. Instal **JDK 17**, Android SDK (platform 34 dan build-tools 34.0.0), serta export templates Godot 4.3 yang versinya cocok dengan editor.
+2. Di Godot, buka **Editor Settings → Export → Android** dan isi lokasi Android SDK serta Java SDK. Pastikan debug keystore tersedia.
+3. Buka **Project → Export**, pilih preset **Android**, lalu ekspor sebagai `build/DuniaDiBalikMimpi-debug.apk`.
+4. Alternatif melalui terminal dari folder repository:
+   ```bash
+   cd android-game
+   mkdir -p build
+   godot --headless --editor --path . --quit
+   godot --headless --path . --export-debug "Android" build/DuniaDiBalikMimpi-debug.apk
+   ```
+5. Pastikan file APK benar-benar terbentuk sebelum dipindahkan ke ponsel. APK debug untuk pengujian; jangan gunakan sebagai rilis Play Store.
 
 ## Fitur yang sudah dibuat
 - Arena 3D dengan pencahayaan, lantai, dan pilar.
@@ -17,7 +33,7 @@ Prototipe RPG 3D offline untuk Android, dibuat dengan Godot 4.3. Seluruh pekerja
 - Kage Bunshin memunculkan tepat 3 bayangan biru selama 8 detik. Tidak ada cooldown; tombol dapat digunakan lagi kapan saja. Bayangan mengikuti MC, menyamakan gerakan lengan dan kaki dengan MC, dan otomatis menyerang Slime atau Bos yang berada dalam jangkauan.
 - Quest berantai: kalahkan Slime, kumpulkan 3 Kristal Mimpi, lalu kalahkan Bos Mimpi.
 - Hadiah monster biasa: Level +1 dan Kekuatan +0,2 (seperlima). Hadiah Bos: Level +5 dan Kekuatan +3.
-- Inventaris dengan 2 Ramuan Kecil awal; satu ramuan memulihkan 30 HP hingga maksimum 100.
+- Inventaris dengan 2 Ramuan Kecil awal (+30 HP) dan Ramuan Besar (+60 HP) sebagai hadiah saat mengumpulkan 3 Kristal Mimpi. Tombol ramuan menampilkan jumlah barang dan nonaktif saat stok habis atau HP penuh; jumlah Koin ditampilkan terpisah.
 - Simpan otomatis untuk inventaris, level, kekuatan, quest, status bos, HP, dan posisi pemain.
 - Saat HP habis, pemain kembali ke titik awal dengan HP penuh tanpa menghapus progres.
 
