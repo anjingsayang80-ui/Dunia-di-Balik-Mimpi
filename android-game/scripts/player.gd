@@ -163,6 +163,7 @@ func _ready() -> void:
     right_leg.name = "RightLeg"
 
     sword = MeshInstance3D.new()
+    sword.name = "Sword"
     var blade := BoxMesh.new()
     blade.size = Vector3(0.12, 0.95, 0.16)
     sword.mesh = blade
