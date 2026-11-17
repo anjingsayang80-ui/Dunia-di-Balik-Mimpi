@@ -568,6 +568,7 @@ func _shadow_clone_attack(delta: float) -> void:
             target = slime
             target_name = "Slime"
         if target != null:
+            _animate_shadow_strike(shadow_clones[i])
             var damage := maxi(1, int(round(12.0 * game_state.player_strength)))
             target.take_damage(damage)
             clone_attack_timers[i] = 0.8
@@ -578,6 +579,15 @@ func _shadow_clone_attack(delta: float) -> void:
                     hero.slime_reward_claimed = true
                 else:
                     game_state.defeat_boss()
+
+func _animate_shadow_strike(shadow: Node3D) -> void:
+    var shadow_sword := shadow.get_node_or_null("Sword") as MeshInstance3D
+    if not is_instance_valid(shadow_sword):
+        return
+    shadow_sword.rotation.z = 0.0
+    var swing := create_tween()
+    swing.tween_property(shadow_sword, "rotation:z", -1.25, 0.10)
+    swing.tween_property(shadow_sword, "rotation:z", 0.0, 0.16)
 
 func _process(delta: float) -> void:
     if clone_time_left > 0.0:
