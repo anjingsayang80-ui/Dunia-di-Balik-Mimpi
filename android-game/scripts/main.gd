@@ -26,8 +26,13 @@ var slime_health_bar: ProgressBar
 var boss_health_bar: ProgressBar
 var quest_text: Label
 var inventory_text: Label
+var coin_text: Label
 var notice_text: Label
 var inventory_panel: PanelContainer
+var inventory_button: Button
+var small_potion_button: Button
+var large_potion_button: Button
+var joystick_touch_index := -1
 var autosave_timer := 0.0
 const SAVE_INTERVAL := 5.0
 const START_POSITION := Vector3(0, 0.1, 4)
@@ -212,7 +217,7 @@ func _make_hud() -> void:
     notice_text.add_theme_color_override("font_color", Color(1.0, 0.9, 0.45))
     layer.add_child(notice_text)
 
-    var inventory_button := Button.new()
+    inventory_button = Button.new()
     inventory_button.text = "TAS"
     inventory_button.position = Vector2(-160, 18)
     inventory_button.size = Vector2(130, 52)
@@ -223,8 +228,8 @@ func _make_hud() -> void:
     layer.add_child(inventory_button)
 
     inventory_panel = PanelContainer.new()
-    inventory_panel.position = Vector2(-285, 82)
-    inventory_panel.size = Vector2(255, 150)
+    inventory_panel.position = Vector2(-315, 82)
+    inventory_panel.size = Vector2(285, 260)
     inventory_panel.anchor_left = 1.0
     inventory_panel.anchor_right = 1.0
     inventory_panel.visible = false
@@ -233,15 +238,31 @@ func _make_hud() -> void:
     var inventory_box := VBoxContainer.new()
     inventory_panel.add_child(inventory_box)
 
+    coin_text = Label.new()
+    coin_text.text = "Koin: 0"
+    coin_text.add_theme_font_size_override("font_size", 17)
+    inventory_box.add_child(coin_text)
+
+    var inventory_scroll := ScrollContainer.new()
+    inventory_scroll.custom_minimum_size = Vector2(260, 112)
+    inventory_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+    inventory_box.add_child(inventory_scroll)
+
     inventory_text = Label.new()
     inventory_text.text = "Inventaris kosong"
     inventory_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-    inventory_box.add_child(inventory_text)
+    inventory_text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+    inventory_scroll.add_child(inventory_text)
 
-    var use_potion := Button.new()
-    use_potion.text = "Gunakan Ramuan (+30 HP)"
-    use_potion.pressed.connect(_use_potion)
-    inventory_box.add_child(use_potion)
+    small_potion_button = Button.new()
+    small_potion_button.text = "Ramuan Kecil (+30 HP)"
+    small_potion_button.pressed.connect(_use_potion.bind("Ramuan Kecil"))
+    inventory_box.add_child(small_potion_button)
+
+    large_potion_button = Button.new()
+    large_potion_button.text = "Ramuan Besar (+60 HP)"
+    large_potion_button.pressed.connect(_use_potion.bind("Ramuan Besar"))
+    inventory_box.add_child(large_potion_button)
 
     joystick = Control.new()
     joystick.position = Vector2(38, -198)
@@ -427,34 +448,50 @@ func _toggle_inventory() -> void:
     inventory_panel.visible = not inventory_panel.visible
     _refresh_inventory()
 
-func _use_potion() -> void:
+func _use_potion(item_name: String) -> void:
     if hero.hp >= 100:
         notice_text.text = "HP masih penuh."
-    elif game_state.use_item("Ramuan Kecil"):
-        hero.hp = mini(100, hero.hp + 30)
-        notice_text.text = "Ramuan digunakan: HP +30"
+    elif game_state.use_item(item_name):
+        var previous_hp: int = hero.hp
+        var heal_amount: int = game_state.get_item_heal_value(item_name)
+        hero.hp = mini(100, hero.hp + heal_amount)
+        var restored_hp: int = hero.hp - previous_hp
+        game_state.save_player_state(hero.hp, hero.global_position)
+        notice_text.text = "%s digunakan: HP +%d" % [item_name, restored_hp]
     else:
-        notice_text.text = "Ramuan tidak tersedia."
+        notice_text.text = "%s tidak tersedia." % item_name
     _refresh_inventory()
 
 func _refresh_inventory() -> void:
     var items: Dictionary = game_state.inventory
+    var item_names: Array = items.keys()
+    item_names.sort()
     var lines := ["INVENTARIS"]
     if items.is_empty():
         lines.append("Belum ada barang.")
     else:
-        for item in items:
-            lines.append("%s x%d" % [item, items[item]])
+        for item_name in item_names:
+            if item_name != "Koin":
+                lines.append("%s x%d" % [item_name, items[item_name]])
     inventory_text.text = "\n".join(lines)
+    coin_text.text = "Koin: %d" % game_state.get_item_count("Koin")
+    var small_count: int = game_state.get_item_count("Ramuan Kecil")
+    var large_count: int = game_state.get_item_count("Ramuan Besar")
+    small_potion_button.text = "Ramuan Kecil (+30 HP) x%d" % small_count
+    large_potion_button.text = "Ramuan Besar (+60 HP) x%d" % large_count
+    small_potion_button.disabled = small_count <= 0 or hero.hp >= 100
+    large_potion_button.disabled = large_count <= 0 or hero.hp >= 100
 
 func _on_joystick_input(event: InputEvent) -> void:
     if event is InputEventScreenTouch:
-        if event.pressed:
+        if event.pressed and joystick_touch_index == -1:
+            joystick_touch_index = event.index
             _set_joystick(event.position)
-        else:
+        elif not event.pressed and event.index == joystick_touch_index:
+            joystick_touch_index = -1
             move_vector = Vector2.ZERO
             knob.position = joystick.size * 0.5 - knob.size * 0.5
-    elif event is InputEventScreenDrag:
+    elif event is InputEventScreenDrag and event.index == joystick_touch_index:
         _set_joystick(event.position)
 
 func _set_joystick(pos: Vector2) -> void:
@@ -466,6 +503,8 @@ func _set_joystick(pos: Vector2) -> void:
     knob.position = center - knob.size * 0.5 + delta
 
 func _is_control_touch(pos: Vector2) -> bool:
+    if inventory_button and inventory_button.get_global_rect().has_point(pos):
+        return true
     if joystick and joystick.get_global_rect().has_point(pos):
         return true
     if attack_button and attack_button.get_global_rect().has_point(pos):
