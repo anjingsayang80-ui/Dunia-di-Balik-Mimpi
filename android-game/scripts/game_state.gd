@@ -103,6 +103,7 @@ func get_quest_text() -> String:
 
 func save_game() -> void:
     var data := ConfigFile.new()
+    data.set_value("meta", "save_version", 1)
     data.set_value("player", "inventory", inventory)
     data.set_value("player", "level", player_level)
     data.set_value("player", "strength", player_strength)
@@ -123,16 +124,43 @@ func load_game() -> bool:
     var error := data.load(SAVE_PATH)
     if error != OK:
         return false
-    inventory = data.get_value("player", "inventory", {"Ramuan Kecil": 2})
-    player_level = int(data.get_value("player", "level", 1))
-    player_strength = float(data.get_value("player", "strength", 1.0))
+
+    # Sanitasi data agar save lama/rusak tidak membuat UI atau quest crash.
+    var saved_inventory: Variant = data.get_value("player", "inventory", {"Ramuan Kecil": 2})
+    inventory.clear()
+    if saved_inventory is Dictionary:
+        for item_name in saved_inventory.keys():
+            var raw_count: Variant = saved_inventory[item_name]
+            if item_name is String and (raw_count is int or raw_count is float):
+                var safe_count := maxi(0, int(raw_count))
+                if safe_count > 0:
+                    inventory[item_name] = safe_count
+
+    player_level = maxi(1, int(data.get_value("player", "level", 1)))
+    player_strength = maxf(0.2, float(data.get_value("player", "strength", 1.0)))
     player_hp = clampi(int(data.get_value("player", "hp", 100)), 0, 100)
-    player_position = data.get_value("player", "position", Vector3(0, 0.1, 4))
+    var saved_position: Variant = data.get_value("player", "position", Vector3(0, 0.1, 4))
+    player_position = saved_position if saved_position is Vector3 else Vector3(0, 0.1, 4)
     has_player_save = bool(data.get_value("player", "has_player_save", false))
-    slime_kills = int(data.get_value("quest", "slime_kills", 0))
+
+    slime_kills = clampi(int(data.get_value("quest", "slime_kills", 0)), 0, 1)
     quest_completed = bool(data.get_value("quest", "completed", false))
-    dream_crystals_collected = int(data.get_value("quest", "dream_crystals_collected", 0))
+    dream_crystals_collected = clampi(int(data.get_value("quest", "dream_crystals_collected", 0)), 0, 3)
     dream_crystal_quest_completed = bool(data.get_value("quest", "dream_crystal_quest_completed", false))
     boss_defeated = bool(data.get_value("quest", "boss_defeated", false))
+
+    # Pertahankan urutan quest: bos tidak mungkin selesai sebelum dua misi sebelumnya.
+    if quest_completed:
+        slime_kills = maxi(1, slime_kills)
+    if dream_crystal_quest_completed:
+        quest_completed = true
+        slime_kills = maxi(1, slime_kills)
+        dream_crystals_collected = 3
+    if boss_defeated:
+        quest_completed = true
+        slime_kills = maxi(1, slime_kills)
+        dream_crystal_quest_completed = true
+        dream_crystals_collected = 3
+
     last_notice = "Progres permainan berhasil dimuat."
     return true
