@@ -10,7 +10,7 @@ Prototipe RPG 3D offline untuk Android, dibuat dengan Godot 4.3. Seluruh pekerja
 5. Buka TAS: pastikan Lendir Slime, Kristal Mimpi, Koin, dan Ramuan terlihat. Kurangi HP dengan mendekati musuh, gunakan ramuan, lalu pastikan HP dan stok ramuan berubah.
 6. Tutup lalu jalankan kembali game. Pastikan level, kekuatan, quest, inventaris, HP, dan posisi terakhir dimuat kembali.
 7. Uji pemulihan save: salin/backup `user://savegame.cfg` sebelum pengujian; bila file hilang atau tidak terbaca, game harus mulai dengan 2 Ramuan Kecil. Data inventaris yang jumlahnya negatif atau bukan angka diabaikan saat dimuat.
-7. Uji analog dengan beberapa sentuhan: lepaskan jari yang menggerakkan analog dan pastikan hanya sentuhan itu yang menghentikan gerakan; geser area kosong untuk memutar kamera.
+8. Uji analog dengan beberapa sentuhan: lepaskan jari yang menggerakkan analog dan pastikan hanya sentuhan itu yang menghentikan gerakan; geser area kosong untuk memutar kamera.
 
 ## Ekspor Android APK secara lokal
 1. Instal **JDK 17**, Android SDK (platform 34 dan build-tools 34.0.0), serta export templates Godot 4.3 yang versinya cocok dengan editor.
