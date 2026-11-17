@@ -582,12 +582,23 @@ func _shadow_clone_attack(delta: float) -> void:
 
 func _animate_shadow_strike(shadow: Node3D) -> void:
     var shadow_sword := shadow.get_node_or_null("Sword") as MeshInstance3D
-    if not is_instance_valid(shadow_sword):
-        return
-    shadow_sword.rotation.z = 0.0
-    var swing := create_tween()
-    swing.tween_property(shadow_sword, "rotation:z", -1.25, 0.10)
-    swing.tween_property(shadow_sword, "rotation:z", 0.0, 0.16)
+    if is_instance_valid(shadow_sword):
+        shadow_sword.rotation.z = 0.0
+        var swing := create_tween()
+        swing.tween_property(shadow_sword, "rotation:z", -1.25, 0.10)
+        swing.tween_property(shadow_sword, "rotation:z", 0.0, 0.16)
+
+    # Bayangan menampilkan kilatan sabetan yang sama dengan MC saat menyerang.
+    var shadow_slash := shadow.get_node_or_null("SwordSlashEffect") as MeshInstance3D
+    if is_instance_valid(shadow_slash):
+        shadow_slash.scale = Vector3(0.12, 0.12, 0.12)
+        shadow_slash.visible = true
+        var slash_swing := create_tween()
+        slash_swing.tween_property(shadow_slash, "scale", Vector3(1.45, 0.92, 0.12), 0.18)
+        slash_swing.tween_callback(func():
+            if is_instance_valid(shadow_slash):
+                shadow_slash.visible = false
+        )
 
 func _process(delta: float) -> void:
     if clone_time_left > 0.0:
