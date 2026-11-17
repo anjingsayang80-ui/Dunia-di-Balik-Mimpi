@@ -9,6 +9,7 @@ Prototipe RPG 3D offline untuk Android, dibuat dengan Godot 4.3. Seluruh pekerja
 4. Uji alur quest: kalahkan Slime, ambil 3 Kristal Mimpi yang muncul, lalu kalahkan Bos Mimpi.
 5. Buka TAS: pastikan Lendir Slime, Kristal Mimpi, Koin, dan Ramuan terlihat. Kurangi HP dengan mendekati musuh, gunakan ramuan, lalu pastikan HP dan stok ramuan berubah.
 6. Tutup lalu jalankan kembali game. Pastikan level, kekuatan, quest, inventaris, HP, dan posisi terakhir dimuat kembali.
+7. Uji pemulihan save: salin/backup `user://savegame.cfg` sebelum pengujian; bila file hilang atau tidak terbaca, game harus mulai dengan 2 Ramuan Kecil. Data inventaris yang jumlahnya negatif atau bukan angka diabaikan saat dimuat.
 7. Uji analog dengan beberapa sentuhan: lepaskan jari yang menggerakkan analog dan pastikan hanya sentuhan itu yang menghentikan gerakan; geser area kosong untuk memutar kamera.
 
 ## Ekspor Android APK secara lokal
@@ -34,7 +35,7 @@ Prototipe RPG 3D offline untuk Android, dibuat dengan Godot 4.3. Seluruh pekerja
 - Quest berantai: kalahkan Slime, kumpulkan 3 Kristal Mimpi, lalu kalahkan Bos Mimpi.
 - Hadiah monster biasa: Level +1 dan Kekuatan +0,2 (seperlima). Hadiah Bos: Level +5 dan Kekuatan +3.
 - Inventaris dengan 2 Ramuan Kecil awal (+30 HP) dan Ramuan Besar (+60 HP) sebagai hadiah saat mengumpulkan 3 Kristal Mimpi. Tombol ramuan menampilkan jumlah barang dan nonaktif saat stok habis atau HP penuh; jumlah Koin ditampilkan terpisah.
-- Simpan otomatis untuk inventaris, level, kekuatan, quest, status bos, HP, dan posisi pemain.
+- Simpan otomatis untuk inventaris, level, kekuatan, quest, status bos, HP, dan posisi pemain. Loader save menormalisasi jumlah item dan memastikan urutan progres quest tetap valid saat memuat data lama/rusak.
 - Saat HP habis, pemain kembali ke titik awal dengan HP penuh tanpa menghapus progres.
 
 ## Membuat dan mengambil APK
