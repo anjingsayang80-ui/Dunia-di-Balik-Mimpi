@@ -36,7 +36,7 @@ Prototipe RPG 3D offline untuk Android, dibuat dengan Godot 4.3. Seluruh pekerja
 - Quest berantai: kalahkan Slime, kumpulkan 3 Kristal Mimpi, lalu kalahkan Bos Mimpi.
 - Hadiah monster biasa: Level +1 dan Kekuatan +0,2 (seperlima). Hadiah Bos: Level +5 dan Kekuatan +3.
 - Inventaris dengan 2 Ramuan Kecil awal (+30 HP) dan Ramuan Besar (+60 HP) sebagai hadiah saat mengumpulkan 3 Kristal Mimpi. Tombol ramuan menampilkan jumlah barang dan nonaktif saat stok habis atau HP penuh; jumlah Koin ditampilkan terpisah.
-- Simpan otomatis untuk inventaris, level, kekuatan, quest, status bos, HP, dan posisi pemain. Loader save menormalisasi jumlah item dan memastikan urutan progres quest tetap valid saat memuat data lama/rusak.
+- Simpan otomatis untuk inventaris, level, kekuatan, quest, status bos, HP, dan posisi pemain setiap 5 detik, serta saat aplikasi Android dijeda/ditutup. Loader save menormalisasi jumlah item dan memastikan urutan progres quest tetap valid saat memuat data lama/rusak.
 - Saat HP habis, pemain kembali ke titik awal dengan HP penuh tanpa menghapus progres.
 
 ## Membuat dan mengambil APK
