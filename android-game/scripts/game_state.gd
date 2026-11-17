@@ -1,6 +1,7 @@
 extends Node
 
 const SAVE_PATH := "user://savegame.cfg"
+const ITEM_HEAL_VALUES := {"Ramuan Kecil": 30, "Ramuan Besar": 60}
 var inventory: Dictionary = {}
 var slime_kills := 0
 var quest_completed := false
@@ -35,8 +36,11 @@ func add_item(item_name: String, amount: int = 1) -> void:
 func get_item_count(item_name: String) -> int:
     return int(inventory.get(item_name, 0))
 
+func get_item_heal_value(item_name: String) -> int:
+    return int(ITEM_HEAL_VALUES.get(item_name, 0))
+
 func use_item(item_name: String) -> bool:
-    if get_item_count(item_name) <= 0:
+    if get_item_heal_value(item_name) <= 0 or get_item_count(item_name) <= 0:
         return false
     inventory[item_name] -= 1
     if inventory[item_name] <= 0:
@@ -72,7 +76,8 @@ func collect_dream_crystal() -> void:
     if dream_crystals_collected >= 3:
         dream_crystal_quest_completed = true
         inventory["Koin"] = int(inventory.get("Koin", 0)) + 20
-        last_notice = "Quest Kristal Mimpi selesai! Bonus 20 Koin. Bos telah muncul!"
+        inventory["Ramuan Besar"] = int(inventory.get("Ramuan Besar", 0)) + 1
+        last_notice = "Quest Kristal Mimpi selesai! Bonus 20 Koin dan 1 Ramuan Besar (+60 HP). Bos telah muncul!"
     else:
         last_notice = "Kristal Mimpi diperoleh (%d/3)." % dream_crystals_collected
     save_game()
