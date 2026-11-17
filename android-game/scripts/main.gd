@@ -37,6 +37,19 @@ var autosave_timer := 0.0
 const SAVE_INTERVAL := 5.0
 const START_POSITION := Vector3(0, 0.1, 4)
 
+func _notification(what: int) -> void:
+    # Android dapat menghentikan aplikasi saat pengguna pindah aplikasi atau
+    # menutup game; simpan progres terakhir pada momen tersebut.
+    if what == NOTIFICATION_APPLICATION_PAUSED or what == NOTIFICATION_WM_CLOSE_REQUEST:
+        _save_current_player_state()
+
+func _exit_tree() -> void:
+    _save_current_player_state()
+
+func _save_current_player_state() -> void:
+    if is_instance_valid(game_state) and is_instance_valid(hero):
+        game_state.save_player_state(hero.hp, hero.global_position)
+
 func _ready() -> void:
     game_state = Node.new()
     game_state.name = "GameState"
