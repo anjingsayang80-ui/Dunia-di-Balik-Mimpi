@@ -228,12 +228,13 @@ func _physics_process(delta: float) -> void:
     var direction := Vector3.ZERO
     var active_camera := get_viewport().get_camera_3d()
     if active_camera:
-        var camera_right := active_camera.global_basis.x
-        var camera_forward := -active_camera.global_basis.z
-        camera_right.y = 0.0
-        camera_forward.y = 0.0
-        camera_right = camera_right.normalized()
-        camera_forward = camera_forward.normalized()
+        # Gunakan yaw kamera saja untuk bidang gerak horizontal. Basis kamera
+        # penuh ikut membawa kemiringan kamera dan dapat membuat arah analog
+        # terasa tidak konsisten pada beberapa rasio layar/perangkat.
+        var flat_camera_basis := Basis(Vector3.UP, active_camera.global_rotation.y)
+        var camera_right := flat_camera_basis.x
+        var camera_forward := -flat_camera_basis.z
+        move = move.limit_length(1.0)
         direction = (camera_right * move.x + camera_forward * -move.y).normalized()
     else:
         direction = Vector3(move.x, 0.0, move.y).normalized()
@@ -273,11 +274,11 @@ func dash() -> void:
         return
     var active_camera := get_viewport().get_camera_3d()
     if mobile_move.length() > 0.12 and active_camera:
-        var camera_right := active_camera.global_basis.x
-        var camera_forward := -active_camera.global_basis.z
-        camera_right.y = 0.0
-        camera_forward.y = 0.0
-        dash_direction = (camera_right.normalized() * mobile_move.x + camera_forward.normalized() * -mobile_move.y).normalized()
+        var flat_camera_basis := Basis(Vector3.UP, active_camera.global_rotation.y)
+        var camera_right := flat_camera_basis.x
+        var camera_forward := -flat_camera_basis.z
+        var dash_move := mobile_move.limit_length(1.0)
+        dash_direction = (camera_right * dash_move.x + camera_forward * -dash_move.y).normalized()
     else:
         dash_direction = -global_basis.z
         dash_direction.y = 0.0
