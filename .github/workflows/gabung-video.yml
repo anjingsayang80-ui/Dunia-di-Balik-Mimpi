@@ -1,0 +1,44 @@
+name: Gabungkan Video dan Voice Misteri Sekolah
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gabungkan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Periksa file input
+        run: |
+          test -f media/video.mp4 || (echo "File media/video.mp4 belum ada" && exit 1)
+          test -f media/voice.mp3 || (echo "File media/voice.mp3 belum ada" && exit 1)
+
+      - name: Pasang FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Gabungkan video dan voice
+        run: |
+          ffmpeg -y \
+            -i media/video.mp4 \
+            -i media/voice.mp3 \
+            -filter_complex "[0:v]tpad=stop_mode=clone:stop_duration=15[v]" \
+            -map "[v]" -map 1:a:0 \
+            -c:v libx264 -preset veryfast -crf 22 \
+            -c:a aac -b:a 192k \
+            -shortest -movflags +faststart \
+            hasil_misteri_sekolah.mp4
+
+      - name: Simpan video hasil
+        uses: actions/upload-artifact@v4
+        with:
+          name: Video-Misteri-Sekolah
+          path: hasil_misteri_sekolah.mp4
+          if-no-files-found: error
+          retention-days: 7
