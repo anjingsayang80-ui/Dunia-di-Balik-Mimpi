@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="1100" viewBox="0 0 900 1100">
+<defs>
+ <linearGradient id="paper" x2="1" y2="1"><stop stop-color="#fffaf1"/><stop offset="1" stop-color="#e7e2f2"/></linearGradient>
+ <linearGradient id="night" x2="0" y2="1"><stop stop-color="#26375e"/><stop offset="1" stop-color="#101327"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#d8fbff" stop-opacity=".95"/><stop offset="1" stop-color="#72cfff" stop-opacity="0"/></radialGradient>
+ <g id="arka" stroke="#17172c" stroke-width="4" stroke-linejoin="round">
+  <path d="M17 105 L9 169 L36 169 L47 126 L58 169 L85 169 L75 105Z" fill="#242c4d"/>
+  <path d="M18 76 Q-2 95 7 132 L27 137 L37 94 M75 76 Q96 95 87 132 L67 137 L57 94" fill="#2867a8"/>
+  <path d="M18 73 Q47 52 76 73 L82 119 Q47 139 12 119Z" fill="#2867a8"/>
+  <path d="M31 76 L47 100 L63 76 L57 119 L37 119Z" fill="#f6e9dc"/>
+  <ellipse cx="47" cy="43" rx="31" ry="37" fill="#f0c7ad"/>
+  <path d="M14 37 Q1 -14 42 -8 Q82 -14 83 34 L72 55 Q62 29 47 24 Q32 48 14 49Z" fill="#172039"/>
+  <path d="M18 40 L2 75 L23 64 M76 38 L93 72 L70 65" fill="#172039"/>
+  <ellipse cx="36" cy="47" rx="4" ry="7" fill="#24365c" stroke="none"/><ellipse cx="59" cy="47" rx="4" ry="7" fill="#24365c" stroke="none"/>
+  <path d="M39 65 Q47 71 55 65" fill="none" stroke="#a95768" stroke-width="3"/>
+  <path d="M34 115 L47 137 L60 115" fill="none" stroke="#ffd36b" stroke-width="4"/>
+ </g>
+ <g id="rina" stroke="#17172c" stroke-width="4" stroke-linejoin="round">
+  <path d="M16 104 L9 169 L35 169 L46 126 L58 169 L84 169 L76 104Z" fill="#263c70"/>
+  <path d="M16 77 Q-1 94 7 133 L27 138 L36 96 M76 77 Q96 96 88 133 L66 138 L57 96" fill="#5b8ed0"/>
+  <path d="M16 72 Q46 53 77 72 L83 120 Q47 139 11 120Z" fill="#5b8ed0"/>
+  <path d="M32 74 L47 99 L62 74 L57 119 L37 119Z" fill="#e9f6ff"/>
+  <ellipse cx="47" cy="43" rx="30" ry="37" fill="#f2cbb6"/>
+  <path d="M17 43 Q5 -8 48 -9 Q91 -5 78 61 L68 102 L60 61 Q43 29 28 61 L24 104 L9 67Z" fill="#e7edf7"/>
+  <path d="M19 35 Q25 -7 63 4 L83 39 Q58 26 42 28 Q29 40 19 35Z" fill="#f8fbff"/>
+  <ellipse cx="36" cy="47" rx="4" ry="7" fill="#4b8ac8" stroke="none"/><ellipse cx="58" cy="47" rx="4" ry="7" fill="#4b8ac8" stroke="none"/>
+  <path d="M39 65 Q47 71 55 65" fill="none" stroke="#b76c80" stroke-width="3"/>
+  <path d="M29 111 Q47 128 65 111" fill="none" stroke="#b9efff" stroke-width="5"/>
+ </g>
+ <g id="ren" stroke="#17172c" stroke-width="4" stroke-linejoin="round">
+  <path d="M16 104 L8 169 L35 169 L47 126 L59 169 L85 169 L76 104Z" fill="#20243b"/>
+  <path d="M16 75 Q-2 94 7 134 L27 138 L36 95 M76 75 Q96 94 88 134 L66 138 L58 95" fill="#25334c"/>
+  <path d="M17 73 Q47 52 77 73 L82 120 Q47 139 11 120Z" fill="#26364e"/>
+  <path d="M31 74 L47 100 L63 74 L57 119 L37 119Z" fill="#e85d61"/>
+  <ellipse cx="47" cy="43" rx="30" ry="37" fill="#efc5ad"/>
+  <path d="M15 42 Q1 -9 44 -11 Q89 -10 81 44 L72 58 L61 27 L45 36 L31 22 L19 56Z" fill="#147d91"/>
+  <path d="M22 41 L12 68 L31 58 M73 38 L91 66 L68 58" fill="#147d91"/>
+  <path d="M25 45 L69 45 L65 63 L27 63Z" fill="#20243b"/>
+  <ellipse cx="37" cy="47" rx="4" ry="6" fill="#d7f8ff" stroke="none"/><ellipse cx="58" cy="47" rx="4" ry="6" fill="#d7f8ff" stroke="none"/>
+  <path d="M35 112 L47 139 L60 112" fill="none" stroke="#e85d61" stroke-width="5"/>
+ </g>
+ <g id="kuro" stroke="#11172c" stroke-width="4" stroke-linejoin="round">
+  <path d="M10 45 L4 2 L32 24 Q49 15 67 24 L94 2 L88 48 Q102 83 77 101 L23 101 Q-1 79 10 45Z" fill="#171b32"/>
+  <path d="M14 49 L13 18 L34 37 M84 49 L85 18 L65 37" fill="#303d63"/>
+  <ellipse cx="32" cy="57" rx="9" ry="13" fill="#73eaff" stroke="none"/><ellipse cx="68" cy="57" rx="9" ry="13" fill="#73eaff" stroke="none"/>
+  <circle cx="32" cy="57" r="3" fill="#fff" stroke="none"/><circle cx="68" cy="57" r="3" fill="#fff" stroke="none"/>
+  <path d="M40 79 Q50 86 60 79" fill="none" stroke="#f5a8c5" stroke-width="3"/>
+  <path d="M87 88 Q122 110 108 68" fill="none" stroke="#171b32" stroke-width="11" stroke-linecap="round"/>
+  <circle cx="49" cy="104" r="7" fill="#ffd36b"/>
+ </g>
+</defs>
+<rect width="900" height="1100" fill="url(#paper)"/><rect width="900" height="76" fill="#201535"/><text x="450" y="49" text-anchor="middle" font-family="Georgia,serif" font-size="29" font-weight="bold" letter-spacing="1" fill="#ffe19a">GADIS DI JARUM JAM</text>
+<g><rect x="28" y="95" width="844" height="300" rx="18" fill="#202b49" stroke="#20172f" stroke-width="9"/><circle cx="465" cy="245" r="128" fill="#0b1124" stroke="#f2d17b" stroke-width="12"/><circle cx="465" cy="245" r="105" fill="none" stroke="#8de7ff" stroke-width="5" stroke-dasharray="6 10"/><path d="M465 125 L510 235 L465 245 L420 345" fill="none" stroke="#e8edf8" stroke-width="14"/><path d="M465 245 L570 190" stroke="#e8edf8" stroke-width="10"/><ellipse cx="465" cy="210" rx="36" ry="43" fill="#e8c7d9"/><path d="M423 210 Q465 145 507 210 L500 300 L430 300Z" fill="#18223e"/><g transform="translate(110 215) scale(.55)"><use href="#arka"/></g><g transform="translate(690 215) scale(.55)"><use href="#ren"/></g><path d="M45 366 Q220 345 430 370 T855 356 L855 383 L45 383Z" fill="#101327" opacity=".76"/><text x="58" y="381" font-family="Arial,sans-serif" font-size="15" font-weight="900" letter-spacing="1.1" fill="#fff">SOSOK DI DALAM JAM RAKSASA</text></g><g><rect x="28" y="420" width="844" height="300" rx="18" fill="#31233f" stroke="#20172f" stroke-width="9"/><rect x="320" y="455" width="260" height="220" rx="20" fill="#090d1c" stroke="#b6eaff" stroke-width="8"/><ellipse cx="450" cy="535" rx="42" ry="54" fill="#e8c7d9" opacity=".8"/><path d="M400 555 Q450 480 500 555 L485 645 L415 645Z" fill="#17213d"/><path d="M340 475 L560 650 M560 475 L340 650" stroke="#a9eaff" stroke-width="4" opacity=".35"/><g transform="translate(120 540) scale(.56)"><use href="#ren"/></g><g transform="translate(690 545) scale(.42)"><use href="#kuro"/></g><path d="M45 691 Q220 670 430 695 T855 681 L855 708 L45 708Z" fill="#101327" opacity=".76"/><text x="58" y="706" font-family="Arial,sans-serif" font-size="15" font-weight="900" letter-spacing="1.1" fill="#fff">REN MENGENALI SESUATU DARI MASA LALUNYA</text></g><g><rect x="28" y="745" width="844" height="300" rx="18" fill="#172d43" stroke="#20172f" stroke-width="9"/><ellipse cx="450" cy="870" rx="260" ry="120" fill="url(#glow)"/><path d="M450 770 L450 995 M320 880 L580 880" stroke="#f2d17b" stroke-width="8"/><path d="M410 815 Q450 780 490 815 L480 925 Q450 960 420 925Z" fill="#10172d" stroke="#a8eaff" stroke-width="5"/><g transform="translate(110 865) scale(.55)"><use href="#arka"/></g><g transform="translate(690 865) scale(.55)"><use href="#rina"/></g><path d="M45 1016 Q220 995 430 1020 T855 1006 L855 1033 L45 1033Z" fill="#101327" opacity=".76"/><text x="58" y="1031" font-family="Arial,sans-serif" font-size="15" font-weight="900" letter-spacing="1.1" fill="#fff">SEBUAH PERINGATAN TERDENGAR DARI BALIK KACA</text></g><text x="850" y="1080" text-anchor="end" font-family="Arial,sans-serif" font-size="13" fill="#5b4c70">DUNIA DI BALIK MIMPI · GADIS DI JARUM JAM</text></svg>
