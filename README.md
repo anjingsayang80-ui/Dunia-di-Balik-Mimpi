@@ -18,7 +18,8 @@ Buka `index.html` melalui GitHub Pages atau jalankan situs secara lokal. Gunakan
 - Halaman 12–16: memasuki Hutan Seribu Bisikan, menghadapi suara peniru dan Penjaga Akar, serta mengungkap segel misterius Ren.
 - Halaman 17–21: menghadapi suara dari cermin, lorong ingatan, membuka pintu dengan lonceng Kuro, melawan bayangan Ren, dan mengaktifkan gerbang Menara Jam Terbalik.
 - Halaman 22–26: memasuki Menara Jam Terbalik, menemukan gadis di dalam jam, memecahkan putaran satu menit, mengalahkan Penjaga Detik, dan memperoleh kunci perak.
-- Halaman 27–200: akan dilanjutkan secara bertahap.
+- Halaman 27–31: membuka Ruang Nama yang Hilang, melewati Pintu Tanpa Bayangan, melawan Penjahit Nama, memulihkan nama Nara, dan menemukan petunjuk menuju Kota Cermin.
+- Halaman 32–200: akan dilanjutkan secara bertahap.
 - Ilustrasi halaman tersimpan sebagai SVG orisinal di folder `assets/`.
 
 ## Tokoh utama
