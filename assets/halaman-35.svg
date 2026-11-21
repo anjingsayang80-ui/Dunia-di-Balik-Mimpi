@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1280" viewBox="0 0 960 1280" role="img" aria-labelledby="title desc">
+<title id="title">Halaman 35 — Rahasia di Balik Senyum</title><desc id="desc">Keberanian juga berarti berani mengakui rasa takut.</desc>
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#182b5a"/><stop offset=".55" stop-color="#513d85"/><stop offset="1" stop-color="#130f2b"/></linearGradient>
+ <linearGradient id="gold" x2="1" y2="1"><stop stop-color="#fff0b3"/><stop offset="1" stop-color="#e3a84d"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#c9f6ff" stop-opacity=".85"/><stop offset="1" stop-color="#75b9ff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="960" height="1280" fill="url(#bg)"/>
+<g fill="#fff4ce" opacity=".8"><circle cx="37" cy="23" r="3"/><circle cx="210" cy="120" r="1.7"/><circle cx="383" cy="217" r="1.7"/><circle cx="556" cy="314" r="1.7"/><circle cx="729" cy="411" r="3"/><circle cx="902" cy="508" r="1.7"/><circle cx="115" cy="605" r="1.7"/><circle cx="288" cy="702" r="1.7"/><circle cx="461" cy="799" r="3"/><circle cx="634" cy="896" r="1.7"/><circle cx="807" cy="993" r="1.7"/><circle cx="20" cy="1090" r="1.7"/><circle cx="193" cy="1187" r="3"/><circle cx="366" cy="34" r="1.7"/><circle cx="539" cy="131" r="1.7"/><circle cx="712" cy="228" r="1.7"/><circle cx="885" cy="325" r="3"/><circle cx="98" cy="422" r="1.7"/><circle cx="271" cy="519" r="1.7"/><circle cx="444" cy="616" r="1.7"/><circle cx="617" cy="713" r="3"/><circle cx="790" cy="810" r="1.7"/><circle cx="3" cy="907" r="1.7"/><circle cx="176" cy="1004" r="1.7"/><circle cx="349" cy="1101" r="3"/><circle cx="522" cy="1198" r="1.7"/><circle cx="695" cy="45" r="1.7"/><circle cx="868" cy="142" r="1.7"/><circle cx="81" cy="239" r="3"/><circle cx="254" cy="336" r="1.7"/><circle cx="427" cy="433" r="1.7"/><circle cx="600" cy="530" r="1.7"/><circle cx="773" cy="627" r="3"/><circle cx="946" cy="724" r="1.7"/><circle cx="159" cy="821" r="1.7"/><circle cx="332" cy="918" r="1.7"/><circle cx="505" cy="1015" r="3"/><circle cx="678" cy="1112" r="1.7"/><circle cx="851" cy="1209" r="1.7"/><circle cx="64" cy="56" r="1.7"/><circle cx="237" cy="153" r="3"/><circle cx="410" cy="250" r="1.7"/></g>
+<circle cx="780" cy="125" r="115" fill="url(#glow)"/>
+<text x="48" y="78" fill="#f9dc91" font-family="Georgia,serif" font-size="22" letter-spacing="5">DUNIA DI BALIK MIMPI</text>
+<text x="48" y="137" fill="#fff5d8" font-family="Georgia,serif" font-size="46" font-weight="bold">Rahasia di Balik Senyum</text>
+<text x="50" y="168" fill="#d7d8ff" font-family="sans-serif" font-size="18">Keberanian juga berarti berani mengakui rasa takut.</text>
+<g><rect x="40" y="195" width="420" height="420" rx="20" fill="#39406d" stroke="#f4d58a" stroke-width="5"/>
+    <path d="M52 240 H448" stroke="#ffffff55" stroke-width="2"/>
+    <text x="60" y="225" fill="#fff4d5" font-family="sans-serif" font-size="18" font-weight="800">1 · LABIRIN CERMIN</text>
+    <path d="M80 280 V570 H180 V330 H300 V570 H400 V280" fill="none" stroke="#a9e8ff" stroke-width="16" opacity=".55"/><path d="M240 260 L280 310 L240 360 L200 310Z" fill="#f6d991"/>
+ <g transform="translate(145 480) scale(0.55)">
+    <path d="M-27 38 Q-48 54 -48 83 L-30 87 L-18 54 M27 38 Q48 54 48 83 L30 87 L18 54" fill="none" stroke="#f5cdbb" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-29 35 Q0 18 29 35 L40 105 L-39 105Z" fill="#6278c9" stroke="#d9e5ff" stroke-width="2"/><path d="M-9 40 L0 62 L10 40" fill="none" stroke="#c8f5ff" stroke-width="5"/>
+    <ellipse cx="0" cy="0" rx="34" ry="39" fill="#f5cdbb" stroke="#5b3c56" stroke-width="2"/>
+    <path d="M-34 -7 Q-38 -48 -2 -49 Q34 -48 35 -8 L29 -28 Q6 -15 -1 -26 Q-18 -12 -30 -23Z" fill="#e4e8f7"/>
+    <path d="M-32 -10 Q-34 -49 0 -48 Q34 -47 34 -9 L18 -23 L8 -5 L-4 -24 L-19 -7Z" fill="#e4e8f7"/>
+    <ellipse cx="-12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/><ellipse cx="12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/>
+    <circle cx="-13" cy="3" r="1.5" fill="white"/><circle cx="11" cy="3" r="1.5" fill="white"/>
+    <path d="M-6 22 Q0 28 7 22" fill="none" stroke="#9d5362" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M-28 105 L-31 132 M28 105 L31 132" stroke="#25233d" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-43 133 L-20 133 M18 133 L43 133" stroke="#f2d8bc" stroke-width="8" stroke-linecap="round"/>
+  </g><g transform="translate(330 480) scale(0.55)">
+    <path d="M-27 38 Q-48 54 -48 83 L-30 87 L-18 54 M27 38 Q48 54 48 83 L30 87 L18 54" fill="none" stroke="#f4c6aa" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-30 35 Q0 20 30 35 L38 105 L-38 105Z" fill="#3c6fbd" stroke="#d7e4ff" stroke-width="2"/><path d="M-9 40 L0 62 L10 40" fill="none" stroke="#8ed8ff" stroke-width="5"/>
+    <ellipse cx="0" cy="0" rx="34" ry="39" fill="#f4c6aa" stroke="#5b3c56" stroke-width="2"/>
+    <path d="M-34 -7 Q-38 -48 -2 -49 Q34 -48 35 -8 L29 -28 Q6 -15 -1 -26 Q-18 -12 -30 -23Z" fill="#17294f"/>
+    <path d="M-34 -8 Q-39 -48 0 -49 Q37 -48 35 -8 L19 -24 L8 -7 L-7 -25 L-22 -5Z" fill="#17294f"/>
+    <ellipse cx="-12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/><ellipse cx="12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/>
+    <circle cx="-13" cy="3" r="1.5" fill="white"/><circle cx="11" cy="3" r="1.5" fill="white"/>
+    <path d="M-6 22 Q0 28 7 22" fill="none" stroke="#9d5362" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M-28 105 L-31 132 M28 105 L31 132" stroke="#25233d" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-43 133 L-20 133 M18 133 L43 133" stroke="#f2d8bc" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  </g><g><rect x="500" y="195" width="420" height="420" rx="20" fill="#4b3b71" stroke="#f4d58a" stroke-width="5"/>
+    <path d="M512 240 H908" stroke="#ffffff55" stroke-width="2"/>
+    <text x="520" y="225" fill="#fff4d5" font-family="sans-serif" font-size="18" font-weight="800">2 · INGATAN RINA</text>
+    <circle cx="700" cy="405" r="120" fill="url(#glow)"/><ellipse cx="700" cy="410" rx="65" ry="90" fill="#d8e4f7" opacity=".35"/><path d="M650 410 Q700 350 750 410" fill="none" stroke="#fff" stroke-width="6"/>
+ <g transform="translate(700 485) scale(0.62)">
+    <path d="M-27 38 Q-48 54 -48 83 L-30 87 L-18 54 M27 38 Q48 54 48 83 L30 87 L18 54" fill="none" stroke="#f5cdbb" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-29 35 Q0 18 29 35 L40 105 L-39 105Z" fill="#6278c9" stroke="#d9e5ff" stroke-width="2"/><path d="M-9 40 L0 62 L10 40" fill="none" stroke="#c8f5ff" stroke-width="5"/>
+    <ellipse cx="0" cy="0" rx="34" ry="39" fill="#f5cdbb" stroke="#5b3c56" stroke-width="2"/>
+    <path d="M-34 -7 Q-38 -48 -2 -49 Q34 -48 35 -8 L29 -28 Q6 -15 -1 -26 Q-18 -12 -30 -23Z" fill="#e4e8f7"/>
+    <path d="M-32 -10 Q-34 -49 0 -48 Q34 -47 34 -9 L18 -23 L8 -5 L-4 -24 L-19 -7Z" fill="#e4e8f7"/>
+    <ellipse cx="-12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/><ellipse cx="12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/>
+    <circle cx="-13" cy="3" r="1.5" fill="white"/><circle cx="11" cy="3" r="1.5" fill="white"/>
+    <path d="M-6 22 Q0 16 7 22" fill="none" stroke="#9d5362" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M-28 105 L-31 132 M28 105 L31 132" stroke="#25233d" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-43 133 L-20 133 M18 133 L43 133" stroke="#f2d8bc" stroke-width="8" stroke-linecap="round"/>
+  </g><path d="M770 315 Q820 270 850 320" stroke="#f5d68c" stroke-width="5" fill="none"/>
+  </g><g><rect x="40" y="650" width="420" height="420" rx="20" fill="#294c72" stroke="#f4d58a" stroke-width="5"/>
+    <path d="M52 695 H448" stroke="#ffffff55" stroke-width="2"/>
+    <text x="60" y="680" fill="#fff4d5" font-family="sans-serif" font-size="18" font-weight="800">3 · JANJI</text>
+    <circle cx="250" cy="835" r="120" fill="url(#glow)"/>
+ <g transform="translate(170 940) scale(0.65)">
+    <path d="M-27 38 Q-48 54 -48 83 L-30 87 L-18 54 M27 38 Q48 54 48 83 L30 87 L18 54" fill="none" stroke="#f4c6aa" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-30 35 Q0 20 30 35 L38 105 L-38 105Z" fill="#3c6fbd" stroke="#d7e4ff" stroke-width="2"/><path d="M-9 40 L0 62 L10 40" fill="none" stroke="#8ed8ff" stroke-width="5"/>
+    <ellipse cx="0" cy="0" rx="34" ry="39" fill="#f4c6aa" stroke="#5b3c56" stroke-width="2"/>
+    <path d="M-34 -7 Q-38 -48 -2 -49 Q34 -48 35 -8 L29 -28 Q6 -15 -1 -26 Q-18 -12 -30 -23Z" fill="#17294f"/>
+    <path d="M-34 -8 Q-39 -48 0 -49 Q37 -48 35 -8 L19 -24 L8 -7 L-7 -25 L-22 -5Z" fill="#17294f"/>
+    <ellipse cx="-12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/><ellipse cx="12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/>
+    <circle cx="-13" cy="3" r="1.5" fill="white"/><circle cx="11" cy="3" r="1.5" fill="white"/>
+    <path d="M-6 22 Q0 28 7 22" fill="none" stroke="#9d5362" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M-28 105 L-31 132 M28 105 L31 132" stroke="#25233d" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-43 133 L-20 133 M18 133 L43 133" stroke="#f2d8bc" stroke-width="8" stroke-linecap="round"/>
+  </g><g transform="translate(330 940) scale(0.65)">
+    <path d="M-27 38 Q-48 54 -48 83 L-30 87 L-18 54 M27 38 Q48 54 48 83 L30 87 L18 54" fill="none" stroke="#f5cdbb" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-29 35 Q0 18 29 35 L40 105 L-39 105Z" fill="#6278c9" stroke="#d9e5ff" stroke-width="2"/><path d="M-9 40 L0 62 L10 40" fill="none" stroke="#c8f5ff" stroke-width="5"/>
+    <ellipse cx="0" cy="0" rx="34" ry="39" fill="#f5cdbb" stroke="#5b3c56" stroke-width="2"/>
+    <path d="M-34 -7 Q-38 -48 -2 -49 Q34 -48 35 -8 L29 -28 Q6 -15 -1 -26 Q-18 -12 -30 -23Z" fill="#e4e8f7"/>
+    <path d="M-32 -10 Q-34 -49 0 -48 Q34 -47 34 -9 L18 -23 L8 -5 L-4 -24 L-19 -7Z" fill="#e4e8f7"/>
+    <ellipse cx="-12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/><ellipse cx="12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/>
+    <circle cx="-13" cy="3" r="1.5" fill="white"/><circle cx="11" cy="3" r="1.5" fill="white"/>
+    <path d="M-6 22 Q0 28 7 22" fill="none" stroke="#9d5362" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M-28 105 L-31 132 M28 105 L31 132" stroke="#25233d" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-43 133 L-20 133 M18 133 L43 133" stroke="#f2d8bc" stroke-width="8" stroke-linecap="round"/>
+  </g><path d="M210 900 Q250 860 290 900" stroke="#ffe5a3" stroke-width="8" fill="none"/>
+ <path d="M250 770 L265 800 L300 805 L275 830 L280 865 L250 845 L220 865 L225 830 L200 805 L235 800Z" fill="#fff0ad"/>
+  </g><g><rect x="500" y="650" width="420" height="420" rx="20" fill="#4a3a64" stroke="#f4d58a" stroke-width="5"/>
+    <path d="M512 695 H908" stroke="#ffffff55" stroke-width="2"/>
+    <text x="520" y="680" fill="#fff4d5" font-family="sans-serif" font-size="18" font-weight="800">4 · LAMBANG FAJAR</text>
+    <path d="M700 735 L760 795 L700 855 L640 795Z" fill="#f6d68e" stroke="#fff" stroke-width="4"/><circle cx="700" cy="795" r="25" fill="#fff4c7"/><path d="M700 850 V1020 M620 935 H780" stroke="#f6d68e" stroke-width="5"/>
+ <g transform="translate(610 980) scale(0.45)">
+    <path d="M-27 38 Q-48 54 -48 83 L-30 87 L-18 54 M27 38 Q48 54 48 83 L30 87 L18 54" fill="none" stroke="#edc0a6" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-30 35 Q0 20 30 35 L38 105 L-38 105Z" fill="#263c58" stroke="#d7e4ff" stroke-width="2"/><path d="M-9 40 L0 62 L10 40" fill="none" stroke="#ff6c83" stroke-width="5"/>
+    <ellipse cx="0" cy="0" rx="34" ry="39" fill="#edc0a6" stroke="#5b3c56" stroke-width="2"/>
+    <path d="M-34 -7 Q-38 -48 -2 -49 Q34 -48 35 -8 L29 -28 Q6 -15 -1 -26 Q-18 -12 -30 -23Z" fill="#247c83"/>
+    <path d="M-34 -8 Q-40 -49 -3 -48 Q31 -47 35 -14 L18 -28 L5 -5 L-9 -22 L-25 -4Z" fill="#247c83"/>
+    <ellipse cx="-12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/><ellipse cx="12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/>
+    <circle cx="-13" cy="3" r="1.5" fill="white"/><circle cx="11" cy="3" r="1.5" fill="white"/>
+    <path d="M-6 22 Q0 28 7 22" fill="none" stroke="#9d5362" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M-28 105 L-31 132 M28 105 L31 132" stroke="#25233d" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-43 133 L-20 133 M18 133 L43 133" stroke="#f2d8bc" stroke-width="8" stroke-linecap="round"/>
+  </g><g transform="translate(790 980) scale(0.45)">
+    <path d="M-27 38 Q-48 54 -48 83 L-30 87 L-18 54 M27 38 Q48 54 48 83 L30 87 L18 54" fill="none" stroke="#f3c6a8" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-30 35 Q0 20 30 35 L38 105 L-38 105Z" fill="#d18a57" stroke="#d7e4ff" stroke-width="2"/><path d="M-9 40 L0 62 L10 40" fill="none" stroke="#ffe49a" stroke-width="5"/>
+    <ellipse cx="0" cy="0" rx="34" ry="39" fill="#f3c6a8" stroke="#5b3c56" stroke-width="2"/>
+    <path d="M-34 -7 Q-38 -48 -2 -49 Q34 -48 35 -8 L29 -28 Q6 -15 -1 -26 Q-18 -12 -30 -23Z" fill="#9b5a3d"/>
+    <path d="M-34 -8 Q-38 -48 0 -48 Q37 -47 35 -8 L18 -22 L4 -6 L-11 -24 L-24 -7Z" fill="#9b5a3d"/>
+    <ellipse cx="-12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/><ellipse cx="12" cy="5" rx="4.2" ry="6.3" fill="#25223d"/>
+    <circle cx="-13" cy="3" r="1.5" fill="white"/><circle cx="11" cy="3" r="1.5" fill="white"/>
+    <path d="M-6 22 Q0 28 7 22" fill="none" stroke="#9d5362" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M-28 105 L-31 132 M28 105 L31 132" stroke="#25233d" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-43 133 L-20 133 M18 133 L43 133" stroke="#f2d8bc" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  </g>
+<rect x="40" y="1125" width="880" height="105" rx="18" fill="#0c1028" stroke="#d9b66c" stroke-width="3"/>
+<text x="66" y="1170" fill="#f8e7b8" font-family="Georgia,serif" font-size="25" font-weight="bold">HALAMAN 35</text>
+<text x="66" y="1205" fill="#d7d8ff" font-family="sans-serif" font-size="17">Petualangan berlanjut di balik pantulan...</text>
+<text x="880" y="1190" text-anchor="end" fill="#f5d995" font-family="Georgia,serif" font-size="26">✦</text>
+</svg>
