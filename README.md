@@ -13,7 +13,7 @@ Buka `index.html` melalui GitHub Pages atau jalankan situs secara lokal. Gunakan
 
 ## Kemajuan cerita
 - Sampul: tersedia.
-- Halaman cerita 1–41: tersedia.
+- Halaman cerita 1–46: tersedia.
 - Halaman 7–11 menambahkan kemunculan Pemburu Mimpi, peta bercahaya, pertemuan dengan Ren, dan perjalanan melewati gerbang pertama.
 - Halaman 12–16: memasuki Hutan Seribu Bisikan, menghadapi suara peniru dan Penjaga Akar, serta mengungkap segel misterius Ren.
 - Halaman 17–21: menghadapi suara dari cermin, lorong ingatan, membuka pintu dengan lonceng Kuro, melawan bayangan Ren, dan mengaktifkan gerbang Menara Jam Terbalik.
@@ -21,7 +21,8 @@ Buka `index.html` melalui GitHub Pages atau jalankan situs secara lokal. Gunakan
 - Halaman 27–31: membuka Ruang Nama yang Hilang, melewati Pintu Tanpa Bayangan, melawan Penjahit Nama, memulihkan nama Nara, dan menemukan petunjuk menuju Kota Cermin.
 - Halaman 32–36: tiba di Kota Cermin, menemukan Pasar Pantulan, menghadapi bayangan Arka, mengungkap ketakutan Rina, dan bertemu Raja Tanpa Wajah.
 - Halaman 37–41: pantulan Ren keluar dari cermin, Nara menolak tawaran Raja Tanpa Wajah, Ren mengungkap rahasia segelnya, para sahabat menemukan Keping Fajar, dan gerbang menuju Laut Langit terbuka.
-- Halaman 42–200: akan dilanjutkan secara bertahap.
+- Halaman 42–46: memasuki Laut Langit, menemukan Naga Awan, mengaktifkan Pulau Akar dan Kapal Kertas Bintang, membebaskan Paus Langit, serta menghadapi Badai Tanpa Hujan menuju Menara Arus.
+- Halaman 47–200: akan dilanjutkan secara bertahap.
 - Ilustrasi halaman tersimpan sebagai SVG orisinal di folder `assets/`.
 
 ## Tokoh utama
