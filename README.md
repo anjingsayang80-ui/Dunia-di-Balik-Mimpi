@@ -13,7 +13,7 @@ Buka `index.html` melalui GitHub Pages atau jalankan situs secara lokal. Gunakan
 
 ## Kemajuan cerita
 - Sampul: tersedia.
-- Halaman cerita 1–66: tersedia.
+- Halaman cerita 1–71: tersedia.
 - Halaman 7–11 menambahkan kemunculan Pemburu Mimpi, peta bercahaya, pertemuan dengan Ren, dan perjalanan melewati gerbang pertama.
 - Halaman 12–16: memasuki Hutan Seribu Bisikan, menghadapi suara peniru dan Penjaga Akar, serta mengungkap segel misterius Ren.
 - Halaman 17–21: menghadapi suara dari cermin, lorong ingatan, membuka pintu dengan lonceng Kuro, melawan bayangan Ren, dan mengaktifkan gerbang Menara Jam Terbalik.
@@ -26,7 +26,8 @@ Buka `index.html` melalui GitHub Pages atau jalankan situs secara lokal. Gunakan
 - Halaman 52–56: tiba di Arsip Bulan, bertemu pustakawan Luma, menghadapi buku yang bernapas, melihat ingatan Kuro di cermin perak, dan mengungkap nama aslinya: Kairun, penjaga kelima yang menyegel Pemakan Mimpi.
 - Halaman 57–61: pintu penjara terbuka, Arka hampir kehilangan kenangan tentang Rina, para sahabat melawan wujud tinta Pemakan Mimpi, Kairun mengingat permintaan masa lalunya, dan segel lima cahaya menahan makhluk itu sementara pecahannya lolos menuju Danau Tanpa Pagi.
 - Halaman 62–66: menuruni tangga menuju Danau Tanpa Pagi, berlayar dengan perahu dari kenangan, menghadapi Penjaga Palung, membebaskan Arka dari mimpi palsu, dan menemukan lonceng kaca di Pulau Jam.
-- Halaman 67–200: akan dilanjutkan secara bertahap.
+- Halaman 67–71: menuruni Tangga di Bawah Waktu, membebaskan Eira dari lonceng kaca, menghadapi Penjaga Detik, mengungkap Eira sebagai penjaga keenam, dan membuka gerbang menuju Kota Fajar.
+- Halaman 72–200: akan dilanjutkan secara bertahap.
 - Ilustrasi halaman tersimpan sebagai SVG orisinal di folder `assets/`.
 
 ## Tokoh utama
